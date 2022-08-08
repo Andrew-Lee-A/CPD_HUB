@@ -116,7 +116,7 @@ nav button {
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 6px 10px;
-  margin: 5px;
+  margin-left: 10px;
   border-radius: 4px;
   font-family: "Poppins";
   cursor: pointer;
