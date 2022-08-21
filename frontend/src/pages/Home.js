@@ -5,6 +5,8 @@ import { useAuthContext } from "../hooks/useAuthContext"
 // components
 import WorkoutDetails from "../components/WorkoutDetails"
 import WorkoutForm from "../components/WorkoutForm"
+import ProgressBar from "../components/ProgressBar"
+import Sidebar from "../components/Sidebar"
 
 const Home = () => {
   const { workouts, dispatch } = useWorkoutsContext()
@@ -31,12 +33,16 @@ const Home = () => {
 
   return (
     <div className="home">
+      <Sidebar className="sideBar"/>
       <div className="workouts">
         {workouts && workouts.map(workout => (
           <WorkoutDetails workout={workout} key={workout._id} />
         ))}
       </div>
-      <WorkoutForm />
+      <div>
+      <ProgressBar/>
+      {/* <WorkoutForm /> */}
+      </div>
     </div>
   )
 }
