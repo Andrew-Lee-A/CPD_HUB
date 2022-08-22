@@ -6,7 +6,7 @@ import { useAuthContext } from "../hooks/useAuthContext"
 import WorkoutDetails from "../components/WorkoutDetails"
 import WorkoutForm from "../components/WorkoutForm"
 import ProgressBar from "../components/ProgressBar"
-import Sidebar from "../components/Sidebar"
+import Sidebar from "../components/Sidebar/Sidebar.js"
 
 const Home = () => {
   const { workouts, dispatch } = useWorkoutsContext()
@@ -33,7 +33,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      <Sidebar className="sideBar"/>
+      <Sidebar/>
       <div className="workouts">
         {workouts && workouts.map(workout => (
           <WorkoutDetails workout={workout} key={workout._id} />

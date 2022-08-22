@@ -13,7 +13,7 @@ const ProgressBar = () => {
         radialBar: {
           dataLabels: {
             name: {
-              fontSize: '22px',
+              fontSize: '24px',
             },
             value: {
               fontSize: '16px',
@@ -23,13 +23,13 @@ const ProgressBar = () => {
               label: 'Total',
               formatter: function (w) {
                 // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
-                return 249
+                return 300
               }
             }
           }
         }
       },
-      labels: ['Apples', 'Oranges', 'Bananas', 'Berries'],
+      labels: ['Area of practice', 'Risk management', 'Business', 'Career Interests'],
       };
     
       var chart = new ApexCharts(document.querySelector("#chart"), options);
