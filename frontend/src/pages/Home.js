@@ -35,11 +35,13 @@ const Home = () => {
     <div className="home">
       <Sidebar/>
       <div className="workouts">
+        <div><h3>Upcoming CPD events</h3></div>
         {workouts && workouts.map(workout => (
           <WorkoutDetails workout={workout} key={workout._id} />
         ))}
       </div>
       <div>
+      <div><h3>CPD Progress</h3></div>
       <ProgressBar/>
       {/* <WorkoutForm /> */}
       </div>

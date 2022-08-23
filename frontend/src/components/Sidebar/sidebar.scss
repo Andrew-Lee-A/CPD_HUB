@@ -1,8 +1,10 @@
 .sidebar {
     flex: 1;
     border-right: 0.5px solid rgb(230, 227, 227);
+    border-radius: 4px;
     min-height: 100vh;
     background-color: white;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
   
     .top {
       height: 50px;
@@ -49,12 +51,12 @@
           }
   
           .icon {
-            font-size: 18px;
+            font-size: 20px;
             color: var(--primary);
           }
   
           span{
-              font-size: 13px;
+              font-size: 18px;
               font-weight: 600;
               color: #888;
               margin-left: 10px;

@@ -1,6 +1,8 @@
 import React from 'react'
 import ApexCharts from 'apexcharts'
 
+import './progresbar.scss'
+
 
 const ProgressBar = () => {
     var options = {
@@ -20,10 +22,10 @@ const ProgressBar = () => {
             },
             total: {
               show: true,
-              label: 'Total',
+              label: 'Current CPD points',
               formatter: function (w) {
                 // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
-                return 300
+                return 150
               }
             }
           }
@@ -37,7 +39,9 @@ const ProgressBar = () => {
       console.log("rendering chart")
 
   return (
-    <div id="chart">CPD Progress</div>
+    <div className='progressBar'>
+      <div id="chart"></div>
+    </div>
   )
 }
 
