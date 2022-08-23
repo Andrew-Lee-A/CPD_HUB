@@ -5,6 +5,11 @@
 :root {
   --primary: #1aac83;
   --error: #e7195a;
+  --secondary: #1d3557;
+  --tertiary: #A8DADC;
+  --fourth: #F1FAEE;
+  --fifth: #E63946;
+  --sixth: #457B9D;
 }
 body {
   background: #f1f1f1;
@@ -28,15 +33,15 @@ header a {
 }
 .pages{
   max-width: 1400px;
-  padding: 20px;
+  padding: 10px;
   margin: 0 auto;
 }
 
 /* homepage */
 .home {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 100px;
+  grid-template-columns: 1fr 3fr 1.5fr;
+  gap: 50px;
 }
 .workout-details {
   background: #fff;

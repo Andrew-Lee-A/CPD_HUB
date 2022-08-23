@@ -26,8 +26,8 @@ const WorkoutDetails = ({ workout }) => {
     return (
         <div className="workout-details">
             <h4>{workout.title}</h4>
-            <p><strong> Load (kg): </strong>{workout.load}</p>
-            <p><strong> Reps : </strong>{workout.reps}</p>
+            <p><strong> CPD Points (hours): </strong>{workout.load}</p>
+            <p><strong> Field:  </strong>{workout.reps}</p>
             <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
             <p><strong> Submitted: </strong>{formatDistanceToNow(new Date(workout.createdAt), {addSuffix: true})}</p>
         </div>

@@ -14,7 +14,6 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <div className="pages">
-
           <Routes>
             <Route 
               path="/" 
