@@ -21,7 +21,7 @@ const WorkoutForm = () => {
     }
     const workout = {title, load, reps}
     
-    const response = await fetch('/api/workouts', {
+    const response = await fetch('/api/cpdEvents', {
       method: 'POST',
       body: JSON.stringify(workout),
       headers: {

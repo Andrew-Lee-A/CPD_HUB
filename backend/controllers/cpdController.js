@@ -1,28 +1,28 @@
-const Workout = require('../models/workoutModel')
+const CpdEvent = require('../models/cpdEventModel')
 const mongoose = require('mongoose')
 
 // get all workouts
-const getWorkouts = async (req, res) => {
+const getCpdEvents = async (req, res) => {
     const user_id = req.user._id
-    const workouts = await Workout.find({user_id}).sort({createdAt: -1})
-    res.status(200).json(workouts)
+    const cpdEvents = await CpdEvent.find({user_id}).sort({createdAt: -1})
+    res.status(200).json(cpdEvents)
 } 
 
 // get a single workout
-const getWorkout = async (req, res) => {
+const getCpdEvent = async (req, res) => {
     const {id} = req.params
     if (!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error: 'No such workout'})
     }
-    const workout = await Workout.findById(id)
-    if(!workout){
+    const cpdEvent = await CpdEvent.findById(id)
+    if(!cpdEvent){
         return res.status(404).json({error: 'No such workout'})
     }
-    res.status(200).json(workout)
+    res.status(200).json(cpdEvent)
 }
 
 // create new workout
-const createWorkout = async (req, res) => {
+const createCpdEvent = async (req, res) => {
     const {title, load, reps} = req.body
   
     //error message check
@@ -42,47 +42,47 @@ const createWorkout = async (req, res) => {
 
     try {
         const user_id = req.user._id
-      const workout = await Workout.create({title, load, reps, user_id})
-      res.status(200).json(workout)
+      const cpdEvent = await CpdEvent.create({title, load, reps, user_id})
+      res.status(200).json(cpdEvent)
     } catch (error) {
       res.status(400).json({error: error.message})
     }
 }
 //delete a workout
-const deleteWorkout = async (req, res) => {
+const deleteCpdEvent = async (req, res) => {
     const {id} = req.params
     if (!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error: 'No such workout'})
     }
 
-    const workout = await Workout.findOneAndDelete({_id: id})
+    const cpdEvent = await CpdEvent.findOneAndDelete({_id: id})
 
-    if (!workout){
+    if (!cpdEvent){
         return res.status(404).json({error: 'No such workout'})
     }
 
-    res.status(200).json(workout)
+    res.status(200).json(cpdEvent)
 }
 
 //update a workout
-const updateWorkout = async (req, res) => {
+const updateCpdEvent = async (req, res) => {
     const {id} = req.params
     if (!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error: 'No such workout'})
     }
 
-    const workout = await Workout.findOneAndUpdate({_id: id}, {
+    const cpdEvent = await CpdEvent.findOneAndUpdate({_id: id}, {
         ...req.body
     })
 
-    res.status(200).json(workout)
+    res.status(200).json(cpdEvent)
 
 }
 
 module.exports = {
-    getWorkouts,
-    getWorkout,
-    createWorkout,
-    updateWorkout,
-    deleteWorkout
+    getCpdEvents,
+    getCpdEvent,
+    createCpdEvent,
+    updateCpdEvent,
+    deleteCpdEvent
 }
