@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { useAuthContext } from '../hooks/useAuthContext'
-import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
+import { useCpdEventsContext } from '../hooks/useCpdEventsContext'
 
 const WorkoutForm = () => {
-  const { dispatch } = useWorkoutsContext()
+  const { dispatch } = useCpdEventsContext()
 
   const [title, setTitle] = useState('')
-  const [load, setLoad] = useState('')
-  const [reps, setReps] = useState('')
+  const [cpd_points, setCpd_points] = useState('')
+  const [field, setField] = useState('')
   const [error, setError] = useState(null)
   const [emptyFields, setEmptyFields] = useState([])
   const {user} = useAuthContext()
@@ -19,11 +19,11 @@ const WorkoutForm = () => {
       setError('You must be logged in')
       return
     }
-    const workout = {title, load, reps}
+    const cpdEvent = {title, cpd_points, field}
     
-    const response = await fetch('/api/workouts', {
+    const response = await fetch('/api/cpdEvents', {
       method: 'POST',
-      body: JSON.stringify(workout),
+      body: JSON.stringify(cpdEvent),
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${user.token}`
@@ -38,19 +38,19 @@ const WorkoutForm = () => {
     if (response.ok) {
       setError(null)
       setTitle('')
-      setLoad('')
-      setReps('')
+      setCpd_points('')
+      setField('')
       setEmptyFields([])
-      dispatch({type: 'CREATE_WORKOUT', payload: json})
+      dispatch({type: 'CREATE_CPDEVENT', payload: json})
     }
 
   }
 
   return (
     <form className="create" onSubmit={handleSubmit}> 
-      <h3>Add a New Workout</h3>
+      <h3>Add a New CPD Event</h3>
 
-      <label>Excersize Title:</label>
+      <label>CPD Title:</label>
       <input 
         type="text" 
         onChange={(e) => setTitle(e.target.value)} 
@@ -58,23 +58,23 @@ const WorkoutForm = () => {
         className={emptyFields.includes('title') ? 'error' : ''}
       />
 
-      <label>Load (in kg):</label>
+      <label>CPD Points (in hours):</label>
       <input 
         type="number" 
-        onChange={(e) => setLoad(e.target.value)} 
-        value={load}
-        className={emptyFields.includes('load') ? 'error' : ''}
+        onChange={(e) => setCpd_points(e.target.value)} 
+        value={cpd_points}
+        className={emptyFields.includes('cpd_points') ? 'error' : ''}
       />
 
-      <label>Number of Reps:</label>
+      <label>Field:</label>
       <input 
-        type="number" 
-        onChange={(e) => setReps(e.target.value)} 
-        value={reps} 
-        className={emptyFields.includes('reps') ? 'error' : ''}
+        type="String" 
+        onChange={(e) => setField(e.target.value)} 
+        value={field} 
+        className={emptyFields.includes('Field') ? 'error' : ''}
       />
 
-      <button>Add Workout</button>
+      <button>Add CPD Event</button>
       {error && <div className="error">{error}</div>}
     </form>
   )

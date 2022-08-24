@@ -1,20 +1,20 @@
 import { useEffect } from "react"
-import { useWorkoutsContext } from "../hooks/useWorkoutsContext"
+import { useCpdEventsContext } from "../hooks/useCpdEventsContext"
 import { useAuthContext } from "../hooks/useAuthContext"
 
 // components
-import WorkoutDetails from "../components/WorkoutDetails"
-import WorkoutForm from "../components/WorkoutForm"
+import WorkoutDetails from "../components/CpdEventDetails"
+import WorkoutForm from "../components/CpdEventForm"
 import ProgressBar from "../components/ProgressBar"
 import Sidebar from "../components/Sidebar/Sidebar.js"
 
 const Home = () => {
-  const { workouts, dispatch } = useWorkoutsContext()
+  const { cpdEvents, dispatch } = useCpdEventsContext()
   const {user} = useAuthContext()
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch('/api/workouts', {
+      const response = await fetch('/api/cpdEvents', {
         headers: {
           'Authorization': `Bearer ${user.token}`
         }
@@ -22,7 +22,7 @@ const Home = () => {
       const json = await response.json()
 
       if (response.ok) {
-        dispatch({type: 'SET_WORKOUTS', payload: json})
+        dispatch({type: 'SET_CPDEVENTS', payload: json})
       }
     }
 
@@ -35,9 +35,10 @@ const Home = () => {
     <div className="home">
       <Sidebar/>
       <div className="workouts">
-        <div><h3>Upcoming CPD events</h3></div>
-        {workouts && workouts.map(workout => (
-          <WorkoutDetails workout={workout} key={workout._id} />
+          <div><h3>Upcoming CPD events</h3></div>
+        {cpdEvents && cpdEvents.map(cpdEvent => (
+          <WorkoutDetails cpdEvent={cpdEvent} key={cpdEvent._id} />
+
         ))}
       </div>
       <div>
