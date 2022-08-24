@@ -23,18 +23,18 @@ const getCpdEvent = async (req, res) => {
 
 // create new workout
 const createCpdEvent = async (req, res) => {
-    const {title, load, reps} = req.body
+    const {title, cpd_points, field} = req.body
   
     //error message check
     let emptyFields = []
     if (!title) {
         emptyFields.push('title')
     }
-    if (!load) {
-        emptyFields.push('load')
+    if (!cpd_points) {
+        emptyFields.push('cpd_points')
     }
-    if (!reps) {
-        emptyFields.push('reps')
+    if (!field) {
+        emptyFields.push('field')
     }
     if (emptyFields.length > 0){
         return res.status(400).json({error: 'Please fill in all the fields', emptyFields})
@@ -42,7 +42,7 @@ const createCpdEvent = async (req, res) => {
 
     try {
         const user_id = req.user._id
-      const cpdEvent = await CpdEvent.create({title, load, reps, user_id})
+      const cpdEvent = await CpdEvent.create({title, cpd_points, field, user_id})
       res.status(200).json(cpdEvent)
     } catch (error) {
       res.status(400).json({error: error.message})

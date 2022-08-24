@@ -7,12 +7,12 @@ const cpdEventSchema = new Schema({
     type: String,
     required: true
   },
-  reps: {
+  cpd_points: {
     type: Number,
     required: true
   },
-  load: {
-    type: Number,
+  field: {
+    type: String,
     required: true
   },
   user_id: {

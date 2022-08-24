@@ -1,37 +1,37 @@
-import { useWorkoutsContext } from "../hooks/useWorkoutsContext"
+import { useCpdEventsContext } from "../hooks/useCpdEventsContext"
 import { useAuthContext } from "../hooks/useAuthContext"
 
 //date fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
-const WorkoutDetails = ({ workout }) => {
-    const {dispatch} = useWorkoutsContext()
+const CpdEventDetails = ({ cpdEvent }) => {
+    const {dispatch} = useCpdEventsContext()
     const {user} = useAuthContext()
 
     const handleClick = async () => {
         if(!user){
             return
         }
-        const response = await fetch('/api/cpdEvents/' + workout._id, {
+        const response = await fetch('/api/cpdEvents/' + cpdEvent._id, {
             method: 'DELETE',
             headers: {'Authorization': `Bearer ${user.token}`}
         })
         const json = await response.json()
         
         if(response.ok){
-            dispatch({type: 'DELETE_WORKOUT', payload: json})
+            dispatch({type: 'DELETE_CPDEVENT', payload: json})
         }
     }
     
     return (
         <div className="workout-details">
-            <h4>{workout.title}</h4>
-            <p><strong> Load (kg): </strong>{workout.load}</p>
-            <p><strong> Reps : </strong>{workout.reps}</p>
+            <h4>{cpdEvent.title}</h4>
+            <p><strong> CPD Points (hours): </strong>{cpdEvent.cpd_points}</p>
+            <p><strong> Field : </strong>{cpdEvent.field}</p>
             <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
-            <p><strong> Submitted: </strong>{formatDistanceToNow(new Date(workout.createdAt), {addSuffix: true})}</p>
+            <p><strong> Submitted: </strong>{formatDistanceToNow(new Date(cpdEvent.createdAt), {addSuffix: true})}</p>
         </div>
     )
 }
 
-export default WorkoutDetails
+export default CpdEventDetails
