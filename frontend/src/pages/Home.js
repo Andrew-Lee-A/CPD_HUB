@@ -5,6 +5,8 @@ import { useAuthContext } from "../hooks/useAuthContext"
 // components
 import WorkoutDetails from "../components/CpdEventDetails"
 import WorkoutForm from "../components/CpdEventForm"
+import ProgressBar from "../components/ProgressBar"
+import Sidebar from "../components/Sidebar/Sidebar.js"
 
 const Home = () => {
   const { cpdEvents, dispatch } = useCpdEventsContext()
@@ -31,12 +33,19 @@ const Home = () => {
 
   return (
     <div className="home">
+      <Sidebar/>
       <div className="workouts">
+          <div><h3>Upcoming CPD events</h3></div>
         {cpdEvents && cpdEvents.map(cpdEvent => (
           <WorkoutDetails cpdEvent={cpdEvent} key={cpdEvent._id} />
+
         ))}
       </div>
-      <WorkoutForm />
+      <div>
+      <div><h3>CPD Progress</h3></div>
+      <ProgressBar/>
+      {/* <WorkoutForm /> */}
+      </div>
     </div>
   )
 }
