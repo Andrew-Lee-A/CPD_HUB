@@ -15,21 +15,23 @@ import { Link } from "react-router-dom";
 // import { DarkModeContext } from "../../context/darkModeContext";
 // import { useContext } from "react";
 
-import {useLogout} from '../../hooks/useLogout'
+import { useLogout } from "../../hooks/useLogout";
 
 const Sidebar = () => {
-//   const { dispatch } = useContext(DarkModeContext);
+  //   const { dispatch } = useContext(DarkModeContext);
 
-const {logout} = useLogout()
+  const { logout } = useLogout();
 
-const handleClick = () => {
-    logout()
-}
+  const handleClick = () => {
+    logout();
+  };
   return (
     <div className="sidebar">
       <div className="top">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <span className="logo">Dashboard</span>
+          <span className="logo">
+            <h1>CPD HUB</h1>
+          </span>
         </Link>
       </div>
       <hr />
@@ -53,27 +55,30 @@ const handleClick = () => {
               <span>Yearly Plan</span>
             </li>
           </Link>
-          <li>
-            <CreditCardIcon className="icon" />
-            <span>CPD Summary</span>
-          </li>
+          <Link to="/CPDSUMMARY" style={{ textDecoration: "none" }}>
+            <li>
+              <CreditCardIcon className="icon" />
+              <span>CPD Summary</span>
+            </li>
+          </Link>
           <li>
             <SettingsApplicationsIcon className="icon" />
             <span>Settings</span>
           </li>
-          <p className="title">USER</p>
-          <li>
-            <AccountCircleOutlinedIcon className="icon" />
-            <span>Profile</span>
-          </li>
-          <li>
-            <ExitToAppIcon className="icon" />
-            <span onClick={handleClick}>Logout</span>
-          </li>
         </ul>
-      </div>
-      <div className="bottom">
-        {/* <div
+        <div className="bottom">
+          <ul>
+            <p className="title">USER</p>
+            <li>
+              <AccountCircleOutlinedIcon className="icon" />
+              <span>Profile</span>
+            </li>
+            <li>
+              <ExitToAppIcon className="icon" />
+              <span onClick={handleClick}>Logout</span>
+            </li>
+          </ul>
+          {/* <div
           className="colorOption"
           onClick={() => dispatch({ type: "LIGHT" })}
         ></div>
@@ -81,6 +86,7 @@ const handleClick = () => {
           className="colorOption"
           onClick={() => dispatch({ type: "DARK" })}
         ></div> */}
+        </div>
       </div>
     </div>
   );

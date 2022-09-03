@@ -1,6 +1,8 @@
 import {useState} from 'react'
 import {useLogin} from '../hooks/useLogin'
 
+import Navbar from '../components/Navbar'
+
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -13,6 +15,8 @@ const Login = () => {
     }
 
     return (
+        <div>
+        <Navbar/>
         <form className="login" onSubmit={handleSubmit}>
             <h3>Log in</h3>
 
@@ -31,6 +35,7 @@ const Login = () => {
             <button disabled={isLoading}>Log in</button>
             {error && <div className="error">{error}</div>}
         </form>
+        </div>
     )
 }
 
