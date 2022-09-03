@@ -1,6 +1,8 @@
 import {useState} from 'react'
 import { useSignup } from '../hooks/useSignup'
 
+import Navbar from '../components/Navbar'
+
 const Signup = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -13,6 +15,8 @@ const Signup = () => {
     }
 
     return (
+        <div>
+        <Navbar/>
         <form className="signup" onSubmit={handleSubmit}>
             <h3>Sign up</h3>
 
@@ -31,6 +35,7 @@ const Signup = () => {
             <button disabled={isLoading}>Sign up</button>
             {error && <div className="error">{Error}</div>}
         </form>
+        </div>
     )
 }
 
