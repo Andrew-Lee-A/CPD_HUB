@@ -3,6 +3,8 @@ import { useAuthContext } from './hooks/useAuthContext'
 
 //pages and components
 import Home from './pages/Home'
+import Calendar from './pages/DashboardPages/Calendar'
+import Dashboard from './pages/DashboardPages/Dashboard'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Navbar from './components/Navbar'
@@ -13,10 +15,12 @@ function App() {
     <div className="App">
       <BrowserRouter>
           <Routes>
-            <Route 
-              path="/" 
-              element={user ? <Home/> : <Navigate to="/login"/>}
-            />
+            <Route path='/' element={user ? <Home/> : <Navigate to="/login"/>}>
+              <Route index element={<Dashboard/>}></Route>
+              <Route path="calendar" element={<Calendar/>}> </Route>
+              {/* <Route path="calendar" element={<Calendar/>}> </Route>
+              <Route path="calendar" element={<Calendar/>}> </Route> */}
+            </Route> 
             <Route 
               path="/login" 
               element={!user ? <Login/>: <Navigate to="/"/>} 

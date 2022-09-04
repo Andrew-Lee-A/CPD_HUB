@@ -19,7 +19,9 @@ const CpdEventDetails = ({ cpdEvent }) => {
         const json = await response.json()
         
         if(response.ok){
+            console.log('Delete response ok')
             dispatch({type: 'DELETE_CPDEVENT', payload: json})
+
         }
     }
     

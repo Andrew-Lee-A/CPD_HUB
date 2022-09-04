@@ -19,8 +19,16 @@
     justify-content: center;
 
     .logo {
+      display: flex;
       font-weight: bold;
       color: #FFF;
+      align-items: center;
+
+      .logo-icon{
+        font-size: 30px;
+        padding-left: 30px;
+      }
+
     }
   }
 
@@ -37,6 +45,7 @@
     height: 100%; //set center to take up remaining 
     min-height: 500px;
     justify-content: space-between;
+    overflow: hidden; //hide the overflow of list items on hover tranform;
 
     ul {
       list-style: none;
@@ -60,6 +69,8 @@
         &:hover {
           background-color: #143d8f;
           border-top-right-radius: 5px;
+          transform: scale(1.1); 
+          transition: all .2s ease-in-out; 
         }
         
         .icon {
@@ -78,6 +89,7 @@
 
     .bottom {
       padding-bottom: 10px;
+
       ul {
         list-style: none;
         margin: 0;
@@ -118,4 +130,8 @@
     }
   }
 
+}
+
+.sidebar-close{
+  
 }

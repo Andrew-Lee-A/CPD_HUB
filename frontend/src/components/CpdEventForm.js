@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useAuthContext } from '../hooks/useAuthContext'
 import { useCpdEventsContext } from '../hooks/useCpdEventsContext'
 
-const WorkoutForm = () => {
+const CpdEventForm = () => {
   const { dispatch } = useCpdEventsContext()
 
   const [title, setTitle] = useState('')
@@ -80,4 +80,4 @@ const WorkoutForm = () => {
   )
 }
 
-export default WorkoutForm
+export default CpdEventForm

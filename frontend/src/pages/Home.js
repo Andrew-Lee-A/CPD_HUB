@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useCpdEventsContext } from "../hooks/useCpdEventsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
+import { Outlet } from "react-router-dom";
 
 // components
 import WorkoutDetails from "../components/CpdEventDetails";
@@ -8,6 +9,7 @@ import WorkoutForm from "../components/CpdEventForm";
 import ProgressBar from "../components/ProgressBar";
 import Sidebar from "../components/Sidebar/Sidebar.js";
 import Navbar from "../components/Navbar";
+
 
 const Home = () => {
   const { cpdEvents, dispatch } = useCpdEventsContext();
@@ -37,24 +39,7 @@ const Home = () => {
       <Sidebar />
       <div className="homeContainer">
         <Navbar />
-        <div className="pages">
-          <div className="workouts">
-            <div>
-              <h3>Upcoming CPD events</h3>
-            </div>
-            {cpdEvents &&
-              cpdEvents.map((cpdEvent) => (
-                <WorkoutDetails cpdEvent={cpdEvent} key={cpdEvent._id} />
-              ))}
-          </div>
-          <div>
-            <div>
-              <h3>CPD Progress</h3>
-            </div>
-            <ProgressBar />
-            {/* <WorkoutForm /> */}
-          </div>
-        </div>
+        <Outlet/>
       </div>
     </div>
   );
