@@ -68,7 +68,7 @@ const Sidebar = () => {
             <p className="title">USER</p>
             <li>
               <AccountCircleOutlinedIcon className="icon" />
-              <span>Profile</span>
+              <span>Change User</span>
             </li>
             <li>
               <ExitToAppIcon className="icon" />

@@ -88,6 +88,59 @@ header a {
   transform: scale(1.1); 
 }
 
+.workout-details-fadeout{
+  background: #255255;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+
+  transition: all 2s ease-in-out;
+  transform: scale(0.1); 
+}
+
+.workout-details-fadeout{
+  -webkit-animation: fadeout .3s linear forwards;
+  animation: fadeout .3s linear forwards;
+}
+
+  @-webkit-keyframes fadeout {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+  }
+  
+  @keyframes fadeout {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+  }
+
+  .workout-details-fadeout h4 {
+      margin: 0 0 10px 0;
+      font-size: 1.2em;
+      color: var(--primary);
+  }
+  .workout-details-fadeout p {
+      margin: 0;
+      font-size: 0.9em;
+      color: #555;
+  }
+  .workout-details-fadeout span {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      background: #f1f1f1;
+      padding: 6px;
+      border-radius: 50%;
+      color: #333;
+      transition: all .2s ease-in-out;
+  }
+  
+  .workout-details-fadeout span:hover{
+      color: var(--primary);
+      transform: scale(1.1); 
+}
 
 
 /* new workout form */
