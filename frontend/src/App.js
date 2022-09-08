@@ -5,9 +5,9 @@ import { useAuthContext } from './hooks/useAuthContext'
 import Home from './pages/Home'
 import Calendar from './pages/DashboardPages/Calendar'
 import Dashboard from './pages/DashboardPages/Dashboard'
+import NewUserInfo from './pages/DashboardPages/NewUserInfo'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
-import Navbar from './components/Navbar'
 
 function App() {
   const {user} = useAuthContext()
@@ -20,6 +20,7 @@ function App() {
               <Route path="calendar" element={<Calendar/>}> </Route>
               {/* <Route path="calendar" element={<Calendar/>}> </Route>
               <Route path="calendar" element={<Calendar/>}> </Route> */}
+              <Route path="NewUserInfo" element={<NewUserInfo/>}> </Route>
             </Route> 
             <Route 
               path="/login" 

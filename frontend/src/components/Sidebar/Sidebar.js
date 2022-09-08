@@ -58,6 +58,12 @@ const Sidebar = () => {
               <span>CPD Summary</span>
             </li>
           </Link>
+          <Link to="/NewUserInfo" style={{ textDecoration: "none" }}>
+            <li>
+              <CreditCardIcon className="icon" />
+              <span>New User Info</span>
+            </li>
+          </Link>
           <li>
             <SettingsApplicationsIcon className="icon" />
             <span>Settings</span>

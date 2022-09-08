@@ -1,0 +1,186 @@
+.UserDetailsStyle{
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 147vh;
+  /* width: 100vw; */
+//   background-image: url(${backgroundImg});
+  background-size: cover;
+  background-position: center;
+  .userDetailsWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .UserDetailsForm {
+    margin-top: 50px;
+
+    background-color: #fff;
+    width: 500px;
+    border-radius: 10px;
+    padding: 20px 40px;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
+  }
+  .formTitle {
+    font-size: 40px;
+    margin-bottom: 5px;
+    color: purple;
+    font-family: "Josefin Sans", sans-serif;
+  }
+  .inputWrapper {
+    position: relative;
+    height: 40px;
+    width: 90%;
+    margin-bottom: 13px;
+  }
+  .inputWrapperContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .progLanguagesAndStudyFieldSelection {
+      margin-bottom: 15px;
+      width: 96%;
+      border-radius: 50px;
+      outline: none;
+      text-decoration: none;
+      border: 1px solid #d3d3d3;
+      background: transparent;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      cursor: pointer;
+      text-indent: 5px;
+      :hover {
+        border: 1px solid #000000;
+      }
+      option {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #000000;
+      }
+    }
+    .inputWrapperSkill {
+      position: relative;
+      height: 40px;
+      width: 80%;
+      margin-bottom: 15px;
+    }
+    .inputWrapperIndustry {
+      position: relative;
+      height: 40px;
+      width: 80%;
+      margin-bottom: 15px;
+    }
+    .inputWrapperTotal {
+      position: relative;
+      height: 40px;
+      width: 80%;
+      margin-bottom: 15px;
+    }
+    .inputWrapperPlatform {
+      position: relative;
+      height: 40px;
+      width: 80%;
+      margin-bottom: 15px;
+    }
+  }
+
+  .input {
+    position: absolute;
+    background: none;
+    outline: none;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #d3d3d3;
+    border-radius: 50px;
+    font-size: 17px;
+    color: #000000;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 14px;
+    text-align: left;
+    text-indent: 30px;
+    padding: 0 20px;
+    z-index: 1;
+    :focus + .label,
+    :valid + .label {
+      top: -7px;
+      left: 50px;
+      z-index: 10;
+      font-size: 10px;
+      font-weight: bold;
+      color: purple;
+      /* border: 1px solid #000000; */
+      border-radius: 50px;
+    }
+    :hover {
+      border: 1px solid #000000;
+    }
+  }
+  .label {
+    position: absolute;
+    top: 12px;
+    left: 44px;
+    padding: 0 4px;
+    background-color: #fff;
+    color: #dadce0;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 13px;
+    transition: 0.5s;
+    z-index: 0;
+  }
+  .submitButton {
+    width: 50%;
+    background-image: linear-gradient(
+      to right,
+      #2b5876 0%,
+      #4e4376 50%,
+      #2b5876 100%
+    );
+    margin: 10px;
+    margin-left: 120px;
+    letter-spacing: 0.1em;
+    padding: 12px 55px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #fff;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    border-style: none;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500%;
+    font-size: 13px;
+    :hover {
+      background-position: right center; /* change the direction of the change here */
+      letter-spacing: 0.25em;
+      transform: scale(1.05);
+      transition: ease-in-out 0.6s;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+  .error {
+    font-size: 12px;
+    color: red;
+    margin-left: 7vh;
+  }
+  h2 {
+    margin-top: 0px;
+  }
+  img {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    margin-top: 8px;
+  }
+  input {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 13px;
+  }
+  option {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 13px;
+    color: #000000;
+    font-weight: bold;
+  }
+}
