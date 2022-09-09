@@ -16,7 +16,7 @@ const Signup = () => {
 
     return (
         <div>
-        <Navbar/>
+        {/* <Navbar/> */}
         <form className="signup" onSubmit={handleSubmit}>
             <h3>Sign up</h3>
 
@@ -34,6 +34,8 @@ const Signup = () => {
             />
             <button disabled={isLoading}>Sign up</button>
             {error && <div className="error">{Error}</div>}
+
+            <span className='span' >Already have an account?<a href="/login"> Login now</a> </span>
         </form>
         </div>
     )
