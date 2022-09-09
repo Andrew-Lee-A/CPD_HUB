@@ -2,6 +2,8 @@ import {Link} from 'react-router-dom'
 import {useLogout} from '../hooks/useLogout'
 import { useAuthContext } from '../hooks/useAuthContext'
 
+import './navbar.scss'
+
 const Navbar = () => {
 
     const {logout} = useLogout()
@@ -11,7 +13,7 @@ const Navbar = () => {
         logout()
     }
     return (
-        <header>
+        <div className="navheader">
             <div className="container">
                 <Link to="/">
                     <h1>CPD HUB</h1>
@@ -30,7 +32,7 @@ const Navbar = () => {
                     )}
                 </nav>
             </div>
-        </header>
+        </div>
     )
 }
 

@@ -1,0 +1,40 @@
+.navheader {
+    background: #fff;
+    height: 70px;
+    border-bottom: 0.5px solid rgb(231, 228, 228);
+
+    .container {
+        height: 50px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a{
+            color: #333;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+          }
+        nav a {
+            margin-left: 10px;
+          }
+          
+        nav button {
+            background: #fff;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 6px 10px;
+            margin-left: 10px;
+            border-radius: 4px;
+            font-family: "Poppins";
+            cursor: pointer;
+            font-size: 1em;
+          } 
+      }
+
+}

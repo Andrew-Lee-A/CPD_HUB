@@ -17,13 +17,12 @@ body {
   padding: 0;
   font-family: "Poppins";
 }
-header {
+/* header {
   background: #fff;
   height: 70px;
   border-bottom: 0.5px solid rgb(231,228,228);
 }
 header .container {
-  /* max-width: 1400px; */
   height: 50px;
   margin: 0 auto;
   padding: 10px 20px;
@@ -34,7 +33,8 @@ header .container {
 header a {
   color: #333;
   text-decoration: none;
-}
+} */
+
 .pages{
   flex: 6;
   padding: 10px 20px;
@@ -147,6 +147,7 @@ header a {
 label, input {
   display: block;
 }
+
 input {
   padding: 10px;
   margin-top: 10px;
@@ -179,7 +180,7 @@ input.error {
 }
 
 /* navbar */
-nav {
+/* nav {
   display: flex;
   align-items: center;
 }
@@ -197,7 +198,7 @@ nav button {
   font-family: "Poppins";
   cursor: pointer;
   font-size: 1em;
-}
+} */
 
 /* auth forms */
 form.signup, form.login {

@@ -8,7 +8,7 @@ import WorkoutDetails from "../components/CpdEventDetails";
 import WorkoutForm from "../components/CpdEventForm";
 import ProgressBar from "../components/ProgressBar";
 import Sidebar from "../components/Sidebar/Sidebar.js";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar.js";
 
 
 const Home = () => {

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import './NewUserInfo.scss'
 
 // images
-import backgroundImg from "../../img/gradienta-bKESVqfxass-unsplash.jpg";
 import nameIcon from "../../img/preferedname.png";
 import company from "../../img/company.png";
 import experience from "../../img/experience.png";
