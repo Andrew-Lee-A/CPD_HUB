@@ -1,0 +1,92 @@
+/* =====> LOGIN and SIGN UP ELEMENTS <=======*/
+
+/* form */
+form.signup, form.login {
+    width: 450px;
+    height: 400px;
+    margin-left: 55vw;
+    padding: 23px;
+    background: #fff;
+    border-radius: 25px;
+  
+    border: 1px solid #1D3557;
+  }
+  
+  /* new workout form */
+  label, input {
+    height: 45px;
+    font-size: 10px;
+    color: rgba(26, 25, 25, 0.662);
+  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 12px;
+  }
+  
+  .password {
+    margin-top: 25px;
+  }
+  
+  .passwordLabel {
+    margin-top: 6px;
+  }
+  
+  input {
+    margin-top: 30px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-indent: 7.5px 7.5px;
+  }
+  
+  form button {
+    background: #1D3557;
+    border: 0;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    font-family: "Poppins";
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 6vh;
+  }
+  
+  span, a {
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+  
+    font-size: 12px;
+    
+    /* width: 100%;
+    border-top: 1px solid #000000; */
+  }
+  
+  a {
+    margin-left: 5px;
+  }
+  
+  hr {
+    margin-bottom: 25px;
+  }
+  
+  .cpdhub {
+    font-size: 12px;
+  }
+  
+  .span, .forgetpassword {
+    margin: 20px 0;
+    font-size: 12px;
+  }
+  
+  .loginContainer {
+    margin-bottom: 20px;
+  }
+  
+  /* ========================================================================= */
