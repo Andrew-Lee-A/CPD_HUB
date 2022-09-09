@@ -26,7 +26,6 @@ export const CpdEventsContextProvider = ({children}) => {
         cpdEvents: null
     })
 
-
     return (
         <CpdEventsContext.Provider value={{...state, dispatch}}>
             {children}

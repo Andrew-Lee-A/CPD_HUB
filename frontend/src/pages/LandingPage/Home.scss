@@ -1,0 +1,128 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.homeContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: #80808030;
+
+    .navbarContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .navbar {
+            margin-top: 1.4rem;
+    
+            
+            width: 85vw;
+            height: 10vh;
+        
+            // background-color: #000000d3;
+            background-color: #0b1e47;
+            
+            border-radius: 50px;
+            border: 1px solid #808080ad;
+    
+            display: flex;
+    
+            .babcockContainer {
+    
+                color: #FFF;
+    
+                margin: 15px 27px /* TOP LEFT */;
+                font-size: 33px;
+                font-weight: bold;
+    
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+    
+            .navbarOptionsContainer {
+    
+                display: flex;
+    
+                margin: 24px 25px;
+                font-size: 20px;
+                font-weight: 700;
+    
+                color: #FFF;
+                gap: 3.3rem;
+    
+                .About, .contactUs {
+                    
+                    &:hover {
+                        cursor: pointer;
+                        border-bottom: 1px solid #FFF;
+                    }
+                }
+            }
+    
+            .loginAndSignUpButtonsContainer {
+                margin-left: 30em;
+                font-size: 20px;
+                font-weight: 700;
+                
+                gap: 35px;
+                list-style-type: none;
+                color: #FFF;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                    
+                .login {
+    
+                    &:hover {
+                        cursor: pointer;
+                        border-bottom: 1px solid #FFF;
+                    }
+                }
+                
+                .getConnected {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    
+                    width: 12vw;
+                    height: 7vh;
+                    background-color: #143d8f;
+                    color: #ADD8E6;
+                    border-radius: 50px;
+    
+                    &:hover {
+                        cursor: pointer;
+                        color: #FFF;
+    
+                    }
+                }
+            }
+        }
+    } /* close navigation bar */
+
+    .bottomContainer {
+        padding: 20px;
+        margin: 130px 130px;
+        // background-color: red;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+
+        h1 {
+            font-size: 50px;
+        }
+
+        h3 {
+            margin-top: 10px;
+        }
+
+    }
+
+
+}
+    
