@@ -1,4 +1,5 @@
 import './Home.scss';
+import { Link } from 'react-router-dom';
 
 import React from 'react'
 
@@ -25,8 +26,14 @@ export default function Home() {
             </div>
 
             <div className="loginAndSignUpButtonsContainer">
+
+                  <Link to="/login">
                     <div className="login">Log in</div>
+                  </Link>
+
+                  <Link to="/signup">
                     <div className="getConnected">Get Connected</div>
+                  </Link>
             </div>
           </div>
         </div>
