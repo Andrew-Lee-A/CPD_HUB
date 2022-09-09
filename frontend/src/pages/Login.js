@@ -1,12 +1,12 @@
-import {useState} from 'react'
-import {useLogin} from '../hooks/useLogin'
+import { useState } from 'react'
+import { useLogin } from '../hooks/useLogin'
 
-import Navbar from '../components/Navbar'
+import './LoginAndSignup.scss'
 
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const {login, error, isLoading} = useLogin()
+    const { login, error, isLoading } = useLogin()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -15,27 +15,33 @@ const Login = () => {
     }
 
     return (
-        <div>
-            {/* <Navbar/> */}
-            <form className="login" onSubmit={handleSubmit}>
-                <h3>Log in</h3>
+        <form className="login" onSubmit={handleSubmit}>
 
-                <label>Email:</label>
+            <div className="loginContainer">
+                <h2>Log in</h2>
+
+                <label>Email address</label>
                 <input
                     type="email"
                     onChange={(e) => setEmail(e.target.value)}
-                    value = {email}
+                    value={email}
                 />
-                <label>Password:</label>
+
+                <label className='passwordLabel'>Password</label>
                 <input
+                    className='password'
                     type="password"
                     onChange={(e) => setPassword(e.target.value)}
-                    value = {password}
+                    value={password}
                 />
                 <button disabled={isLoading}>Log in</button>
                 {error && <div className="error">{error}</div>}
-            </form>
-        </div>
+
+                <a className='forgetpassword' href='/forgetpassword' >Forgot password?</a> <hr></hr>
+                <span className='span' >new to cpd hub?<a href="/signup"> Get connected</a> </span>
+            </div>
+
+        </form>
     )
 }
 
