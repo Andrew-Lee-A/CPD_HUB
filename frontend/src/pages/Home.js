@@ -10,7 +10,6 @@ import ProgressBar from "../components/ProgressBar";
 import Sidebar from "../components/Sidebar/Sidebar.js";
 import Navbar from "../components/Navbar";
 
-
 const Home = () => {
   const { cpdEvents, dispatch } = useCpdEventsContext();
   const { user } = useAuthContext();
