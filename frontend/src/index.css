@@ -138,12 +138,18 @@ input.error {
 nav {
   display: flex;
   align-items: center;
+  justify-items: center;
+  padding-right: 40px;
+
 }
 
 nav a {
   margin-left: 10px;
 }
 
+.icon{
+  color: var(--primary);
+}
 nav button {
   background: #fff;
   color: var(--primary);

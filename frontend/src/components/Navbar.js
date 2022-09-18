@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useLogout } from '../hooks/useLogout'
 import { useAuthContext } from '../hooks/useAuthContext'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Navbar = () => {
 
@@ -19,8 +20,10 @@ const Navbar = () => {
                 <nav>
                     {user ? (
                         <div>
+                            
                             Welcome {user.email}
-                            <button onClick={handleClick}> Log out</button>
+                            {/* <button onClick={handleClick}> Log out</button> */}
+                            
                         </div>
                     ):(
                         <div>
