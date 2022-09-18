@@ -38,7 +38,14 @@ const signupUser = async (req, res) => {
 
 }
 
+const getCPDSummary = async (req, res) => {
+    const user_id = req.user._id;
+    // const cpdSummary= await User.find({user_id}).sort({createdAt: -1})
+    res.status(200).json(user_id)
+}
+
 module.exports = {
     loginUser,
-    signupUser
+    signupUser,
+    getCPDSummary
 }
