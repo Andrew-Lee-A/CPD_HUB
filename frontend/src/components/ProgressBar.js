@@ -7,69 +7,92 @@ import "./progresbar.scss";
 
 const ProgressBar = () => {
   const [data, setData] = useState(null);
+  const [areaOfPractice, setAreaOfPractice] = useState(null)
+  const [isLoading, setIsLoading] = useState(true)
   const { user } = useAuthContext();
 
-  const fetchCPDSummary = async () => {
-    const response = await fetch("/api/userDetails", {
-      headers: {
-        Authorization: `Bearer ${user.token}`,
-      },
-    });
-    const json = await response.json();
-    setData(json);
-    
-    
-  };
-
-  useEffect(() => {
-    fetchCPDSummary();
-    const {areaOfPractice} = data
   
+  useEffect(() => {
+    const fetchCPDSummary = async () => {
+      const response = await fetch("/api/userDetails", {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+      const json = await response.json();
 
+      if (response.ok){
+        console.log(json)
+        setData(json)
+        setIsLoading(false)
+        setAreaOfPractice(json.areaOfPractice)
+        
+      }
+    };
 
-  var options = {
-    series: [areaOfPractice, 55, 67, 83],
-    chart: {
-      height: 350,
-      type: "radialBar",
-    },
-    plotOptions: {
-      radialBar: {
-        dataLabels: {
-          name: {
-            fontSize: "24px",
+    if (user){
+      fetchCPDSummary()
+      let areaOfPracticebar = areaOfPractice/15*100;
+        const options = {
+          series: [areaOfPracticebar, 55, 67, 83],
+          chart: {
+            height: 350,
+            type: "radialBar",
           },
-          value: {
-            fontSize: "16px",
-          },
-          total: {
-            show: true,
-            label: "Current CPD points",
-            formatter: function (w) {
-              // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
-              return 150;
+          plotOptions: {
+            radialBar: {
+              dataLabels: {
+                name: {
+                  fontSize: "24px",
+                },
+                value: {
+                  show: true,
+                  fontSize: "16px",
+                  formatter: function () {
+                    console.log(areaOfPractice)
+                    return [areaOfPractice,];
+                  }
+                },
+                total: {
+                  show: true,
+                  label: "Current CPD points",
+                  formatter: function (w) {
+                    // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
+                    return 150;
+                  },
+                },
+              },
             },
           },
-        },
-      },
-    },
-    labels: [
-      "Area of practice",
-      "Risk management",
-      "Business",
-      "Career Interests",
-    ],
-  };
+          labels: [
+            "Area of practice",
+            "Risk management",
+            "Business",
+            "Career Interests",
+          ],
+        };
+      
+       
 
-  var chart = new ApexCharts(document.querySelector("#chart"), options);
-  chart.render();
-}, [user]);
+    if (!isLoading){
+      new ApexCharts(document.querySelector("#chart"), options).render();
+    }
+      
+}
+}, [isLoading]);
 
-  return (
-    <div className="progressBar">
-      <div id="chart"></div>
-    </div>
-  );
+
+    return (
+      <div className="progressBar">
+        {!isLoading ? (
+          <div id="chart"></div>
+        ) : (
+          <div> Loading </div>
+        )}
+          
+      </div>
+    )
+
 };
 
 export default ProgressBar;

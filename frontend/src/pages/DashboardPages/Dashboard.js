@@ -7,6 +7,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import WorkoutDetails from "../../components/CpdEventDetails";
 import CpdEventForm from "../../components/CpdEventForm";
 import ProgressBar from "../../components/ProgressBar";
+import ProgressBarTest from "../../components/ProgressBartest"
 
 const Dashboard = () => {
 
