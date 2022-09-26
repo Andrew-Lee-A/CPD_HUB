@@ -144,7 +144,7 @@ const ProgressBar = () => {
     }
       
 }
-}, [isLoading, user, areaOfPractice]);
+}, [isLoading, user, areaOfPractice, businessAndManagement, careerInterests, riskManagement]);
 
 
     return (
