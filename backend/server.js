@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const express = require('express')
 const cpdRoutes = require('./routes/cpdEvents')
 const userRoutes = require('./routes/user')
+const userDetailsRoute = require('./routes/userDetails')
 
 // express app
 const app = express()
@@ -18,6 +19,7 @@ app.use((req, res, next) => {
 // routes
 app.use('/api/cpdEvents', cpdRoutes)
 app.use('/api/user', userRoutes)
+app.use('/api/userDetails', userDetailsRoute)
 
 //connect to db
 mongoose.connect(process.env.MONGO_URI, { 

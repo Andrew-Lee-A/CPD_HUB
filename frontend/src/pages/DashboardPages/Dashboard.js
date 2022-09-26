@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useEffect } from "react";
 import { useCpdEventsContext } from "../../hooks/useCpdEventsContext";
 import { useAuthContext } from "../../hooks/useAuthContext";
@@ -12,7 +12,8 @@ const Dashboard = () => {
 
     const { cpdEvents, dispatch } = useCpdEventsContext();
     const { user } = useAuthContext();
-  
+    const [isLoaded, setIsLoaded] = useState(false)
+
     useEffect(() => {
       const fetchWorkouts = async () => {
         const response = await fetch("/api/cpdEvents", {
@@ -24,28 +25,31 @@ const Dashboard = () => {
   
         if (response.ok) {
           dispatch({ type: "SET_CPDEVENTS", payload: json });
+          setIsLoaded(true);
         }
       };
   
       if (user) {
         fetchWorkouts();
+        
       }
     }, [dispatch, user]);
 
+    console.log(cpdEvents)
   return (
         <div className="pages">
           <div className="workouts">
             <div>
               <h3>Upcoming CPD events</h3>
             </div>
-            {cpdEvents &&
-              cpdEvents.map((cpdEvent) => (
+            {isLoaded ? (cpdEvents.length > 0 ? 
+              (cpdEvents.map((cpdEvent) => (
                 <WorkoutDetails cpdEvent={cpdEvent} key={cpdEvent._id} />
-              ))}
+              ))):(<div>No Upcoming CPD</div>) ) : (<div>Loading</div>)}
           </div>
           <div>
             <div>
-              <h3>CPD Progress</h3>
+              <h3>CPD Progress - Points(hours)</h3>
             </div>
             <ProgressBar />
           </div>

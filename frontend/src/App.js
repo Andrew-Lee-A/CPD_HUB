@@ -7,7 +7,8 @@ import Calendar from './pages/DashboardPages/Calendar'
 import Dashboard from './pages/DashboardPages/Dashboard'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
-import Navbar from './components/Navbar'
+import CPDTypePage from './pages/DashboardPages/CPDTypePage/CPDTypePage'
+import CPDRecordingUserGuide from './pages/DashboardPages/CPDRecordingUserGuide/CPDRecordingUserGuidePage'
 
 function App() {
   const {user} = useAuthContext()
@@ -20,6 +21,8 @@ function App() {
               <Route path="/calendar" element={<Calendar/>}> </Route>
               {/* <Route path="calendar" element={<Calendar/>}> </Route>
               <Route path="calendar" element={<Calendar/>}> </Route> */}
+              <Route path="cpdTypePage" element={<CPDTypePage/>}></Route>
+              <Route path="CPDRecordingUserGuide" element={<CPDRecordingUserGuide/>}></Route>
             </Route> 
             <Route 
               path="/login" 

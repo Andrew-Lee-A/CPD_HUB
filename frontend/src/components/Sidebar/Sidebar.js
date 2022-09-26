@@ -58,10 +58,26 @@ const Sidebar = () => {
               <span>CPD Summary</span>
             </li>
           </Link>
-          <li>
-            <SettingsApplicationsIcon className="icon" />
-            <span>Settings</span>
-          </li>
+
+          <Link to="/settings" style={{ textDecoration: "none" }}>
+            <li>
+              <SettingsApplicationsIcon className="icon" />
+              <span>Settings</span>
+            </li>
+          </Link>
+          <p className="title">REFERENCES</p>
+          <Link to="/CPDTypePage" style={{ textDecoration: "none" }}>
+            <li>
+              <CreditCardIcon className="icon" />
+              <span>CPD Types</span>
+            </li>
+          </Link>
+          <Link to="/CPDRecordingUserGuide" style={{ textDecoration: "none" }}>
+            <li>
+              <CreditCardIcon className="icon" />
+              <span>Recording Guide</span>
+            </li>
+          </Link>
         </ul>
         <div className="bottom">
           <ul>
