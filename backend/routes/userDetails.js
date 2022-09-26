@@ -1,6 +1,7 @@
 const express = require('express')
 const {
-    getUserCPDSummary
+    getUserCPDSummary,
+    updateCpdEvent,
 } = require('../controllers/userDetailsController')
 const requireAuth = require('../middleware/requireAuth')
 
@@ -12,4 +13,6 @@ router.use(requireAuth)
 // GET all cpdEvents
 router.get('/', getUserCPDSummary)
 
+// UPDATE a user's CPD Summary
+router.patch('/', updateCpdEvent)
 module.exports = router

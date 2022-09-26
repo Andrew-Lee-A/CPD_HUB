@@ -23,15 +23,19 @@ const userSchema = new Schema({
     cpdSummary:{
         areaOfPractice:{
             type: String,
+            default: "0",
         },
         riskManagement:{
             type: String,
+            default: "0",
         },
         businessAndManagement:{
-            type: String
+            type: String,
+            default: "0",
         },
         careerInterests:{
-            type: String
+            type: String,
+            default: "0",
         }
     }
 })
