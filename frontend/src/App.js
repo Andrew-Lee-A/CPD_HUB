@@ -17,7 +17,7 @@ function App() {
           <Routes>
             <Route path='/' element={user ? <Home/> : <Navigate to="/login"/>}>
               <Route index element={<Dashboard/>}></Route>
-              <Route path="calendar" element={<Calendar/>}> </Route>
+              <Route path="/calendar" element={<Calendar/>}> </Route>
               {/* <Route path="calendar" element={<Calendar/>}> </Route>
               <Route path="calendar" element={<Calendar/>}> </Route> */}
             </Route> 
