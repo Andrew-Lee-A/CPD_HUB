@@ -14,6 +14,10 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    detailsCompletedStatus:{
+        type: Boolean,
+        default: false,
+    },
     cpdStartDate:{
         type: Date,
     },
@@ -37,6 +41,35 @@ const userSchema = new Schema({
             type: String,
             default: "0",
         }
+    },
+    userDetails:{
+        prefferedName:{
+            type:String,
+        },
+        CompanyName:{
+            type: String,
+        },
+        yearsOfExperience:{
+            type:String,
+        },
+        prefferredField:{
+            type:String,
+        },
+        occupation:{
+            type:String,
+        },
+        countryOfOrigin:{
+            type:String,
+        },
+        programmingSkill:{
+            type:String,
+        },
+        pushFrequency:{
+            type:String,
+        },
+        prefferredPlatform:{
+            type:String,
+        },
     }
 })
 
