@@ -88,7 +88,15 @@ const ProgressBar = () => {
           },
           dataLabels: {
             name: {
-              fontSize: '15px',
+              show: true,
+              fontSize: '16px',
+              formatter: function(seriesName){
+                if (seriesName === "CPD points"){
+                  return seriesName
+                }else{
+                  return chartData[seriesName].name;
+                }
+              },
             },
             value: {
               fontSize: '25px',
@@ -112,7 +120,7 @@ const ProgressBar = () => {
         floating: true,
         fontSize: '15px',
         position: 'left',
-        offsetX: -35,
+        offsetX: -40,
         offsetY: 2,
         labels: {
           useSeriesColors: true,

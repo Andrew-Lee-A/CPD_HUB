@@ -15,4 +15,5 @@ router.get('/', getUserCPDSummary)
 
 // UPDATE a user's CPD Summary
 router.patch('/', updateCpdEvent)
+
 module.exports = router
