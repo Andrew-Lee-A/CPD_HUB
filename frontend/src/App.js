@@ -3,7 +3,7 @@ import { useAuthContext } from './hooks/useAuthContext'
 
 //pages and components
 import Home from './pages/Home'
-import Calendar from './pages/DashboardPages/Calendar'
+import Calendar from './pages/DashboardPages/Calendar/App'
 import Dashboard from './pages/DashboardPages/Dashboard'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
@@ -28,7 +28,7 @@ function App() {
             <Route 
               path="/signup" 
               element={!user ? <Signup/> : <Navigate to="/"/>} 
-            />
+            />git 
           </Routes>
       </BrowserRouter>
     </div>
