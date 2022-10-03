@@ -15,27 +15,26 @@
 
         .navbar {
             margin-top: 1.4rem;
-    
             
-            width: 85vw;
-            height: 10vh;
-        
-            // background-color: #000000d3;
+            width: 80vw;
             background-color: #0b1e47;
             
             border-radius: 50px;
-            border: 1px solid #808080ad;
+            // border: 1px solid #808080ad;
     
             display: flex;
     
             .babcockContainer {
-    
                 color: #FFF;
     
-                margin: 15px 27px /* TOP LEFT */;
-                font-size: 33px;
+                margin: 15px 37px /* TOP LEFT */;
+                font-size: 23px;
                 font-weight: bold;
-    
+
+                // width: 20vw;
+
+                // border: 1px solid #808080ad;
+
                 &:hover {
                     cursor: pointer;
                 }
@@ -44,15 +43,28 @@
             .navbarOptionsContainer {
     
                 display: flex;
-    
-                margin: 24px 25px;
-                font-size: 20px;
-                font-weight: 700;
-    
-                color: #FFF;
-                gap: 3.3rem;
-    
+                align-items: center;
+                justify-content: center;
+
+                margin-left: 3vw;
+
+                width: 20vw;
+
+                // border: 1px solid #FFF;
+                
                 .About, .contactUs {
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    width: 10vw;
+                    height: 5vh;
+
+                    font-size: 20px;
+
+                    color: #FFF;
+                    // border: 1px solid red;
                     
                     &:hover {
                         cursor: pointer;
@@ -62,7 +74,6 @@
             }
     
             .loginAndSignUpButtonsContainer {
-                margin-left: 30em;
                 font-size: 20px;
                 font-weight: 700;
                 
@@ -75,6 +86,10 @@
                 justify-content: center;
                     
                 .login {
+
+                    color: #FFF;
+
+                    margin-left: 33em;
     
                     &:hover {
                         cursor: pointer;

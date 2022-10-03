@@ -11,6 +11,7 @@ export default function Home() {
         {/* Navigation bar component */}
         <div className="navbarContainer">
           <div className="navbar">
+
             <div className="babcockContainer">
               CPD Hub
             </div>
@@ -23,6 +24,7 @@ export default function Home() {
               <div className="contactUs">
                 Contact us
               </div>
+              
             </div>
 
             <div className="loginAndSignUpButtonsContainer">
