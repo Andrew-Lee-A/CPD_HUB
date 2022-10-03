@@ -17,6 +17,7 @@ export default function Home() {
             </div>
 
             <div className="navbarOptionsContainer">
+              
               <div className="About">
                 About
               </div>

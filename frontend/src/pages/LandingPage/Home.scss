@@ -16,8 +16,8 @@
 
         .navbar {
             margin-top: 1.4rem;
-            
             width: 80vw;
+            
             background-color: #0b1e47;
             
             border-radius: 50px;
@@ -32,10 +32,8 @@
                 font-size: 23px;
                 font-weight: bold;
 
-                // width: 20vw;
-
                 // border: 1px solid #808080ad;
-
+                
                 &:hover {
                     cursor: pointer;
                 }
@@ -47,11 +45,11 @@
                 align-items: center;
                 justify-content: center;
 
-                margin-left: 3vw;
+                // margin-left: 3vw;
 
                 width: 20vw;
-
                 // border: 1px solid #FFF;
+
                 
                 .About, .contactUs {
 
@@ -79,7 +77,6 @@
                 font-weight: 700;
                 
                 gap: 35px;
-                list-style-type: none;
                 color: #FFF;
                 
                 display: flex;
@@ -87,15 +84,13 @@
                 justify-content: center;
                     
                 .login {
-<<<<<<< HEAD
 
                     color: #FFF;
 
-                    margin-left: 33em;
+                    margin-left: 20em;
+                    text-decoration: none;
+
     
-=======
-                    color: #fff;
->>>>>>> 3344da9fea3cc574db612ddf94f853ee94b47cc4
                     &:hover {
                         cursor: pointer;
                         border-bottom: 1px solid #FFF;
@@ -142,7 +137,5 @@
         }
 
     }
-
-
 }
     
