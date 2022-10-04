@@ -48,10 +48,19 @@ const updateUserDetails = async (req, res) => {
     res.status(200).json(user.userDetails)
 }
 
+const getUserDetailsCompletionStatus = async (req, res) => {
+    const _id = req.user._id 
+    const user = await User.findById({_id})
+    res.status(200).json(user.detailsCompletedStatus)
+}
+
 module.exports = {
     getUserCPDSummary,
     getUserStartDate,
     updateCpdEvent,
+    getUserDetailsCompletionStatus,
+    getUserStartDate,
     getUserDetails,
     updateUserDetails,
+
 }

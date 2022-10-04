@@ -3,6 +3,7 @@ import { useAuthContext } from './hooks/useAuthContext'
 
 //pages and components
 import Home from './pages/Home'
+import NewUserInfo from './pages/NewUserDetailsPage/NewUserDetailsPage'
 import Calendar from './pages/DashboardPages/Calendar'
 import Dashboard from './pages/DashboardPages/Dashboard'
 import Login from './pages/Login'
@@ -31,6 +32,10 @@ function App() {
             <Route 
               path="/signup" 
               element={!user ? <Signup/> : <Navigate to="/"/>} 
+            />
+            <Route
+              path="/userdetails"
+              element={<NewUserInfo/>}
             />
           </Routes>
       </BrowserRouter>

@@ -14,6 +14,10 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    detailsCompletedStatus:{
+        type: Boolean,
+        default: false,
+    },
     cpdSummary:{
         areaOfPractice:{
             type: String,
@@ -66,7 +70,6 @@ const userSchema = new Schema({
         type: Array,
         default: [],
     },
-
 })
 
 // static signup method
