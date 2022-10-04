@@ -43,6 +43,9 @@ const updateUserDetails = async (req, res) => {
     const user = await User.findOneAndUpdate({_id: _id}, {
         userDetails: {
             ...req.body
+        },
+        $set: {detailsCompletedStatus:
+            'true'
         }
     })
     res.status(200).json(user.userDetails)

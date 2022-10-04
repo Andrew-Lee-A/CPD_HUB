@@ -23,13 +23,10 @@ router.patch('/', updateCpdEvent)
 // GET a user's details completion status - 
 router.get('/getUserDetailsCompletionStatus', getUserDetailsCompletionStatus)
 
-// GET a user's details
-
-// UPDATE a user's details
 // GET user details
 router.get('/details', getUserDetails)
 
 // UPDATE user details
-router.patch('/details', updateUserDetails)
+router.put('/details', updateUserDetails)
 
 module.exports = router
