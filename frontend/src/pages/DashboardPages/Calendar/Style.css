@@ -1,0 +1,20 @@
+.App {
+    /* text-align: center; */
+
+    height: 110vh;
+
+}
+
+.addEventButton, .startDatePicker, .endtDatePicker {
+    width: 20vw;
+    height: 6vh;
+    
+    margin-left: 3vw;
+}
+
+/* .startDate, .endDate {
+    margin-left: 3.1vw;
+
+    font-size: 10px;
+} */
+

@@ -3,7 +3,7 @@ import { useAuthContext } from './hooks/useAuthContext'
 
 //pages and components
 import Home from './pages/Home'
-import Calendar from './pages/DashboardPages/Calendar/App'
+import Calendar from './pages/DashboardPages/Calendar/Calendar'
 import Dashboard from './pages/DashboardPages/Dashboard'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
