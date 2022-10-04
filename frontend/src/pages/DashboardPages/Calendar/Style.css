@@ -8,12 +8,14 @@
 .addEventButton {
     text-transform: uppercase;
     border-radius: 3px;
-}
-
-.addEventButton:hover {
 
     background-color: #0b1e47;
     color: #FFF;
+}
+
+.addEventButton:hover {
+    cursor: pointer;
+    color: #1aac83;
 
     border-radius: 3px;
     text-transform: uppercase;

@@ -19,6 +19,7 @@ const CpdEventForm = () => {
       setError('You must be logged in')
       return
     }
+
     const cpdEvent = {title, cpd_points, field}
     
     const response = await fetch('/api/cpdEvents', {
@@ -29,12 +30,14 @@ const CpdEventForm = () => {
         'Authorization': `Bearer ${user.token}`
       }
     })
+
     const json = await response.json()
 
     if (!response.ok) {
       setError(json.error)
       setEmptyFields(json.emptyFields)
     }
+
     if (response.ok) {
       setError(null)
       setTitle('')
@@ -43,7 +46,6 @@ const CpdEventForm = () => {
       setEmptyFields([])
       dispatch({type: 'CREATE_CPDEVENT', payload: json})
     }
-
   }
 
   return (

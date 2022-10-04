@@ -15,7 +15,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-/* FUNCTIONS */
+/* Global variables */
 const locales = {
     "en-NZ": require("date-fns/locale/en-NZ")
 }
@@ -47,6 +47,12 @@ const events = [
     },
 ]
 
+/* To pass the data to the database */
+const handleSubmit = (e) => {
+    e.preventDefault();
+
+}
+
 function CalendarApp() {
     const [newEvent, setNewEvent] = useState({ title: "", start: "", end: ""});
     const [allEvents, setAllEvents] = useState(events);
@@ -76,7 +82,7 @@ function CalendarApp() {
             {/* <h1>Welcome to our Calender page</h1>
             <h4>Please fill in the inputs below to book your webinar meeting</h4> */}
 
-            <div>
+            <form onSubmit={handleSubmit}>
                 {/* An input for title */}
                 <input 
                     /* attributes */
@@ -140,7 +146,7 @@ function CalendarApp() {
                 >
                     Add New Event
                 </button>
-            </div>
+            </form>
 
             {/* Calendar view */}
             <Calendar 
