@@ -1,8 +1,11 @@
 const express = require('express')
 const {
     getUserCPDSummary,
+    getUserStartDate,
     updateCpdEvent,
     getUserDetailsCompletionStatus,
+    getUserDetails,
+    updateUserDetails,
 } = require('../controllers/userDetailsController')
 const requireAuth = require('../middleware/requireAuth')
 
@@ -23,5 +26,10 @@ router.get('/getUserDetailsCompletionStatus', getUserDetailsCompletionStatus)
 // GET a user's details
 
 // UPDATE a user's details
+// GET user details
+router.get('/details', getUserDetails)
+
+// UPDATE user details
+router.patch('/details', updateUserDetails)
 
 module.exports = router

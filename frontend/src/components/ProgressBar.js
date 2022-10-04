@@ -118,9 +118,9 @@ const ProgressBar = () => {
       legend: {
         show: true,
         floating: true,
-        fontSize: '15px',
+        fontSize: '13vw',
         position: 'left',
-        offsetX: -40,
+        offsetX: -30,
         offsetY: 2,
         labels: {
           useSeriesColors: true,

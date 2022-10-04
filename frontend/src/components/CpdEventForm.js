@@ -8,18 +8,22 @@ const CpdEventForm = () => {
   const [title, setTitle] = useState('')
   const [cpd_points, setCpd_points] = useState('')
   const [field, setField] = useState('')
+  const [date, setDate] = useState('')
+  const [location, setLocation] = useState('')
+
   const [error, setError] = useState(null)
   const [emptyFields, setEmptyFields] = useState([])
   const {user} = useAuthContext()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
+    
     if(!user){
       setError('You must be logged in')
       return
     }
-    const cpdEvent = {title, cpd_points, field}
+    console.log(date)
+    const cpdEvent = {title, cpd_points, field, date, location}
     
     const response = await fetch('/api/cpdEvents', {
       method: 'POST',
@@ -40,6 +44,8 @@ const CpdEventForm = () => {
       setTitle('')
       setCpd_points('')
       setField('')
+      setDate('')
+      setLocation('')
       setEmptyFields([])
       dispatch({type: 'CREATE_CPDEVENT', payload: json})
     }
@@ -71,8 +77,25 @@ const CpdEventForm = () => {
         type="String" 
         onChange={(e) => setField(e.target.value)} 
         value={field} 
-        className={emptyFields.includes('Field') ? 'error' : ''}
+        className={emptyFields.includes('field') ? 'error' : ''}
       />
+
+      <label>Date:</label>
+      <input 
+        type="datetime-local" 
+        onChange={(e) => setDate(e.target.value)} 
+        value={date} 
+        className={emptyFields.includes('date') ? 'error' : ''}
+      />
+
+      <label>Location:</label>
+      <input 
+        type="String" 
+        onChange={(e) => setLocation(e.target.value)} 
+        value={location} 
+        className={emptyFields.includes('location') ? 'error' : ''}
+      />
+      
 
       <button>Add CPD Event</button>
       {error && <div className="error">{error}</div>}
