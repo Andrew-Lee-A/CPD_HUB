@@ -81,6 +81,7 @@ function CalendarApp() {
                 <input 
                     /* attributes */
                     type="text"
+                    required="yes"
                     placeholder="Add a title here..."
                     value={newEvent.title}
                     onChange={(event) => setNewEvent({...newEvent, title: event.target.value})}
@@ -101,6 +102,9 @@ function CalendarApp() {
                     className='startDatePicker'
                     placeholderText="Enter a start date here"
                     selected={newEvent.start}
+                    showTimeSelect
+                    timeFormat="HH:mm"
+                    dateFormat="MMMM d, yyyy h:mm aa"
                     onChange={(start) => setNewEvent({...newEvent, start})} 
 
                     /* the style */
@@ -117,6 +121,9 @@ function CalendarApp() {
                     className='endtDatePicker'
                     placeholderText="Enter an end date here"
                     selected={newEvent.end}
+                    showTimeSelect
+                    timeFormat="HH:mm"
+                    dateFormat="MMMM d, yyyy h:mm aa"
                     onChange={(end) => setNewEvent({...newEvent, end})} 
 
                     /* the style */
