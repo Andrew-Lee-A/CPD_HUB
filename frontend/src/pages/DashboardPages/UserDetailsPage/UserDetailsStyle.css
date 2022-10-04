@@ -1,16 +1,16 @@
-* {
+/* * {
   padding: 0;
   margin: 0;
-}
+} */
 
-.App {
+.UserDetailsFormContainer {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background-color: #0b1e47;
+  background-color: #FFF;
 
-  width: 100vw;
+  /* width: 100vw; */
   height: 100vh;
 }
 
@@ -20,6 +20,7 @@
   justify-content: center;
 
   width: 22vw;
+  height: 85vh;
 
   padding: 5vh 5vw;
   row-gap: 0.6rem;
@@ -48,10 +49,6 @@
 .selects {
   width: 22.2vw;
   height: 5.7vh;
-}
-
-option {
-  
 }
 
 .submitButton {

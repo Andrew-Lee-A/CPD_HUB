@@ -17,24 +17,24 @@ const Signup = () => {
     return (
         <div>
         <Navbar/>
-        <form className="signup" onSubmit={handleSubmit}>
-            <h3>Sign up</h3>
+            <form className="signup" onSubmit={handleSubmit}>
+                <h3>Sign up</h3>
 
-            <label>Email:</label>
-            <input
-                type="email"
-                onChange={(e) => setEmail(e.target.value)}
-                value = {email}
-            />
-            <label>Password:</label>
-            <input
-                type="password"
-                onChange={(e) => setPassword(e.target.value)}
-                value = {password}
-            />
-            <button disabled={isLoading}>Sign up</button>
-            {error && <div className="error">{Error}</div>}
-        </form>
+                <label>Email:</label>
+                <input
+                    type="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value = {email}
+                />
+                <label>Password:</label>
+                <input
+                    type="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    value = {password}
+                />
+                <button disabled={isLoading}>Sign up</button>
+                {error && <div className="error">{Error}</div>}
+            </form>
         </div>
     )
 }

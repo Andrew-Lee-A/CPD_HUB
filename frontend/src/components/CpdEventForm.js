@@ -43,7 +43,6 @@ const CpdEventForm = () => {
       setEmptyFields([])
       dispatch({type: 'CREATE_CPDEVENT', payload: json})
     }
-
   }
 
   return (

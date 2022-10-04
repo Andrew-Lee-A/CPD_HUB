@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './App.css';
+import './UserDetailsStyle.css';
 
-function App() {
+function UserDetailsForm() {
 
    const [values, setValues] = useState ({
         preferredname: "",
@@ -37,7 +37,7 @@ function App() {
   const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
   return (
-    <div className="App">
+    <div className="UserDetailsFormContainer">
 
       {/* FORM */}
       <form className="userDetailsForm" onSubmit={handleSubmit}>
@@ -85,9 +85,8 @@ function App() {
           submit
         </button>
       </form>
-
     </div>
   );
 }
 
-export default App;
+export default UserDetailsForm;

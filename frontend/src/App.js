@@ -5,7 +5,7 @@ import { useAuthContext } from './hooks/useAuthContext'
 import Home from './pages/Home'
 import Calendar from './pages/DashboardPages/Calendar'
 import Dashboard from './pages/DashboardPages/Dashboard'
-import NewUserInfo from './pages/DashboardPages/NewUserInfo'
+import NewUserInfo from './pages/DashboardPages/UserDetailsPage/UserDetails'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 
