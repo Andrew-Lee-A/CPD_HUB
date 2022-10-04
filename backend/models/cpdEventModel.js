@@ -15,6 +15,14 @@ const cpdEventSchema = new Schema({
     type: String,
     required: true
   },
+  date:{
+    type: Date,
+    required: false
+  },
+  location:{
+    type: String,
+    required: false
+  },
   user_id: {
     type: String,
     required: true

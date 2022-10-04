@@ -14,12 +14,6 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    cpdStartDate:{
-        type: Date,
-    },
-    name: {
-        type: String,
-    },
     cpdSummary:{
         areaOfPractice:{
             type: String,
@@ -37,7 +31,42 @@ const userSchema = new Schema({
             type: String,
             default: "0",
         }
-    }
+    },
+    userDetails:{
+        prefferedName:{
+            type: String,
+            default: "",
+        },
+        lineOfBusiness:{
+            type: String,
+            default: "",
+        },
+        discipline:{
+            type: String,
+            default: "",
+        },
+        seniority:{
+            type: String,
+            default: "",
+        },
+        cycleStartDate:{
+            type: Date,
+            default: Date.now,
+        },
+        pushFrequency:{
+            type: String,
+            default: "",
+        },
+    },
+    cpdBooked:{
+        type: Array,
+        default: [],
+    },
+    cpdCompleted:{
+        type: Array,
+        default: [],
+    },
+
 })
 
 // static signup method
