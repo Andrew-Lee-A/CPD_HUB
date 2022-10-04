@@ -144,7 +144,7 @@ function CalendarApp() {
                     className='addEventButton'
                     onClick={addNewEvent}
                 >
-                    Add New Event
+                    Add Event
                 </button>
             </form>
 
