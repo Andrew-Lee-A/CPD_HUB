@@ -1,0 +1,136 @@
+.sidebar {
+  border-right: 0.5px solid rgb(230, 227, 227);
+  border-radius: 4px;
+  min-height: 100vh;
+  min-width: 250px;
+  max-width: 250px;
+  // background-color: #023f90;
+  // background-color: #143d8f;
+  background-color: #0b1e47;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+
+  .top {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .logo {
+      display: flex;
+      font-weight: bold;
+      color: #FFF;
+      align-items: center;
+
+      .logo-icon{
+        font-size: 30px;
+        padding-left: 30px;
+      }
+
+    }
+  }
+
+  hr {
+    margin: 0px;
+    height: 0;
+    border: 0.5px solid rgb(230, 227, 227);
+  }
+
+  .center {
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%; //set center to take up remaining 
+    min-height: 500px;
+    justify-content: space-between;
+    overflow: hidden; //hide the overflow of list items on hover tranform;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .title {
+        font-size: 10px;
+        font-weight: bold;
+        color: #fff;
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #143d8f;
+          border-top-right-radius: 5px;
+          transform: scale(1.1); 
+          transition: all .2s ease-in-out; 
+        }
+        
+        .icon {
+          font-size: 20px;
+          color: var(--primary);
+        }
+
+        span {
+          font-size: 18px;
+          font-weight: 600;
+          color: #fff;
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .bottom {
+      padding-bottom: 10px;
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .title {
+          font-size: 10px;
+          font-weight: bold;
+          color: #fff;
+          margin-top: 15px;
+          margin-bottom: 5px;
+        }
+
+        li {
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #143d8f;
+            border-top-right-radius: 5px;
+          }
+
+          .icon {
+            font-size: 20px;
+            color: var(--primary);
+          }
+
+          span {
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.sidebar-close{
+  
+}

@@ -18,7 +18,7 @@ export const AuthContextProvider = ({ children }) => {
     user: null
   })
 
-  //keeps AuthContext aware of a user in local storage
+  // keeps AuthContext aware of a user in local storage
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'))
     if (user) {
@@ -33,5 +33,4 @@ export const AuthContextProvider = ({ children }) => {
       { children }
     </AuthContext.Provider>
   )
-
 }

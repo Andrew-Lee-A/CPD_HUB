@@ -13,6 +13,30 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    cpdStartDate:{
+        type: Date,
+    },
+    name: {
+        type: String,
+    },
+    cpdSummary:{
+        areaOfPractice:{
+            type: String,
+            default: "0",
+        },
+        riskManagement:{
+            type: String,
+            default: "0",
+        },
+        businessAndManagement:{
+            type: String,
+            default: "0",
+        },
+        careerInterests:{
+            type: String,
+            default: "0",
+        }
     }
 })
 

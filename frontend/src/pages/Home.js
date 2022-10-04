@@ -1,44 +1,47 @@
-import { useEffect } from "react"
-import { useWorkoutsContext } from "../hooks/useWorkoutsContext"
-import { useAuthContext } from "../hooks/useAuthContext"
+import { useEffect } from "react";
+import { useCpdEventsContext } from "../hooks/useCpdEventsContext";
+import { useAuthContext } from "../hooks/useAuthContext";
+import { Outlet } from "react-router-dom";
 
 // components
-import WorkoutDetails from "../components/WorkoutDetails"
-import WorkoutForm from "../components/WorkoutForm"
+import WorkoutDetails from "../components/CpdEventDetails";
+import WorkoutForm from "../components/CpdEventForm";
+import ProgressBar from "../components/ProgressBar";
+import Sidebar from "../components/Sidebar/Sidebar.js";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
-  const { workouts, dispatch } = useWorkoutsContext()
-  const {user} = useAuthContext()
+  // const { user } = useAuthContext();
+  // // const { cpdEvents, dispatch } = useCpdEventsContext();
 
-  useEffect(() => {
-    const fetchWorkouts = async () => {
-      const response = await fetch('/api/workouts', {
-        headers: {
-          'Authorization': `Bearer ${user.token}`
-        }
-      })
-      const json = await response.json()
+  // // useEffect(() => {
+  // //   const fetchWorkouts = async () => {
+  // //     const response = await fetch("/api/cpdEvents", {
+  // //       headers: {
+  // //         Authorization: `Bearer ${user.token}`,
+  // //       },
+  // //     });
+  // //     const json = await response.json();
 
-      if (response.ok) {
-        dispatch({type: 'SET_WORKOUTS', payload: json})
-      }
-    }
+  // //     if (response.ok) {
+  // //       dispatch({ type: "SET_CPDEVENTS", payload: json });
+  // //     }
+  // //   };
 
-    if (user){
-      fetchWorkouts()
-    }
-  }, [dispatch, user])
+  // //   if (user) {
+  // //     fetchWorkouts();
+  // //   }
+  // // }, [dispatch, user]);
 
   return (
     <div className="home">
-      <div className="workouts">
-        {workouts && workouts.map(workout => (
-          <WorkoutDetails workout={workout} key={workout._id} />
-        ))}
+      <Sidebar />
+      <div className="homeContainer">
+        <Navbar />
+        <Outlet/>
       </div>
-      <WorkoutForm />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

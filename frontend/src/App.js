@@ -3,23 +3,27 @@ import { useAuthContext } from './hooks/useAuthContext'
 
 //pages and components
 import Home from './pages/Home'
+import Calendar from './pages/DashboardPages/Calendar'
+import Dashboard from './pages/DashboardPages/Dashboard'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
-import Navbar from './components/Navbar'
+import CPDTypePage from './pages/DashboardPages/CPDTypePage/CPDTypePage'
+import CPDRecordingUserGuide from './pages/DashboardPages/CPDRecordingUserGuide/CPDRecordingUserGuidePage'
 
 function App() {
   const {user} = useAuthContext()
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar/>
-        <div className="pages">
-
           <Routes>
-            <Route 
-              path="/" 
-              element={user ? <Home/> : <Navigate to="/login"/>}
-            />
+            <Route path='/' element={user ? <Home/> : <Navigate to="/login"/>}>
+              <Route index element={<Dashboard/>}></Route>
+              <Route path="/calendar" element={<Calendar/>}> </Route>
+              {/* <Route path="calendar" element={<Calendar/>}> </Route>
+              <Route path="calendar" element={<Calendar/>}> </Route> */}
+              <Route path="cpdTypePage" element={<CPDTypePage/>}></Route>
+              <Route path="CPDRecordingUserGuide" element={<CPDRecordingUserGuide/>}></Route>
+            </Route> 
             <Route 
               path="/login" 
               element={!user ? <Login/>: <Navigate to="/"/>} 
@@ -29,8 +33,6 @@ function App() {
               element={!user ? <Signup/> : <Navigate to="/"/>} 
             />
           </Routes>
-
-        </div>
       </BrowserRouter>
     </div>
   );

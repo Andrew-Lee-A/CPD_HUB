@@ -2,17 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { WorkoutsContextProvider } from './context/WorkoutContext';
+import { CpdEventsContextProvider } from './context/CpdEventContext';
 import { AuthContextProvider } from './context/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <AuthContextProvider>
-      <WorkoutsContextProvider>
+      <CpdEventsContextProvider>
         <App />
-      </WorkoutsContextProvider>
+      </CpdEventsContextProvider>
     </AuthContextProvider>
-  </React.StrictMode>
 );
 

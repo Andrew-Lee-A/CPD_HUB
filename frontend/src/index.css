@@ -5,39 +5,59 @@
 :root {
   --primary: #1aac83;
   --error: #e7195a;
+  --secondary: #1d3557;
+  --tertiary: #A8DADC;
+  --fourth: #F1FAEE;
+  --fifth: #E63946;
+  --sixth: #457B9D;
 }
+
 body {
   background: #f1f1f1;
   margin: 0;
+  padding: 0;
   font-family: "Poppins";
 }
+
 header {
   background: #fff;
+  height: 70px;
+  border-bottom: 0.5px solid rgb(231,228,228);
 }
+
 header .container {
-  max-width: 1400px;
+  /* max-width: 1400px; */
+  height: 50px;
   margin: 0 auto;
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 header a {
   color: #333;
   text-decoration: none;
 }
+
 .pages{
-  max-width: 1400px;
-  padding: 20px;
-  margin: 0 auto;
+  flex: 6;
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: 3fr 1.25fr;
+  gap: 50px;
 }
 
 /* homepage */
 .home {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 100px;
+  display: flex;
 }
+
+.homeContainer{
+  flex-direction: column;
+  width: 100%;
+}
+
 .workout-details {
   background: #fff;
   border-radius: 4px;
@@ -46,16 +66,19 @@ header a {
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
+
 .workout-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
 }
+
 .workout-details p {
   margin: 0;
   font-size: 0.9em;
   color: #555;
 }
+
 .workout-details span {
   position: absolute;
   top: 20px;
@@ -73,12 +96,11 @@ header a {
   transform: scale(1.1); 
 }
 
-
-
 /* new workout form */
 label, input {
   display: block;
 }
+
 input {
   padding: 10px;
   margin-top: 10px;
@@ -88,6 +110,7 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 form button {
   background: var(--primary);
   border: 0;
@@ -97,6 +120,7 @@ form button {
   border-radius: 4px;
   cursor: pointer;
 }
+
 div.error {
   padding: 10px;
   background: #ffefef;
@@ -114,11 +138,18 @@ input.error {
 nav {
   display: flex;
   align-items: center;
+  justify-items: center;
+  padding-right: 40px;
+
 }
+
 nav a {
   margin-left: 10px;
 }
 
+.icon{
+  color: var(--primary);
+}
 nav button {
   background: #fff;
   color: var(--primary);
