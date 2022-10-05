@@ -1,0 +1,45 @@
+.userDetailsForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 22vw;
+    margin: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    row-gap: 0.6rem;
+
+    /* border: 1px solid red; */
+    background-color: #F1F1F1;
+    border-radius: 7px;
+
+    .title {
+        text-transform: uppercase;
+    }
+
+    .labels {
+        font-style: oblique;
+    }
+
+    .inputs {
+        width: 22vw;
+        height: 5vh;
+
+    }
+
+    .selects {
+        width: 22.2vw;
+        height: 5.7vh;
+    }
+
+    .submitButton {
+        width: 22.2vw;
+        height: 5.7vh;
+
+        margin-top: 3vh;
+
+        text-transform: uppercase;
+    }
+}
