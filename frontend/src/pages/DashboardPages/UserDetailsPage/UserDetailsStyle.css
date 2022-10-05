@@ -1,0 +1,61 @@
+/* * {
+  padding: 0;
+  margin: 0;
+} */
+
+.UserDetailsFormContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #FFF;
+
+  /* width: 100vw; */
+  height: 100vh;
+}
+
+.userDetailsForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 22vw;
+  height: 85vh;
+
+  padding: 5vh 5vw;
+  row-gap: 0.6rem;
+
+  /* border: 1px solid red; */
+  background-color: #F1F1F1;
+  border-radius: 7px;
+
+  /* font-family: "Poppins"; */
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.labels {
+  font-style: oblique;
+}
+
+.inputs {
+  width: 22vw;
+  height: 5vh;
+
+}
+
+.selects {
+  width: 22.2vw;
+  height: 5.7vh;
+}
+
+.submitButton {
+  width: 22.2vw;
+  height: 5.7vh;
+
+  margin-top: 3vh;
+
+  text-transform: uppercase;
+}
