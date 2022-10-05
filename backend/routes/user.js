@@ -10,7 +10,4 @@ router.post('/login', loginUser)
 // signup route
 router.post('/signup', signupUser)
 
-//getCPD summary
-router.get('/getCPDSummary', getCPDSummary)
-
 module.exports = router
