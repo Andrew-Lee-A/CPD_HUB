@@ -3,7 +3,7 @@ import { useAuthContext } from './hooks/useAuthContext'
 
 //pages and components
 import Home from './pages/Home'
-import NewUserInfo from './pages/NewUserDetailsPage/NewUserDetailsPage'
+import UserDetailsFormPage from './pages/UserDetailsFormPage/UserDetailsFormPage'
 import Calendar from './pages/DashboardPages/Calendar'
 import Dashboard from './pages/DashboardPages/Dashboard'
 import Login from './pages/Login'
@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
           <Routes>
-            <Route path='/' element={user ? <Home/> : <Navigate to="/login"/>}>
+            <Route path='/' element={user ? ((!user.detailsCompletedStatus)? <Navigate to="/userDetails"/>: <Home/>) : <Navigate to="/login"/>}>
               <Route index element={<Dashboard/>}></Route>
               <Route path="/calendar" element={<Calendar/>}> </Route>
               {/* <Route path="calendar" element={<Calendar/>}> </Route>
@@ -35,7 +35,7 @@ function App() {
             />
             <Route
               path="/userdetails"
-              element={<NewUserInfo/>}
+              element={!user ? <Navigate to="/login"/> : (!user.detailsCompletedStatus) ? <UserDetailsFormPage/> : <Navigate to="/"/>}
             />
           </Routes>
       </BrowserRouter>

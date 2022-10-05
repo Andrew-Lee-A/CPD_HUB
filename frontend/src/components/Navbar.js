@@ -1,16 +1,9 @@
 import { Link } from 'react-router-dom'
-import { useLogout } from '../hooks/useLogout'
 import { useAuthContext } from '../hooks/useAuthContext'
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Navbar = () => {
-
-    const {logout} = useLogout()
     const {user} = useAuthContext()
 
-    const handleClick = () => {
-        logout()
-    }
     return (
         <header>
             <div className="container">
@@ -21,7 +14,7 @@ const Navbar = () => {
                     {user ? (
                         <div>
                             
-                            Welcome {user.email}
+                            Welcome {user.prefferedName}!
                             {/* <button onClick={handleClick}> Log out</button> */}
                             
                         </div>
