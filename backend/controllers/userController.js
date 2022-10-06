@@ -17,7 +17,6 @@ const loginUser = async (req, res) => {
         // GET the user details completetion status
         const {detailsCompletedStatus, userDetails} = await User.findById({_id}, {"detailsCompletedStatus": 1, "_id": 0, "userDetails": 1 })
         const {prefferedName} = userDetails
-        console.log(detailsCompletedStatus)
         
         //create a token
         const token = createToken(user._id)

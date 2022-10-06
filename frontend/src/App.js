@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import UserDetailsFormPage from './pages/UserDetailsFormPage/UserDetailsFormPage'
 import Calendar from './pages/DashboardPages/Calendar'
 import Dashboard from './pages/DashboardPages/Dashboard'
+import Profile from './pages/DashboardPages/UserProfilePage/Profile'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import CPDTypePage from './pages/DashboardPages/CPDTypePage/CPDTypePage'
@@ -20,6 +21,7 @@ function App() {
             <Route path='/' element={user ? ((!user.detailsCompletedStatus)? <Navigate to="/userDetails"/>: <Home/>) : <Navigate to="/login"/>}>
               <Route index element={<Dashboard/>}></Route>
               <Route path="/calendar" element={<Calendar/>}> </Route>
+              <Route path="/profile" element={<Profile/>}> </Route>
               {/* <Route path="calendar" element={<Calendar/>}> </Route>
               <Route path="calendar" element={<Calendar/>}> </Route> */}
               <Route path="cpdTypePage" element={<CPDTypePage/>}></Route>
