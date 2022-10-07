@@ -58,6 +58,12 @@ const Sidebar = () => {
               <span>CPD Summary</span>
             </li>
           </Link>
+          <Link to="/addcpd" style={{ textDecoration: "none" }}>
+            <li>
+              <CreditCardIcon className="icon" />
+              <span>Add CPD</span>
+            </li>
+          </Link>
 
           <Link to="/settings" style={{ textDecoration: "none" }}>
             <li>
