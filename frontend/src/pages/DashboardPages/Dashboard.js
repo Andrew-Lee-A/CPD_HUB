@@ -5,7 +5,6 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 
 // components
 import WorkoutDetails from "../../components/CpdEventDetails";
-import CpdEventForm from "../../components/CpdEventForm";
 import ProgressBar from "../../components/ProgressBar";
 
 const Dashboard = () => {
@@ -15,7 +14,7 @@ const Dashboard = () => {
     const [isLoaded, setIsLoaded] = useState(false)
 
     useEffect(() => {
-      const fetchWorkouts = async () => {
+      const fetchCPDEvents = async () => {
         const response = await fetch("/api/cpdEvents", {
           headers: {
             Authorization: `Bearer ${user.token}`,
@@ -30,12 +29,11 @@ const Dashboard = () => {
       };
   
       if (user) {
-        fetchWorkouts();
+        fetchCPDEvents();
         
       }
     }, [dispatch, user]);
 
-    console.log(cpdEvents)
   return (
         <div className="pages">
           <div className="workouts">
