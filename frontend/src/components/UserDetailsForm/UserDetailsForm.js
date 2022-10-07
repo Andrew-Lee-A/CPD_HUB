@@ -14,7 +14,7 @@ function UserDetailsForm() {
     // console.log(todaysdate)
 
    const [values, setValues] = useState ({
-        preferredName: "",
+        prefferedName: "",
         lineOfBusiness: "",
         discipline: "",
         seniority: "",
@@ -27,6 +27,7 @@ function UserDetailsForm() {
         ...values,
         [e.target.name]: e.target.value,
     });
+    console.log(e.target.value + ": "  + e.target.name)
   };
 
   const handleSubmit = async (e) => {
@@ -47,6 +48,7 @@ function UserDetailsForm() {
         //update Local Storage so that detailsCompletedStatus turns to True
         const user = JSON.parse(localStorage.getItem('user'))
         user["detailsCompletedStatus"] = true;
+        user["prefferedName"] = values.prefferedName;
         localStorage.setItem('user', JSON.stringify(user));
 
         //navigate to dashboard route
@@ -67,7 +69,7 @@ function UserDetailsForm() {
         
         {/* Preferred name */}
         <label className="labels">Preferred Name:</label>
-        <input required="yes" type="text" className="inputs" name='preferredName' value={values.preferredName} onChange={handleChange} />
+        <input required="yes" type="text" className="inputs" name='prefferedName' value={values.preferredName} onChange={handleChange} />
 
         {/* Line of Business */}
         <label className="labels">Line of Business:</label>
@@ -75,11 +77,11 @@ function UserDetailsForm() {
 
         {/* Discipline */}
         <label className="labels">Discipline type:</label>
-        <select className="selects" defaultValue={'DEFAULT'} id="disciplines">
-          <option value="DEFAULT" disabled="yes" >None selected</option>
-          <option name="disciplines" value={values.discipline}>Mechanical Engineer</option>
-          <option name="disciplines" value={values.discipline}>Naval Architect</option>
-          <option name="disciplines" value={values.discipline}>Other</option>
+        <select className="selects" required="yes" value={values.discipline} name="discipline" onChange={handleChange}>
+          <option value="" disabled="yes">None selected</option>
+          <option name="discipline" value="Mechnical Engineer">Mechanical Engineer</option>
+          <option name="discipline" value="Naval Architect">Naval Architect</option>
+          <option name="discipline" value="Other">Other</option>
         </select>
 
         {/* seniority */}
@@ -88,16 +90,16 @@ function UserDetailsForm() {
 
         {/* CPD start date */}
         <label className="labels">CPD submit date:</label>
-        <input required="yes" type="date" className="inputs" name='cyclestartdate' value={values.cycleStartDate} onChange={handleChange} />
+        <input required="yes" type="date" className="inputs" name='cycleStartDate' value={values.cycleStartDate} onChange={handleChange} />
 
         {/* push notification */}
         <label className="labels">Push notification frequency:</label>
-        <select className="selects" defaultValue={'DEFAULT'} id="pushnotifications" >
-          <option value="default" disabled="yes" >None selected</option>
-          <option name="notification" value={values.pushFrequency}>Fortnightly (every 2 weeks)</option>
-          <option name="notification" value={values.pushFrequency}>Monthly</option>
-          <option name="notification" value={values.pushFrequency}>Quaterly (every 3 months)</option>
-          <option name="notification" value={values.pushFrequency}>Semi-annual (every 6 months)</option>
+        <select className="selects" required="yes" value={values.pushFrequency} name="pushFrequency" onChange={handleChange}>
+          <option value="" disabled="yes" >None selected</option>
+          <option name="pushFrequency" value="Fortnightly (every 2 weeks)">Fortnightly (every 2 weeks)</option>
+          <option name="pushFrequency" value="Monthly">Monthly</option>
+          <option name="pushFrequency" value="Quartly (every 3 months)">Quaterly (every 3 months)</option>
+          <option name="pushFrequency" value="Semi-annual (every 6 months)">Semi-annual (every 6 months)</option>
         </select>
 
         {/* Submit button */}

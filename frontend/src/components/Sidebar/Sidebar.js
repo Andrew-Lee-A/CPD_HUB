@@ -82,10 +82,12 @@ const Sidebar = () => {
         <div className="bottom">
           <ul>
             <p className="title">USER</p>
-            <li>
-              <AccountCircleOutlinedIcon className="icon" />
-              <span>Profile</span>
-            </li>
+            <Link to ="/profile" style={{ textDecoration: "none" }}>
+              <li>
+                <AccountCircleOutlinedIcon className="icon" />
+                <span>Profile</span>
+              </li>
+            </Link>
             <li>
               <ExitToAppIcon className="icon" />
               <span onClick={handleClick}>Logout</span>
