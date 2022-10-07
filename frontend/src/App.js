@@ -4,10 +4,11 @@ import { useAuthContext } from './hooks/useAuthContext'
 //pages and components
 import Home from './pages/Home'
 import UserDetailsFormPage from './pages/UserDetailsFormPage/UserDetailsFormPage'
-import Calendar from './pages/DashboardPages/Calendar'
+import Calendar from './pages/DashboardPages/CalendarPage/Calendar'
 import AddCPD from './pages/DashboardPages/AddCPD'
 import Dashboard from './pages/DashboardPages/Dashboard'
 import Profile from './pages/DashboardPages/UserProfilePage/Profile'
+import CPDsummary from './pages/DashboardPages/CPDsummary/Tabs'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import CPDTypePage from './pages/DashboardPages/CPDTypePage/CPDTypePage'
@@ -28,6 +29,7 @@ function App() {
               <Route path="calendar" element={<Calendar/>}> </Route> */}
               <Route path="cpdTypePage" element={<CPDTypePage/>}></Route>
               <Route path="CPDRecordingUserGuide" element={<CPDRecordingUserGuide/>}></Route>
+              <Route path="cpdsummary" element={<CPDsummary/>}></Route>
             </Route> 
             <Route 
               path="/login" 
