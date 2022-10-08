@@ -1,4 +1,6 @@
-import React, {useState } from 'react'
+import React, {useState, useEffect } from 'react'
+import { useCpdEventsContext } from "../../../hooks/useCpdEventsContext";
+import { useAuthContext } from "../../../hooks/useAuthContext";
 import "./calendar.scss"
 
 /* date-fns dependencies */
@@ -31,122 +33,48 @@ const localizer = dateFnsLocalizer({
 const events = [
     {
         title: "Big Meeting",
-        allDay: true,
-        start: new Date(2021, 10, 4),
-        end: new Date(2021, 10, 4),
-    },
-    {
-        title: "Holiday",
-        start: new Date(2021, 10, 6),
-        end: new Date(2021, 10, 8),
-    },
-    {
-        title: "Webinar",
-        start: new Date(2021, 10, 3),
-        end: new Date(2021, 10, 5),
-    },
+        start: Date(),
+        end: "",
+    }
 ]
 
-/* To pass the data to the database */
-const handleSubmit = (e) => {
-    e.preventDefault();
-
-}
-
 function CalendarApp() {
-    const [newEvent, setNewEvent] = useState({ title: "", start: "", end: ""});
     const [allEvents, setAllEvents] = useState(events);
+    const { cpdEvents, dispatch } = useCpdEventsContext();
+    const { user } = useAuthContext();
 
-    function addNewEvent() {
-        
-        /* for loop to identify all event */
-        for (let index = 0; index < allEvents; index++) {
-            const d1 = new Date (allEvents[index].start);
-            const d2 = new Date (newEvent.start);
-            const d3 = new Date (allEvents[index].end);
-            const d4 = new Date (newEvent.end);
-        
-            /* if statement to avoid duplications of exact same date */
-            if (( (d1 <= d2) && (d2 <= d3) ) || ( (d1 <= d4) && (d4 <= d3) )) {
-                alert("We are sorry the date entered for webinar booking is already reserved.");
-                break;
-            }
+
+    useEffect(() => {
+        const fetchCPDEvents = async () => {
+          const response = await fetch("/api/cpdEvents", {
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+            },
+          });
+          const json = await response.json();
+    
+          if (response.ok) {
+            dispatch({ type: "SET_CPDEVENTS", payload: json });
+          }
+        };
+    
+        if (user){
+            fetchCPDEvents();
+            const cpdEventsArray = cpdEvents.map(item => ({
+                title: item.title, start: new Date(item.date), end: new Date(item.date),
+              }));
+            setAllEvents(allEvents.concat(cpdEventsArray))
+            console.log(allEvents)
+
         }
-
-        setAllEvents([...allEvents, newEvent]);
-    }
+          
+      }, [user, dispatch]);
     
   return (
     <>
         <div className="App">
             {/* <h1>Welcome to our Calender page</h1>
             <h4>Please fill in the inputs below to book your webinar meeting</h4> */}
-
-            <form onSubmit={handleSubmit}>
-                {/* An input for title */}
-                <input 
-                    /* attributes */
-                    type="text"
-                    required="yes"
-                    placeholder="Add a title here..."
-                    value={newEvent.title}
-                    onChange={(event) => setNewEvent({...newEvent, title: event.target.value})}
-
-                    /* the style */
-                    style={{
-                        width: '20vw',
-                        height: '6vh',
-                        marginLeft: "3vw",
-                        // marginTop: "3vw",
-                    }}
-                />
-
-                {/* An input for a start date */}
-                {/* <label className="startDate">Start date:</label> */}
-                <DatePicker 
-                    /* attributes */
-                    className='startDatePicker'
-                    placeholderText="Enter a start date here"
-                    selected={newEvent.start}
-                    showTimeSelect
-                    timeFormat="HH:mm"
-                    dateFormat="MMMM d, yyyy h:mm aa"
-                    onChange={(start) => setNewEvent({...newEvent, start})} 
-
-                    /* the style */
-                    style={{
-                        width: '30%',
-                        // marginRight: '10px',
-                    }}
-                />
-
-                {/* An input for an end date */}
-                {/* <label className="endDate">End date:</label> */}
-                <DatePicker 
-                    /* attributes */
-                    className='endtDatePicker'
-                    placeholderText="Enter an end date here"
-                    selected={newEvent.end}
-                    showTimeSelect
-                    timeFormat="HH:mm"
-                    dateFormat="MMMM d, yyyy h:mm aa"
-                    onChange={(end) => setNewEvent({...newEvent, end})} 
-
-                    /* the style */
-                    style={{
-                        width: "30%",
-                        // marginRight: '10px',
-                    }}
-                />
-
-                {/* button */}
-                <button
-                    className='addEventButton'
-                    onClick={addNewEvent}
-                >
-                    Add Event
-                </button>
-            </form>
 
             {/* Calendar view */}
             <Calendar 
@@ -158,7 +86,7 @@ function CalendarApp() {
 
                 /* style */
                 style={{
-                    height: '420px',
+                    height: '80vh',
                     margin: '50px'
                 }}
             />
