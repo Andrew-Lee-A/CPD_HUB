@@ -34,14 +34,21 @@ const events = [
     }
 ]
 
+function calculateEndDate(date, points){
+  const endDate = new Date(date);
+  endDate.setUTCHours(endDate.getUTCHours() + points);
+  return endDate
+}
+
 function CalendarApp() {
     const [allEvents, setAllEvents] = useState(events);
     const {cpdEvents} = useCpdEventsContext();
 
-
     useEffect(() => {
       const cpdEventsArray = cpdEvents.map(item => ({
-        title: item.title, start: new Date(item.date), end: new Date(item.date),
+        title: item.title,
+        start: new Date(item.date),
+        end: calculateEndDate(item.date, item.cpd_points),
       }));
       setAllEvents(allEvents.concat(cpdEventsArray))
       }, []);

@@ -21,6 +21,11 @@ app.use('/api/cpdEvents', cpdRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/userDetails', userDetailsRoute)
 
+app.get('/', (req, res) => {
+  //health check route
+  res.status(200).send({ STATUS: 'Good to go!' });
+});
+
 //connect to db
 mongoose.connect(process.env.MONGO_URI, { 
   useNewUrlParser: true, useUnifiedTopology: true 
