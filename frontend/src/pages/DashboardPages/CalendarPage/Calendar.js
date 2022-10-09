@@ -1,6 +1,5 @@
 import React, {useState, useEffect } from 'react'
 import { useCpdEventsContext } from "../../../hooks/useCpdEventsContext";
-import { useAuthContext } from "../../../hooks/useAuthContext";
 import "./calendar.scss"
 
 /* date-fns dependencies */
@@ -13,9 +12,6 @@ import startOfWeek from "date-fns/startOfWeek";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
-/* datepicker dependencies */
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 
 /* Global variables */
 const locales = {
@@ -40,36 +36,15 @@ const events = [
 
 function CalendarApp() {
     const [allEvents, setAllEvents] = useState(events);
-    const { cpdEvents, dispatch } = useCpdEventsContext();
-    const { user } = useAuthContext();
+    const {cpdEvents} = useCpdEventsContext();
 
 
     useEffect(() => {
-        const fetchCPDEvents = async () => {
-          const response = await fetch("/api/cpdEvents", {
-            headers: {
-              Authorization: `Bearer ${user.token}`,
-            },
-          });
-          const json = await response.json();
-    
-          if (response.ok) {
-            dispatch({ type: "SET_CPDEVENTS", payload: json });
-          }
-        };
-    
-        if (user){
-            fetchCPDEvents();
-            const cpdEventsArray = cpdEvents.map(item => ({
-                title: item.title, start: new Date(item.date), end: new Date(item.date),
-              }));
-            setAllEvents(allEvents.concat(cpdEventsArray))
-            console.log(allEvents)
-
-        }
-          
-      }, [user, dispatch]);
-    
+      const cpdEventsArray = cpdEvents.map(item => ({
+        title: item.title, start: new Date(item.date), end: new Date(item.date),
+      }));
+      setAllEvents(allEvents.concat(cpdEventsArray))
+      }, []);
   return (
     <>
         <div className="App">
