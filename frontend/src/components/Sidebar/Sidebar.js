@@ -72,24 +72,23 @@ const Sidebar = ({ open, setOpen, ...props}) => {
 
   const listComponentsThree = [
     {
+      path: "/CPDTypePage",
+      name: "CPD Type",
+      icon: <BiFile/>
+    },
+    {
       path: "/CPDRecordingUserGuide",
       name: "Recording Guide",
       icon: <BiLinkAlt/>
     },
+  ]
+  
+  const listComponentsFour = [
     {
       path: "/profile",
       name: "Profile",
       icon: <AccountCircleOutlinedIcon/>
     },
-  ]
-
-  const listComponentsFour = [
-    {
-      path: "/CPDTypePage",
-      name: "CPD Type",
-      icon: <BiFile/>
-    },
-   
     {
       // path: onclick={handleClick},
       path: "/login",
