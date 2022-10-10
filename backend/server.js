@@ -21,6 +21,7 @@ app.use('/api/cpdEvents', cpdRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/userDetails', userDetailsRoute)
 
+console.log(process.env.MONGO_URI)
 //connect to db
 mongoose.connect(process.env.MONGO_URI, { 
   useNewUrlParser: true, useUnifiedTopology: true 
