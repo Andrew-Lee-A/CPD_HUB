@@ -33,7 +33,7 @@ const Sidebar = ({ open, setOpen, ...props}) => {
   const toggle = () => setIsOpen(!isOpen);
 
   /* lists of sidebar menu */
-  const listComponentsOne = [
+  const listComponents = [
     {
       path: "/",
       name: "Dashboard",
@@ -119,7 +119,7 @@ const Sidebar = ({ open, setOpen, ...props}) => {
       {/* MAIN */}
       <p className="mainTitle" style={{display: isOpen ? "block" : "none"}}>MAIN</p>
       {
-        listComponentsOne.map((component, index) => (
+        listComponents.map((component, index) => (
           <Link
             to={component.path}
             key={index}
