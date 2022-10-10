@@ -1,8 +1,9 @@
-import './Home.scss';
+import './landingpage.scss';
+import { Link } from "react-router-dom";
 
 import React from 'react'
 
-export default function Home() {
+export default function LandingPage() {
   return (
     <>
       <div className="homeContainer">
@@ -25,8 +26,12 @@ export default function Home() {
             </div>
 
             <div className="loginAndSignUpButtonsContainer">
-                    <div className="login">Log in</div>
-                    <div className="getConnected">Get Connected</div>
+                    <Link to="/login" style={{textDecoration: "none"}}>
+                      <div className="login">Log in</div>
+                    </Link>
+                    <Link to="/signup" style={{textDecoration: "none"}}>
+                      <div className="getConnected">Get Connected</div>
+                    </Link>
             </div>
           </div>
         </div>

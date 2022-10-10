@@ -33,52 +33,52 @@ const Sidebar = () => {
       <div className="center">
         <ul>
           <p className="title">MAIN</p>
-          <Link to="/" style={{textDecoration: "none"}}>
+          <Link to="" style={{textDecoration: "none"}}>
           <li>
             <DashboardIcon className="icon" />
             <span>Dashboard</span>
           </li>
           </Link>
           <p className="title">LISTS</p>
-          <Link to="/calendar" style={{ textDecoration: "none" }}>
+          <Link to="calendar" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
               <span>Calendar</span>
             </li>
           </Link>
-          <Link to="/yearlyplan" style={{ textDecoration: "none" }}>
+          <Link to="yearlyplan" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
               <span>Yearly Plan</span>
             </li>
           </Link>
-          <Link to="/CPDSUMMARY" style={{ textDecoration: "none" }}>
+          <Link to="CPDSUMMARY" style={{ textDecoration: "none" }}>
             <li>
               <CreditCardIcon className="icon" />
               <span>CPD Summary</span>
             </li>
           </Link>
-          <Link to="/addcpd" style={{ textDecoration: "none" }}>
+          <Link to="addcpd" style={{ textDecoration: "none" }}>
             <li>
               <CreditCardIcon className="icon" />
               <span>Add CPD</span>
             </li>
           </Link>
 
-          <Link to="/settings" style={{ textDecoration: "none" }}>
+          <Link to="settings" style={{ textDecoration: "none" }}>
             <li>
               <SettingsApplicationsIcon className="icon" />
               <span>Settings</span>
             </li>
           </Link>
           <p className="title">REFERENCES</p>
-          <Link to="/CPDTypePage" style={{ textDecoration: "none" }}>
+          <Link to="CPDTypePage" style={{ textDecoration: "none" }}>
             <li>
               <CreditCardIcon className="icon" />
               <span>CPD Types</span>
             </li>
           </Link>
-          <Link to="/CPDRecordingUserGuide" style={{ textDecoration: "none" }}>
+          <Link to="CPDRecordingUserGuide" style={{ textDecoration: "none" }}>
             <li>
               <CreditCardIcon className="icon" />
               <span>Recording Guide</span>
@@ -88,7 +88,7 @@ const Sidebar = () => {
         <div className="bottom">
           <ul>
             <p className="title">USER</p>
-            <Link to ="/profile" style={{ textDecoration: "none" }}>
+            <Link to ="profile" style={{ textDecoration: "none" }}>
               <li>
                 <AccountCircleOutlinedIcon className="icon" />
                 <span>Profile</span>

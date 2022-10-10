@@ -18,10 +18,11 @@ const requireAuth = async (req, res, next) => {
         return next()
 
     }catch(error){
-        if (error.code === 'TokenExpiredError'){
-            localStorage.removeItem('user')
+        if (error.name === 'TokenExpiredError'){
+            
         }
-        console.log(error)
+        console.log("Auth error: " + error)
+        console.log(error.name)
         res.status(401).json({error: 'Request is not authorized'})
     }
 }

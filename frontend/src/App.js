@@ -2,6 +2,7 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
 
 //pages and components
+import LandingPage from './pages/LandingPage/LandingPage'
 import Home from './pages/Home'
 import UserDetailsFormPage from './pages/UserDetailsFormPage/UserDetailsFormPage'
 import Calendar from './pages/DashboardPages/CalendarPage/Calendar'
@@ -20,28 +21,28 @@ function App() {
     <div className="App">
       <BrowserRouter>
           <Routes>
-            <Route path='/' element={user ? ((!user.detailsCompletedStatus)? <Navigate to="/userDetails"/>: <Home/>) : <Navigate to="/login"/>}>
+            <Route path='/' element={user ? <Navigate to='Dashboard'/>:<LandingPage/>}></Route>
+
+            <Route path='Dashboard' element={user ? ((!user.detailsCompletedStatus)? <Navigate to="/userDetails"/>: <Home/>) : <Navigate to="/login"/>}>
               <Route index element={<Dashboard/>}></Route>
-              <Route path="/calendar" element={<Calendar/>}> </Route>
-              <Route path="/addcpd" element={<AddCPD/>}> </Route>
-              <Route path="/profile" element={<Profile/>}> </Route>
-              {/* <Route path="calendar" element={<Calendar/>}> </Route>
-              <Route path="calendar" element={<Calendar/>}> </Route> */}
+              <Route path="calendar" element={<Calendar/>}> </Route>
+              <Route path="addcpd" element={<AddCPD/>}> </Route>
+              <Route path="profile" element={<Profile/>}> </Route>
               <Route path="cpdTypePage" element={<CPDTypePage/>}></Route>
               <Route path="CPDRecordingUserGuide" element={<CPDRecordingUserGuide/>}></Route>
               <Route path="cpdsummary" element={<CPDsummary/>}></Route>
             </Route> 
             <Route 
               path="/login" 
-              element={!user ? <Login/>: <Navigate to="/"/>} 
+              element={!user ? <Login/>: <Navigate to="/Dashboard"/>} 
             />
             <Route 
               path="/signup" 
-              element={!user ? <Signup/> : <Navigate to="/"/>} 
+              element={!user ? <Signup/> : <Navigate to="/Dashboard"/>} 
             />
             <Route
               path="/userdetails"
-              element={!user ? <Navigate to="/login"/> : (!user.detailsCompletedStatus) ? <UserDetailsFormPage/> : <Navigate to="/"/>}
+              element={!user ? <Navigate to="/login"/> : (!user.detailsCompletedStatus) ? <UserDetailsFormPage/> : <Navigate to="/Dashboard"/>}
             />
           </Routes>
       </BrowserRouter>
