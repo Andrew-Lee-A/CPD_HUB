@@ -1,18 +1,15 @@
 import { Link } from 'react-router-dom'
 import { useAuthContext } from '../hooks/useAuthContext'
 
-
-
 const Navbar = () => {
     const {user} = useAuthContext()
 
     return (
         <header>
             <div className="container">
-
-                {/* <Link to="/">
+                <Link to="/">
                     <h1>CPD HUB</h1>
-                </Link> */}
+                </Link>
                 <nav>
                     {user ? (
                         <div>
