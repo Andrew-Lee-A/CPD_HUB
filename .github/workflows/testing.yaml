@@ -1,7 +1,7 @@
-name: Node.js CI
+name: Express testing with JEST & SuperTest
 
 env: 
-  MONGO_URI: mongodb+srv://gjs5758:guardianangel1@cluster0.p2ion.mongodb.net/?retryWrites=true&w=majority
+  MONGO_URI: ${{ secrets.MONGO_URI }}
   PORT: 8000
   SECRET: ninjadojoshifuyoshimarioluigipeachbowser
 
