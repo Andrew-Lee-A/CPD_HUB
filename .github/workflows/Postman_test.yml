@@ -25,7 +25,7 @@ jobs:
             npm install
       - run: |
             cd backend 
-            npm run build --if-present
+            npm run start
       - name: Install Postman CLI
         run: |
           curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
