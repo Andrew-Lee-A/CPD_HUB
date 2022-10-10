@@ -5,7 +5,7 @@ on:
     branches: [ workflows ]
 
 env: 
-  MONGO_URI: ${{secrets.MONGO_URI}}
+  MONGO_URI: mongodb+srv://gjs5758:guardianangel1@cluster0.p2ion.mongodb.net/?retryWrites=true&w=majority
   PORT: 8000
   SECRET: ninjadojoshifuyoshimarioluigipeachbowser
   
