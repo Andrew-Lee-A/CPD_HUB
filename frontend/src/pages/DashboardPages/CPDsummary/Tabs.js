@@ -9,7 +9,7 @@ function Tabs() {
   };
 
   return (
-    <div className="outerContainer">
+    <div className="outerContainerTabs">
 
       <div className="blocs-tabs">
         <button

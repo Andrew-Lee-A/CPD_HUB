@@ -1,9 +1,7 @@
 const express = require('express')
 const {
-    getUserCPDSummary,
-    getUserStartDate,
-    updateCpdEvent,
-    getUserDetailsCompletionStatus,
+    getUserCPDPoints,
+    updateUserCPDPoints,
     getUserDetails,
     updateUserDetails,
 } = require('../controllers/userDetailsController')
@@ -14,14 +12,11 @@ const router = express.Router()
 //needs auth middleware to pass before router moves to routes
 router.use(requireAuth)
 
-// GET a user's CPD Summary
-router.get('/', getUserCPDSummary)
+// GET a user's CPD Points Summary
+router.get('/', getUserCPDPoints)
 
-// UPDATE a user's CPD Summary
-router.patch('/', updateCpdEvent)
-
-// GET a user's details completion status - 
-router.get('/getUserDetailsCompletionStatus', getUserDetailsCompletionStatus)
+// UPDATE a user's CPD Points Summary
+router.patch('/', updateUserCPDPoints)
 
 // GET user details
 router.get('/details', getUserDetails)

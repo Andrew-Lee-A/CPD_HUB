@@ -2,13 +2,13 @@ const User = require('../models/userModel')
 const mongoose = require('mongoose')
 
 
-const getUserCPDSummary = async (req, res) => {
+const getUserCPDPoints = async (req, res) => {
     const _id = req.user._id
     const user = await User.findById({_id})
     res.status(200).json(user.cpdSummary)
 }
 
-const updateCpdEvent = async (req, res) => {
+const updateUserCPDPoints = async (req, res) => {
     const _id = req.user._id 
     if (!mongoose.Types.ObjectId.isValid(_id)){
         return res.status(404).json({error: 'No such user '})
@@ -20,12 +20,6 @@ const updateCpdEvent = async (req, res) => {
         }
     })
     res.status(200).json(user.cpdSummary)
-}
-
-const getUserStartDate = async (req, res) => {
-    const _id = req.user._id
-    const user = await User.findById({_id})
-    res.status(200).json(user.cpdStartDate)
 }
 
 const getUserDetails = async (req, res) => {
@@ -51,19 +45,9 @@ const updateUserDetails = async (req, res) => {
     res.status(200).json(user.userDetails)
 }
 
-const getUserDetailsCompletionStatus = async (req, res) => {
-    const _id = req.user._id 
-    const user = await User.findById({_id})
-    res.status(200).json(user.detailsCompletedStatus)
-}
-
 module.exports = {
-    getUserCPDSummary,
-    getUserStartDate,
-    updateCpdEvent,
-    getUserDetailsCompletionStatus,
-    getUserStartDate,
+    getUserCPDPoints,
+    updateUserCPDPoints,
     getUserDetails,
     updateUserDetails,
-
 }
