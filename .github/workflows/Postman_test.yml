@@ -1,11 +1,16 @@
-name: Automated API tests using Postman CLI
+name: Node.js CI
 
-on: [push]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-    
-  automated-api-tests:
+  build:
+
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         node-version: [10.x, 12.x, 14.x, 15.x]
@@ -16,6 +21,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - working-directory: ./backend
       - run: npm ci
       - run: npm run build --if-present
+      - run: npm test
