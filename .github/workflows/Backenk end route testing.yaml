@@ -1,5 +1,10 @@
 name: Node.js CI
 
+env: 
+  MONGO_URI: mongodb+srv://gjs5758:guardianangel1@cluster0.p2ion.mongodb.net/?retryWrites=true&w=majority
+  PORT: 8000
+  SECRET: ninjadojoshifuyoshimarioluigipeachbowser
+
 on:
   push:
     branches: [ development_merge_JEST ]
