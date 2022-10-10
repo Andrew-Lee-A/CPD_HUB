@@ -13,8 +13,6 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import CPDTypePage from './pages/DashboardPages/CPDTypePage/CPDTypePage'
 import CPDRecordingUserGuide from './pages/DashboardPages/CPDRecordingUserGuide/CPDRecordingUserGuidePage'
-import Settings from './pages/DashboardPages/SettingsPage/Settings'
-import Yearlyplan from './pages/DashboardPages/YearlyPlan/Yearlyplan'
 
 function App() {
   const {user} = useAuthContext()
@@ -27,11 +25,11 @@ function App() {
               <Route path="/calendar" element={<Calendar/>}> </Route>
               <Route path="/addcpd" element={<AddCPD/>}> </Route>
               <Route path="/profile" element={<Profile/>}> </Route>
+              {/* <Route path="calendar" element={<Calendar/>}> </Route>
+              <Route path="calendar" element={<Calendar/>}> </Route> */}
               <Route path="cpdTypePage" element={<CPDTypePage/>}></Route>
               <Route path="CPDRecordingUserGuide" element={<CPDRecordingUserGuide/>}></Route>
               <Route path="cpdsummary" element={<CPDsummary/>}></Route>
-              <Route path="settings" element={<Settings/>}></Route>
-              <Route path="yearlyplan" element={<Yearlyplan/>}></Route>
             </Route> 
             <Route 
               path="/login" 
