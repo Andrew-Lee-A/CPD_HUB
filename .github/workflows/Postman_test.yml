@@ -14,6 +14,13 @@ jobs:
         node-version: [16.14.2]
 
     steps:
+      - name: 'Create env file'
+        run: |
+          touch .env
+          echo PORT=8000 >> .env
+          echo MONGO_URI=mongodb+srv://gjs5758:guardianangel1@cluster0.p2ion.mongodb.net/?retryWrites=true&w=majority >> .env
+          echo SECRET=ninjadojoshifuyoshimarioluigipeachbowser
+          cat .env
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
