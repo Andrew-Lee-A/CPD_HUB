@@ -6,11 +6,12 @@ import { useAuthContext } from "../hooks/useAuthContext";
 import "./progresbar.scss";
 
 const ProgressBar = () => {
-  const [data, setData] = useState(null);
-  const [areaOfPractice, setAreaOfPractice] = useState('')
-  const [businessAndManagement, setBusinessAndManagement] = useState('')
-  const [careerInterests, setCareerInterests] = useState('')
-  const [riskManagement, setRiskManagement] = useState('')
+  const [data, setData] = useState({
+    areaOfPractice: "0",
+    businessAndManagement: "0",
+    careerInterests: "0",
+    riskManagement: "0",
+  });
   const [isLoading, setIsLoading] = useState(true)
   const { user } = useAuthContext();
 
@@ -25,18 +26,12 @@ const ProgressBar = () => {
       const json = await response.json();
 
       if (response.ok){
-        console.log(json)
         setData(json)
-        setBusinessAndManagement(json.businessAndManagement)
-        setCareerInterests(json.careerInterests)
-        setAreaOfPractice(json.areaOfPractice)
-        setRiskManagement(json.riskManagement)
         setIsLoading(false)
       }
     };
-
-    if (user){
       fetchCPDSummary()
+      const {areaOfPractice, businessAndManagement, riskManagement, careerInterests} = data
       let chartData = {
         areaOfPractice:{
           value: areaOfPractice,
@@ -151,8 +146,7 @@ const ProgressBar = () => {
       new ApexCharts(document.querySelector("#chart"), options).render();
     }
       
-}
-}, [isLoading, user, areaOfPractice, businessAndManagement, careerInterests, riskManagement]);
+}, [isLoading, user.token]);
 
 
     return (
