@@ -27,11 +27,11 @@ function App() {
               <Route path="/calendar" element={<Calendar/>}> </Route>
               <Route path="/addcpd" element={<AddCPD/>}> </Route>
               <Route path="/profile" element={<Profile/>}> </Route>
-              <Route path="cpdTypePage" element={<CPDTypePage/>}></Route>
-              <Route path="CPDRecordingUserGuide" element={<CPDRecordingUserGuide/>}></Route>
-              <Route path="cpdsummary" element={<CPDsummary/>}></Route>
-              <Route path="settings" element={<Settings/>}></Route>
-              <Route path="yearlyplan" element={<Yearlyplan/>}></Route>
+              <Route path="/cpdTypePage" element={<CPDTypePage/>}></Route>
+              <Route path="/CPDRecordingUserGuide" element={<CPDRecordingUserGuide/>}></Route>
+              <Route path="/cpdsummary" element={<CPDsummary/>}></Route>
+              <Route path="/settings" element={<Settings/>}></Route>
+              <Route path="/yearlyplan" element={<Yearlyplan/>}></Route>
             </Route> 
             <Route 
               path="/login" 

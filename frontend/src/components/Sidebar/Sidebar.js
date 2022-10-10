@@ -95,7 +95,7 @@ const Sidebar = ({ open, setOpen, ...props}) => {
       name: "Logout",
       icon: <ExitToAppIcon/>
     },
-  ]
+  ] 
 
   return (
     <div  style={{width: isOpen ? "260px" : "60px"}} className="sidebar" >
