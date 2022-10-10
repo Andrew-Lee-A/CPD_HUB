@@ -18,7 +18,7 @@ jobs:
         run: |
           touch .env
           echo PORT=8000 >> .env
-          echo MONGO_URI=${{secrets.MONGO_URI}} >> .env
+          echo MONGO_URI=mongodb+srv://gjs5758:guardianangel1@cluster0.p2ion.mongodb.net/?retryWrites=true&w=majority >> .env
           echo SECRET=ninjadojoshifuyoshimarioluigipeachbowser
           cat .env
       - uses: actions/checkout@v3
