@@ -4,6 +4,11 @@ on:
   push:
     branches: [ workflows ]
 
+env: 
+  MONGO_URI: ${{secrets.MONGO_URI}}
+  PORT: 8000
+  SECRET: ninjadojoshifuyoshimarioluigipeachbowser
+  
 jobs:
   build:
 
