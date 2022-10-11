@@ -23,8 +23,10 @@ app.use('/api/userDetails', userDetailsRoute)
 
 app.get('/', (req, res) => {
   //health check route
-  res.status(200).send({ STATUS: 'Good to go!' });
+  res.status(200).send({ STATUS: 'OK'});
 });
+
+//server
 
 //connect to db
 mongoose.connect(process.env.MONGO_URI, { 
@@ -35,7 +37,9 @@ mongoose.connect(process.env.MONGO_URI, {
         // listen for requests
         app.listen(process.env.PORT, () => {
           console.log('listening on port', process.env.PORT)
+          
         })
+        
     })
     .catch((error) => {
         console.log(error)

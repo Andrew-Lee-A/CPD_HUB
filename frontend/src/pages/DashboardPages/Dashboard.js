@@ -43,7 +43,7 @@ const Dashboard = () => {
             {isLoaded ? (cpdEvents.length > 0 ? 
               (cpdEvents.map((cpdEvent) => (
                 <WorkoutDetails cpdEvent={cpdEvent} key={cpdEvent._id} />
-              ))):(<div>No Upcoming CPD</div>) ) : (<div>Loading</div>)}
+              ))):(<div style={{padding: "10px"}}>No Upcoming CPD</div>) ) : (<div>Loading</div>)}
           </div>
           <div>
             <div>
