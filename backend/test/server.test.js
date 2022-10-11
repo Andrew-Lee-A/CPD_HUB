@@ -120,8 +120,6 @@ describe('TESING_USER_LOGIN_ROUTE', () => {
         test('SUCCESS_Login_OK', async () => {
             const sampleResponse = {email: "", token: "", detailsCompletedStatus: "", prefferedName: ""}
             const response = await request.post('/api/user/login').send({email: "Jest@gmail.com", password: "@Cpduser1"})
-            console.log("HERE" + response.request.body)
-            console.log("HERE" + response.body.keys)
             expect(response.statusCode).toBe(200)
     
             //Matching email and token keys regardless of values
