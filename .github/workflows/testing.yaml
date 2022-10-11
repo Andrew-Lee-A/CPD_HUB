@@ -1,4 +1,4 @@
-name: Express testing with JEST & SuperTest
+name: Run backend Tests
 
 env: 
   MONGO_URI: ${{ secrets.MONGO_URI }}
