@@ -41,10 +41,12 @@ function calculateEndDate(date, points){
 }
 
 function CalendarApp() {
+
     const [allEvents, setAllEvents] = useState(events);
     const {cpdEvents} = useCpdEventsContext();
 
     useEffect(() => {
+
       const cpdEventsArray = cpdEvents.map(item => ({
         title: item.title,
         start: new Date(item.date),
@@ -52,14 +54,16 @@ function CalendarApp() {
       }));
       setAllEvents(allEvents.concat(cpdEventsArray))
       }, []);
+
   return (
     <>
-        <div className="App">
+        <div className="calendarApp">
             {/* <h1>Welcome to our Calender page</h1>
             <h4>Please fill in the inputs below to book your webinar meeting</h4> */}
 
             {/* Calendar view */}
             <Calendar 
+
                 /* Attributes */
                 localizer={localizer}
                 events={allEvents}
@@ -69,12 +73,12 @@ function CalendarApp() {
                 /* style */
                 style={{
                     height: '80vh',
+                    // width: '50vw',
                     margin: '50px'
                 }}
             />
         </div>
     </>
-    
   )
 }
 

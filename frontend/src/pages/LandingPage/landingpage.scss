@@ -12,12 +12,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
+        
         .navbar {
+
             margin-top: 1.4rem;
-    
             
-            width: 85vw;
+            width: 90vw;
             height: 10vh;
         
             // background-color: #000000d3;
@@ -75,6 +75,10 @@
                 justify-content: center;
                     
                 .login {
+                    border: 1px solid #0b1e47;
+                    padding: 4px;
+
+                    color: #FFF;
     
                     &:hover {
                         cursor: pointer;
@@ -91,7 +95,8 @@
                     width: 12vw;
                     height: 7vh;
                     background-color: #143d8f;
-                    color: #ADD8E6;
+                    // color: #ADD8E6;
+                    color: #FFF;
                     border-radius: 50px;
     
                     &:hover {

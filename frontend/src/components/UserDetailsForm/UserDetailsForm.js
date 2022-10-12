@@ -76,12 +76,12 @@ function UserDetailsForm() {
         <input required="yes" type="text" className="inputs" name='lineOfBusiness' value={values.lineOfBusiness} onChange={handleChange}/>
 
         {/* Discipline */}
-        <label className="labels">Discipline type:</label>
+        <label className="disciplineLabel">Discipline type:</label>
         <select className="selects" required="yes" value={values.discipline} name="discipline" onChange={handleChange}>
           <option value="" disabled="yes">None selected</option>
-          <option name="discipline" value="Mechnical Engineer">Mechanical Engineer</option>
-          <option name="discipline" value="Naval Architect">Naval Architect</option>
-          <option name="discipline" value="Other">Other</option>
+          <option className='options' name="discipline" value="Mechnical Engineer">Mechanical Engineer</option>
+          <option className='options' name="discipline" value="Naval Architect">Naval Architect</option>
+          <option className='options' name="discipline" value="Other">Other</option>
         </select>
 
         {/* seniority */}
@@ -93,19 +93,18 @@ function UserDetailsForm() {
         <input required="yes" type="date" className="inputs" name='cycleStartDate' value={values.cycleStartDate} onChange={handleChange} />
 
         {/* push notification */}
-        <label className="labels">Push notification frequency:</label>
+        <label className="PNFLabels">Push notification frequency:</label>
         <select className="selects" required="yes" value={values.pushFrequency} name="pushFrequency" onChange={handleChange}>
           <option value="" disabled="yes" >None selected</option>
-          <option name="pushFrequency" value="Fortnightly (every 2 weeks)">Fortnightly (every 2 weeks)</option>
-          <option name="pushFrequency" value="Monthly">Monthly</option>
-          <option name="pushFrequency" value="Quartly (every 3 months)">Quaterly (every 3 months)</option>
-          <option name="pushFrequency" value="Semi-annual (every 6 months)">Semi-annual (every 6 months)</option>
+          <option  className='options' name="pushFrequency" value="Fortnightly (every 2 weeks)">Fortnightly (every 2 weeks)</option>
+          <option  className='options'  name="pushFrequency" value="Monthly">Monthly</option>
+          <option  className='options' name="pushFrequency" value="Quartly (every 3 months)">Quaterly (every 3 months)</option>
+          <option  className='options' name="pushFrequency" value="Semi-annual (every 6 months)">Semi-annual (every 6 months)</option>
         </select>
 
         {/* Submit button */}
         <button className="submitButton" type='submit'>
           submit
-          
         </button>
       </form>
 

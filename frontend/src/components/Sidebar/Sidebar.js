@@ -32,13 +32,15 @@ const Sidebar = () => {
       <hr />
       <div className="center">
         <ul>
+
           <p className="title">MAIN</p>
           <Link to="" style={{textDecoration: "none"}}>
-          <li>
-            <DashboardIcon className="icon" />
-            <span>Dashboard</span>
-          </li>
+            <li>
+              <DashboardIcon className="icon" />
+              <span>Dashboard</span>
+            </li>
           </Link>
+
           <p className="title">LISTS</p>
           <Link to="calendar" style={{ textDecoration: "none" }}>
             <li>
@@ -46,18 +48,21 @@ const Sidebar = () => {
               <span>Calendar</span>
             </li>
           </Link>
+
           <Link to="yearlyplan" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
               <span>Yearly Plan</span>
             </li>
           </Link>
+
           <Link to="CPDSUMMARY" style={{ textDecoration: "none" }}>
             <li>
               <CreditCardIcon className="icon" />
               <span>CPD Summary</span>
             </li>
           </Link>
+
           <Link to="addcpd" style={{ textDecoration: "none" }}>
             <li>
               <CreditCardIcon className="icon" />
@@ -71,6 +76,7 @@ const Sidebar = () => {
               <span>Settings</span>
             </li>
           </Link>
+
           <p className="title">REFERENCES</p>
           <Link to="CPDTypePage" style={{ textDecoration: "none" }}>
             <li>
@@ -78,12 +84,14 @@ const Sidebar = () => {
               <span>CPD Types</span>
             </li>
           </Link>
+
           <Link to="CPDRecordingUserGuide" style={{ textDecoration: "none" }}>
             <li>
               <CreditCardIcon className="icon" />
               <span>Recording Guide</span>
             </li>
           </Link>
+          
         </ul>
         <div className="bottom">
           <ul>
@@ -94,19 +102,11 @@ const Sidebar = () => {
                 <span>Profile</span>
               </li>
             </Link>
-            <li>
+            <li onClick={handleClick} >
               <ExitToAppIcon className="icon" />
-              <span onClick={handleClick}>Logout</span>
+              <span>Logout</span>
             </li>
           </ul>
-          {/* <div
-          className="colorOption"
-          onClick={() => dispatch({ type: "LIGHT" })}
-        ></div>
-        <div
-          className="colorOption"
-          onClick={() => dispatch({ type: "DARK" })}
-        ></div> */}
         </div>
       </div>
     </div>

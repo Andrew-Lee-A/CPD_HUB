@@ -128,6 +128,35 @@ describe('TESING_USER_LOGIN_ROUTE', () => {
     })
 })
 
+describe('TESTING JWT EXPIRE ERROR', () => {
+    
+    describe('Given that the JWT has expired', () => {
+        beforeEach( async () => {
+            //SET token expiration time
+            process.env.SECRET_EXPIRE ='1ms'
+            //LOGIN to get a signed token
+            const response = await request.post('/api/user/login').send({email: "Jest@gmail.com", password: "@Cpduser1"})
+            token = response.body.token
+        })
+        test('should expect a Auth token expire error', async () => {
+            const header = {"Authorization":`Bearer ${token}`}
+            const response = await request.get('/api/userDetails/').set(header);
+            expect(response.body).toStrictEqual({error: 'Authorization token expired'})
+            expect(response.statusCode).toBe(401)
+        })
+    })
+
+    describe('Given that the SECRET_EXPIRE was set to 1ms', ()=> {
+        beforeEach(() => {
+            process.env.SECRET_EXPIRE = '1d'
+        })
+        test('should expect SECRET_EXPIRE be set back to 1d', () => {
+            
+            expect(process.env.SECRET_EXPIRE).toBe('1d')
+        })
+    })
+})
+
 
 describe('TESTING_USER_DETAILS_CONTROLLER', ()=> {
 

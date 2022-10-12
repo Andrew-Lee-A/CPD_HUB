@@ -19,7 +19,7 @@ const requireAuth = async (req, res, next) => {
 
     }catch(error){
         if (error.name === 'TokenExpiredError'){
-            
+            return res.status(401).header("Clear-Site-Data", "storage").json({error: 'Authorization token expired'})
         }
         console.log("Auth error: " + error)
         console.log(error.name)
