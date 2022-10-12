@@ -69,11 +69,12 @@ function CalendarApp() {
                 events={allEvents}
                 startAccessor="start"
                 endAccessor="end"
+                className='calendarview'
 
                 /* style */
                 style={{
                     height: '80vh',
-                    // width: '50vw',
+                    width: '65vw',
                     margin: '50px'
                 }}
             />

@@ -10,6 +10,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from "react-router-dom";
 // import { DarkModeContext } from "../../context/darkModeContext";
 // import { useContext } from "react";
+import { BiNews } from 'react-icons/bi';
+import { BiCommentDetail } from 'react-icons/bi';
+import { BiCalendar } from 'react-icons/bi';
+import { BiReceipt } from 'react-icons/bi';
+import { BiMessageSquareAdd } from 'react-icons/bi';
+import { BiCog } from 'react-icons/bi';
+import { BiFile } from 'react-icons/bi';
+import { BiLinkAlt } from 'react-icons/bi';
+import { FaBars } from 'react-icons/fa';
+
 
 import { useLogout } from "../../hooks/useLogout";
 
@@ -36,7 +46,7 @@ const Sidebar = () => {
           <p className="title">MAIN</p>
           <Link to="" style={{textDecoration: "none"}}>
             <li>
-              <DashboardIcon className="icon" />
+              <BiNews className="icon" />
               <span>Dashboard</span>
             </li>
           </Link>
@@ -44,35 +54,35 @@ const Sidebar = () => {
           <p className="title">LISTS</p>
           <Link to="calendar" style={{ textDecoration: "none" }}>
             <li>
-              <PersonOutlineIcon className="icon" />
+              <BiCalendar className="icon" />
               <span>Calendar</span>
             </li>
           </Link>
 
           <Link to="yearlyplan" style={{ textDecoration: "none" }}>
             <li>
-              <StoreIcon className="icon" />
+              <BiCommentDetail className="icon" />
               <span>Yearly Plan</span>
             </li>
           </Link>
 
           <Link to="CPDSUMMARY" style={{ textDecoration: "none" }}>
             <li>
-              <CreditCardIcon className="icon" />
+              <BiReceipt className="icon" />
               <span>CPD Summary</span>
             </li>
           </Link>
 
           <Link to="addcpd" style={{ textDecoration: "none" }}>
             <li>
-              <CreditCardIcon className="icon" />
+              <BiMessageSquareAdd className="icon" />
               <span>Add CPD</span>
             </li>
           </Link>
 
           <Link to="settings" style={{ textDecoration: "none" }}>
             <li>
-              <SettingsApplicationsIcon className="icon" />
+              <BiCog className="icon" />
               <span>Settings</span>
             </li>
           </Link>
@@ -80,14 +90,14 @@ const Sidebar = () => {
           <p className="title">REFERENCES</p>
           <Link to="CPDTypePage" style={{ textDecoration: "none" }}>
             <li>
-              <CreditCardIcon className="icon" />
+              <BiFile className="icon" />
               <span>CPD Types</span>
             </li>
           </Link>
 
           <Link to="CPDRecordingUserGuide" style={{ textDecoration: "none" }}>
             <li>
-              <CreditCardIcon className="icon" />
+              <BiLinkAlt className="icon" />
               <span>Recording Guide</span>
             </li>
           </Link>

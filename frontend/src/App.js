@@ -14,6 +14,9 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import CPDTypePage from './pages/DashboardPages/CPDTypePage/CPDTypePage'
 import CPDRecordingUserGuide from './pages/DashboardPages/CPDRecordingUserGuide/CPDRecordingUserGuidePage'
+import YearlyPlan from './pages/DashboardPages/YearlyPlan/Yearlyplan'
+import Settings from './pages/DashboardPages/SettingsPage/Settings'
+
 
 function App() {
   const {user} = useAuthContext()
@@ -21,7 +24,12 @@ function App() {
     <div className="App">
       <BrowserRouter>
           <Routes>
-            <Route path='/' element={user ? <Navigate to='Dashboard'/>:<LandingPage/>}></Route>
+
+            <Route 
+              path='/' 
+              element={user ? <Navigate 
+              to='Dashboard'/>:<LandingPage/>}>
+            </Route>
 
             <Route path='Dashboard' element={user ? ((!user.detailsCompletedStatus)? <Navigate to="/userDetails"/>: <Home/>) : <Navigate to="/login"/>}>
               <Route index element={<Dashboard/>}></Route>
@@ -31,19 +39,25 @@ function App() {
               <Route path="cpdTypePage" element={<CPDTypePage/>}></Route>
               <Route path="CPDRecordingUserGuide" element={<CPDRecordingUserGuide/>}></Route>
               <Route path="cpdsummary" element={<CPDsummary/>}></Route>
-            </Route> 
+              <Route path="yearlyplan" element={<YearlyPlan/>}></Route>
+              <Route path="settings" element={<Settings/>}></Route>
+            </Route>
+
             <Route 
               path="/login" 
               element={!user ? <Login/>: <Navigate to="/Dashboard"/>} 
             />
+
             <Route 
               path="/signup" 
               element={!user ? <Signup/> : <Navigate to="/Dashboard"/>} 
             />
+
             <Route
               path="/userdetails"
               element={!user ? <Navigate to="/login"/> : (!user.detailsCompletedStatus) ? <UserDetailsFormPage/> : <Navigate to="/Dashboard"/>}
             />
+
           </Routes>
       </BrowserRouter>
     </div>

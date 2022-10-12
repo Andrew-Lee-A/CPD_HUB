@@ -19,6 +19,7 @@ const AddCPD = () => {
             Authorization: `Bearer ${user.token}`,
           },
         });
+        
         const json = await response.json();
   
         if (response.ok) {
