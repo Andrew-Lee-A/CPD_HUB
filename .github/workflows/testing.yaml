@@ -7,7 +7,9 @@ env:
 
 on:
   push:
-    branches: [ development_merge_JEST ]
+    branches: [ main, development, development_merge, development_merge_JEST ]
+  pull_request:
+    branches: [ main, development, development_merge, development_merge_JEST  ]
 
 jobs:
   build:
