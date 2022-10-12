@@ -1,15 +1,12 @@
 .sidebar {
   border-right: 0.5px solid rgb(230, 227, 227);
-  border-radius: 4px;
   min-height: 100vh;
   min-width: 250px;
-  max-width: 250px;
-  // background-color: #023f90;
-  // background-color: #143d8f;
   background-color: #0b1e47;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
+  // position: sticky;
 
   .top {
     height: 70px;
@@ -23,11 +20,10 @@
       color: #FFF;
       align-items: center;
 
-      .logo-icon{
+      .logo-icon {
         font-size: 30px;
         padding-left: 30px;
       }
-
     }
   }
 
@@ -41,12 +37,13 @@
     padding-left: 10px;
     display: flex;
     flex-direction: column;
-    height: 100%; //set center to take up remaining 
+    height: 100%; // set center to take up remaining 
     min-height: 500px;
     justify-content: space-between;
-    overflow: hidden; //hide the overflow of list items on hover tranform;
-
+    overflow: hidden; // hide the overflow of list items on hover tranform;
+    
     ul {
+
       list-style: none;
       margin: 0;
       padding: 0;
@@ -128,9 +125,4 @@
       }
     }
   }
-
-}
-
-.sidebar-close{
-  
 }

@@ -39,12 +39,14 @@ const Dashboard = () => {
           <div className="workouts">
             <div>
               <h3>Upcoming CPD events</h3>
+
             </div>
             {isLoaded ? (cpdEvents.length > 0 ? 
               (cpdEvents.map((cpdEvent) => (
                 <WorkoutDetails cpdEvent={cpdEvent} key={cpdEvent._id} />
               ))):(<div>No Upcoming CPD</div>) ) : (<div>Loading</div>)}
           </div>
+          
           <div>
             <div>
               <h3>CPD Progress - Points(hours)</h3>
