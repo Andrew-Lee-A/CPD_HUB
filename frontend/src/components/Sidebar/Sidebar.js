@@ -102,19 +102,11 @@ const Sidebar = () => {
                 <span>Profile</span>
               </li>
             </Link>
-            <li>
+            <li onClick={handleClick} >
               <ExitToAppIcon className="icon" />
-              <span onClick={handleClick}>Logout</span>
+              <span>Logout</span>
             </li>
           </ul>
-          {/* <div
-          className="colorOption"
-          onClick={() => dispatch({ type: "LIGHT" })}
-        ></div>
-        <div
-          className="colorOption"
-          onClick={() => dispatch({ type: "DARK" })}
-        ></div> */}
         </div>
       </div>
     </div>
