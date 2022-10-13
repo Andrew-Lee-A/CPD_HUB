@@ -12,14 +12,21 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        .babcockContainer, .navbarOptionsContainer, .contactUs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         
         .navbar {
 
+            position: relative;
             margin-top: 1.4rem;
             
             width: 90vw;
             height: 10vh;
-        
+
             // background-color: #000000d3;
             background-color: #0b1e47;
             
@@ -27,6 +34,7 @@
             border: 1px solid #808080ad;
     
             display: flex;
+            float: right;
     
             .babcockContainer {
     
@@ -62,7 +70,9 @@
             }
     
             .loginAndSignUpButtonsContainer {
-                margin-left: 30em;
+                margin-left: 35vw;
+                // width: 40vw;
+                float: right;
                 font-size: 20px;
                 font-weight: 700;
                 
@@ -73,7 +83,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                    
+
                 .login {
                     border: 1px solid #0b1e47;
                     padding: 4px;
@@ -125,9 +135,6 @@
         h3 {
             margin-top: 10px;
         }
-
     }
-
-
 }
     

@@ -78,13 +78,13 @@ function UserDetailsForm() {
         {/* Discipline */}
         <label className="disciplineLabel">Discipline type:</label>
         <select className="selects" required="yes" value={values.discipline} name="discipline" onChange={handleChange}>
-          <option value="" disabled="yes">None selected</option>
+          <option selected="selected" value="" disabled="yes">None selected</option>
           <option className='options' name="discipline" value="Mechnical Engineer">Mechanical Engineer</option>
           <option className='options' name="discipline" value="Naval Architect">Naval Architect</option>
           <option className='options' name="discipline" value="Other">Other</option>
         </select>
 
-        {/* seniority */}
+        {/* Seniority */}
         <label className="labels">Seniority:</label>
         <input required="yes" type="text" className="inputs" name='seniority' value={values.seniority} onChange={handleChange}/>
 
@@ -95,9 +95,9 @@ function UserDetailsForm() {
         {/* push notification */}
         <label className="PNFLabels">Push notification frequency:</label>
         <select className="selects" required="yes" value={values.pushFrequency} name="pushFrequency" onChange={handleChange}>
-          <option value="" disabled="yes" >None selected</option>
+          <option  selected="selected" value="" disabled="yes" >None selected</option>
           <option  className='options' name="pushFrequency" value="Fortnightly (every 2 weeks)">Fortnightly (every 2 weeks)</option>
-          <option  className='options'  name="pushFrequency" value="Monthly">Monthly</option>
+          <option  className='options' name="pushFrequency" value="Monthly">Monthly</option>
           <option  className='options' name="pushFrequency" value="Quartly (every 3 months)">Quaterly (every 3 months)</option>
           <option  className='options' name="pushFrequency" value="Semi-annual (every 6 months)">Semi-annual (every 6 months)</option>
         </select>
@@ -106,6 +106,7 @@ function UserDetailsForm() {
         <button className="submitButton" type='submit'>
           submit
         </button>
+
       </form>
 
     </div>
