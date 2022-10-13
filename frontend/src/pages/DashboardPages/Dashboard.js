@@ -15,7 +15,7 @@ const Dashboard = () => {
 
     useEffect(() => {
       const fetchCPDEvents = async () => {
-        const response = await fetch("/api/cpdEvents", {
+        const response = await fetch("/api/bookedCPD", {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },

@@ -13,12 +13,11 @@ const CpdEventDetails = ({ cpdEvent }) => {
         if(!user){
             return
         }
-        const response = await fetch('/api/cpdEvents/' + cpdEvent._id, {
-            method: 'DELETE',
+        const response = await fetch('/api/bookedCPD/' + cpdEvent._id, {
+            method: 'PATCH',
             headers: {'Authorization': `Bearer ${user.token}`}
         })
         const json = await response.json()
-        
         if(response.ok){
             console.log('Delete response ok')
             dispatch({type: 'DELETE_CPDEVENT', payload: json})

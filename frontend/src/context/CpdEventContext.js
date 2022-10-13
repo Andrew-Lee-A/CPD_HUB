@@ -13,8 +13,9 @@ export const cpdEventsReducer = (state, action) => {
                 cpdEvents: [action.payload, ...state.cpdEvents]
             }
         case 'DELETE_CPDEVENT':
+            console.log('DELETE!')
             return {
-                cpdEvents: state.cpdEvents.filter(w => w._id !== action.payload._id)
+                cpdEvents: state.cpdEvents.filter(w => w._id !== action.payload._id),
             }
         default:
             return state
