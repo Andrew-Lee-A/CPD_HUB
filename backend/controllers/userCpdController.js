@@ -39,13 +39,15 @@ const deleteBookedCpdEvent = async (req, res) => {
             $pull: { cpdBooked: {_id: id} }
         
     })
-    console.log("Did it delete?: " + user)
+    
 
     if (!user){
         return res.status(404).json({error: 'No such workout'})
+    }else{
+        cpdEvent = await CpdEvent.findOne({_id: id})
+        res.status(200).json(cpdEvent)
     }
 
-    res.status(200).json(id)
 }
 
 
