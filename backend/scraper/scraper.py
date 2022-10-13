@@ -4,7 +4,6 @@ from numpy import dtype
 import requests
 import pandas as pd
 from pandas import DataFrame
-import pymongo_connect
 
 # created funtion that convert a list into string that is sperated by a comma 
 def CPD_Convert(str):
@@ -30,8 +29,8 @@ reg=[]
 
 ## provides the domain for the scraper to scrape in order to retrive it's content which is done using the BeautifulSoup's text-based html parser
 n_page = 17
-url_reg = "https://www.engineeringnz.org/courses-events/"
-base_link = "https://www.engineeringnz.org/courses-events/?p="
+url_reg = "https://www.engineersaustralia.org.au/learning-and-events/events-webinars-and-courses"
+base_link = "https://www.engineersaustralia.org.au/learning-and-events/events-webinars-and-courses"
 for i in range (1, n_page+1):
     url = base_link+str(i)
     #print(url)
