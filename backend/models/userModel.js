@@ -70,6 +70,10 @@ const userSchema = new Schema({
         type: Array,
         default: [],
     },
+    keywords:{
+        type: Array,
+        default: []
+    }
 })
 
 // static signup method

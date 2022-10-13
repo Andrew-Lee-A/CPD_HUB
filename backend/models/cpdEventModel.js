@@ -26,6 +26,10 @@ const cpdEventSchema = new Schema({
   user_id: {
     type: String,
     required: true
+  },
+  booking_Url:{
+    type: String,
+    default: ""
   }
 }, { timestamps: true })
 
