@@ -7,6 +7,7 @@ import requests
 import pymongo
 from pymongo import MongoClient
 import re
+from datetime import datetime
 
 #set variable to track page number
 page = 0
@@ -48,6 +49,7 @@ while page != 18:
         stepDate = stepSoup.find('div', class_='event__datetime')
         try:
             realStepDate = stepDate.text.strip()
+           
         except: 
             realStepDate = "TBC"
         #retirives the CPD points ensuring anything without CPD points is set at 0
