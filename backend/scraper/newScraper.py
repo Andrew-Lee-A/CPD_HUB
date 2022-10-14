@@ -8,16 +8,18 @@ import pymongo
 from pymongo import MongoClient
 import re
 from datetime import datetime
+import certifi
+ca = certifi.where()
 
 #set variable to track page number
 page = 0
 
 #connect to Mongo
-client = MongoClient('mongodb+srv://User:Password@cluster0.a9jy9oq.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('mongodb+srv://gjs5758:guardianangel1@cluster0.p2ion.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
 #Connect to DB in Mongo
-db = client["test"]
+db = client["CPD"]
 #connect to collection in DB
-collection = db["test"]
+collection = db["cpdevents"]
 
 
 
@@ -36,6 +38,7 @@ while page != 18:
         #retrieves the link for the CPD event page off the tile
         step = links.a['href']
         linkStep = "https://www.engineersaustralia.org.au/" + step
+        print(linkStep)
         #sets a new scrape for the CPD event page using link
         newR = requests.get(linkStep)
         stepSoup = BeautifulSoup(newR.content, 'html5lib')
@@ -71,10 +74,12 @@ while page != 18:
             break;
         else:
             #posts all scraped elements into the DB
-            post = {"Title": realStepTitle, "CPD_Points": realStepPoints, "Date": realStepDate, "Price": memberPrice[0], "Book_URL": linkStep }
+            post = {"title": realStepTitle, "cpd_points": realStepPoints, "date": realStepDate, "price": memberPrice[0], "booking_Url": linkStep }
             collection.insert_one(post)
     #increaing page number to scrape the next page
     page = page + 1
 
+    
+    print(page)
 
 
