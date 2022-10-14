@@ -11,15 +11,11 @@ const cpdEventSchema = new Schema({
     type: Number,
     required: true
   },
-  field: {
-    type: String,
-    required: true
-  },
   date:{
     type: Date,
     required: false
   },
-  location:{
+  price:{
     type: String,
     required: false
   },
