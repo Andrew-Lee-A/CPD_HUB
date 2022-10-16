@@ -33,6 +33,7 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: #f1f1f1;
 }
 
 header a {
@@ -153,6 +154,7 @@ nav a {
 .icon{
   color: var(--primary);
 }
+
 nav button {
   background: #fff;
   color: var(--primary);

@@ -11,3 +11,6 @@ const CPD_typePage = () => {
 }
 
 export default CPD_typePage
+
+
+/* this si the legendary thing that ever happen to me */

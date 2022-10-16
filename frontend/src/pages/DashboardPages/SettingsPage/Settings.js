@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState, createContext } from 'react'
 import './settings.scss'
 
 export default function Settings() {
   return (
     <>
       <div className="settingsContainer">
-          <div>Settings</div>
+        Settings
       </div>
     </>
   )

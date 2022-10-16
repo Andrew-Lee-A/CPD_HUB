@@ -7,6 +7,7 @@
     width: 100vw;
     height: 100vh;
     background-color: #80808030;
+    // background-color: #0b1e47;
 
     .navbarContainer {
         display: flex;
@@ -24,17 +25,17 @@
             position: relative;
             margin-top: 1.4rem;
             
-            width: 90vw;
-            height: 10vh;
+            width: 90%;
+            height: auto;
 
-            // background-color: #000000d3;
             background-color: #0b1e47;
+            // background-color: #1aac83;
             
             border-radius: 50px;
             border: 1px solid #808080ad;
     
             display: flex;
-            float: right;
+            // float: right;
     
             .babcockContainer {
     
@@ -70,9 +71,9 @@
             }
     
             .loginAndSignUpButtonsContainer {
-                margin-left: 35vw;
-                // width: 40vw;
-                float: right;
+                width: 62%;
+                height: auto;
+
                 font-size: 20px;
                 font-weight: 700;
                 
@@ -82,7 +83,8 @@
                 
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: right;
+
 
                 .login {
                     border: 1px solid #0b1e47;
@@ -129,7 +131,8 @@
         gap: 50px;
 
         h1 {
-            font-size: 50px;
+            font-size: 60px;
+            color: #0b1e47;
         }
 
         h3 {

@@ -73,7 +73,13 @@ function UserDetailsForm() {
 
         {/* Line of Business */}
         <label className="labels">Line of Business:</label>
-        <input required="yes" type="text" className="inputs" name='lineOfBusiness' value={values.lineOfBusiness} onChange={handleChange}/>
+        {/* <input required="yes" type="text" className="inputs" name='lineOfBusiness' value={values.lineOfBusiness} onChange={handleChange}/> */}
+        <select className="selects" required="yes" value={values.lineOfBusiness} name="lineOfBusiness" onChange={handleChange}>
+          <option selected="selected" value="" disabled="yes">None selected</option>
+          <option className='options' name="discipline" value="Marketing">Marketing</option>
+          <option className='options' name="discipline" value=""></option>
+          <option className='options' name="discipline" value=""></option>
+        </select>
 
         {/* Discipline */}
         <label className="disciplineLabel">Discipline type:</label>
@@ -81,13 +87,16 @@ function UserDetailsForm() {
           <option selected="selected" value="" disabled="yes">None selected</option>
           <option className='options' name="discipline" value="Mechnical Engineer">Mechanical Engineer</option>
           <option className='options' name="discipline" value="Naval Architect">Naval Architect</option>
-          <option className='options' name="discipline" value="Other">Other</option>
         </select>
 
         {/* Seniority */}
         <label className="labels">Seniority:</label>
-        <input required="yes" type="text" className="inputs" name='seniority' value={values.seniority} onChange={handleChange}/>
-
+        <select className="selects" required="yes" value={values.seniority} name="seniority" onChange={handleChange}>
+          <option selected="selected" value="" disabled="yes">None selected</option>
+          <option className='options' name="discipline" value="Junior">Junior</option>
+          <option className='options' name="discipline" value="Senior">Senior</option>
+        </select>
+        
         {/* CPD start date */}
         <label className="labels">CPD submit date:</label>
         <input required="yes" type="date" className="inputs" name='cycleStartDate' value={values.cycleStartDate} onChange={handleChange} />

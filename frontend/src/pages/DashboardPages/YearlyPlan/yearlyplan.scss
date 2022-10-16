@@ -23,6 +23,7 @@
             margin-bottom: 5px;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             font-weight: bold;
+            word-spacing: 2px;
         }
 
         span {
@@ -30,10 +31,12 @@
             margin-bottom: 20px;
         }
 
+
         select {
             min-width: 290px;
             max-width: 300px;
             height: 5vh;
+
             
             option {
                 display: flex;
@@ -49,5 +52,26 @@
             text-transform: uppercase;
             margin-top: 20px;
         }
+    }
+
+    .yearlyplanview {
+        min-width: 290px;
+        max-width: 300px;
+        min-height: 353px;
+
+        border-radius: 4px;
+        // border: 1px solid #0b1e47;
+
+        .downArrow {
+            font-size: 35px;
+            width: 22px;
+            height: 3vh;
+
+            margin-top: 1vh;
+            margin-left: 8.5vw;
+
+            cursor: pointer;
+        }
+
     }
 }

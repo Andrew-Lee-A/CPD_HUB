@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './yearlyplan.scss'
+import { FcExpand } from "react-icons/fc";
 
 export default function Yearlyplan() {
 
@@ -29,26 +30,34 @@ export default function Yearlyplan() {
               <h1>Yearly Plan Form</h1>
               <span>Kindly choose the position and field you'd be interested in below: </span>
             
+              {/* Desired position */}
               <label className='YPLabels'>Desired Position:</label>
-              <select value={values.options} onChange={handleChange}>
+              <select className='selects' name="position" value={values.position} onChange={handleChange}>
                 <option selected="selected" disabled="yes" >None selected:</option>
-                <option class="options" value="Manager" >Manager</option>
-                <option class="options" value="Project Manager" >Project Manager</option>
-                <option class="options" value="Naval Architect" >Naval Architect</option>
-                <option class="options" value="Mechanical Engineer" >Mechanical Engineer</option>
-                <option class="options" value="Software Engineer" >Software Engineer</option>
+                <option name="position" value="Manager" >Manager</option>
+                <option name="position" value="Architect" >Architect</option>
+                <option name="position" value="Engineer" >Engineer</option>
               </select>
               
+              {/* Desired field */}
               <label className='YPLabels'>Desired Field:</label>
-              <select value={values.options} onChange={handleChange}>
+              <select className='selects' name="field" value={values.field} onChange={handleChange}>
                 <option selected="selected" disabled="yes">None selected:</option>
-                <option class="options" value="" >option 1</option>
-                <option class="options" value="" >option 2</option>
-                <option class="options" value="" >option 3</option>
+                <option name="field"value="Naval" >Naval</option>
+                <option name="field"value="Mechanical" >Mechanical</option>
+                <option name="field"value="Software" >Software</option>
+                <option name="field"value="Marketing" >Marketing</option>
+                <option name="field"value="Construction">Construction</option>
               </select>
 
               <button className='submitButton'>submit</button>
           </form>
+
+          <div className="yearlyplanview">
+            <div className="downArrow">
+              <FcExpand/>
+            </div>
+          </div>
         </div>
     </>
   )
