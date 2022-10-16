@@ -8,6 +8,7 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from "react-router-dom";
+
 // import { DarkModeContext } from "../../context/darkModeContext";
 // import { useContext } from "react";
 import { BiNews } from 'react-icons/bi';
@@ -19,11 +20,14 @@ import { BiCog } from 'react-icons/bi';
 import { BiFile } from 'react-icons/bi';
 import { BiLinkAlt } from 'react-icons/bi';
 import { FaBars } from 'react-icons/fa';
+import {HiOutlineUserGroup} from 'react-icons/hi'
 
 
 import { useLogout } from "../../hooks/useLogout";
+import { useAuthContext } from '../../hooks/useAuthContext'
 
 const Sidebar = () => {
+  const {user} = useAuthContext() 
   //   const { dispatch } = useContext(DarkModeContext);
 
   const { logout } = useLogout();
@@ -101,7 +105,18 @@ const Sidebar = () => {
               <span>Recording Guide</span>
             </li>
           </Link>
-          
+
+          { user.permission === 'admin' && (
+            <>
+              <p className="title">MANAGE TEAM</p>
+              <Link to="CPDTypePage" style={{ textDecoration: "none" }}>
+                <li>
+                  <HiOutlineUserGroup className="icon" />
+                  <span>Team Overview</span>
+                </li>
+              </Link>
+            </>
+          )}  
         </ul>
         <div className="bottom">
           <ul>
