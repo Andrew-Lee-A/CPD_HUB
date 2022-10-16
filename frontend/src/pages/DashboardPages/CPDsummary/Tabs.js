@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./tabs.scss";
-import { AiFillCaretDown } from "react-icons/ai";
 
 function Tabs() {
   const [toggleState, setToggleState] = useState(1);
@@ -31,7 +30,6 @@ function Tabs() {
           <button className={toggleState === 3 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(3)}> 
             3rd Year  
           </button>
-
         </div>
 
         {/* CONTENTS */}

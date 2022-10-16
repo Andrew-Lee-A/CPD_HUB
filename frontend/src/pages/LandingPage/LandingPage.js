@@ -11,17 +11,19 @@ export default function LandingPage() {
         {/* Navigation bar component */}
         <div className="navbarContainer">
           <div className="navbar">
-            <div className="babcockContainer">
-              CPD Hub
-            </div>
-
-            <div className="navbarOptionsContainer">
-              <div className="About">
-                About
+            <div className="leftContainer">
+              <div className="babcockContainer">
+                CPD Hub
               </div>
 
-              <div className="contactUs">
-                Contact us
+              <div className="navbarOptionsContainer">
+                <div className="About">
+                  About
+                </div>
+
+                <div className="contactUs">
+                  Contact us
+                </div>
               </div>
             </div>
 

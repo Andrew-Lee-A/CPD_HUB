@@ -46,8 +46,9 @@ const Profile = () => {
 
   return (
     <div className="pages">
-        <div className="u   serDetails">
-        {isLoaded ? ( 
+        <div className="userDetails">
+            {isLoaded ? ( 
+
             <div className="userDetailsCard">
                 <form className="create" onSubmit={handleSubmit}>
                 <h3>General Details</h3>
@@ -98,15 +99,17 @@ const Profile = () => {
                 </form>
             </div>
             
-        ):(
-            <div> Loading </div>
-        )}
+            ):(
+                <div> Loading </div>
+            )}
         </div>
-      <div className="pictureCard">
-        <div className="picture">
-            <InsertEmoticonIcon/>
+
+        <div className="pictureCard">
+            <div className="picture">
+                <InsertEmoticonIcon/>
+            </div>
         </div>
-      </div>
+
     </div>
   );
 };

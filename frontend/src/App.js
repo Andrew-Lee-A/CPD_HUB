@@ -20,6 +20,7 @@ import Settings from './pages/DashboardPages/SettingsPage/Settings'
 
 function App() {
   const {user} = useAuthContext()
+  
   return (
     <div className="App">
       <BrowserRouter>

@@ -41,12 +41,18 @@ header a {
   text-decoration: none;
 }
 
+h3 {
+  /* border: 1px solid red; */
+}
+
 .pages{
   flex: 6;
   padding: 10px 20px;
   display: grid;
   grid-template-columns: 3fr 1.25fr;
   gap: 50px;
+
+  margin-left: 25%;
 }
 
 /* homepage */

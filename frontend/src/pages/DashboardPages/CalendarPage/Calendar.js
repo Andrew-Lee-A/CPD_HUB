@@ -41,7 +41,6 @@ function calculateEndDate(date, points){
 }
 
 function CalendarApp() {
-
     const [allEvents, setAllEvents] = useState(events);
     const {cpdEvents} = useCpdEventsContext();
 
@@ -75,7 +74,6 @@ function CalendarApp() {
                 style={{
                     height: '80vh',
                     width: '65vw',
-                    margin: '50px'
                 }}
             />
         </div>

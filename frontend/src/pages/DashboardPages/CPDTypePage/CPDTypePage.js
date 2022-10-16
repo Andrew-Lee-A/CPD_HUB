@@ -6,7 +6,9 @@ var template = { __html: __html };
 
 const CPD_typePage = () => {
   return (
-    <div className='cpdType'><span className="cpdTypeSpan" dangerouslySetInnerHTML={template}></span></div>
+    <div className='cpdType'>
+      <span className="cpdTypeSpan" dangerouslySetInnerHTML={template}></span>
+    </div>
   )
 }
 
