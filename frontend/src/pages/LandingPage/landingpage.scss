@@ -80,7 +80,7 @@
             .loginAndSignUpButtonsContainer {
                 width: 62%;
                 height: 7vh;
-                // border: 1px solid red;
+                border: 1px solid red;
                 margin-right: 5%;
 
                 font-size: 20px;
@@ -111,7 +111,6 @@
                     align-items: center;
                     justify-content: center;
                     
-                    
                     width: 120%;
                     height: 5vh;
                     background-color: #143d8f;
@@ -122,7 +121,6 @@
                     &:hover {
                         cursor: pointer;
                         color: #FFF;
-    
                     }
                 }
             }

@@ -1,19 +1,38 @@
 .settingsContainer {
     width: 100%;
-    height: 90%;
-
+    height: 91.1%;
+    
     display: flex;
-    align-items: center;
-    justify-content: center;
 
-    
-    
-    #light {
-        background-color: #f3ebf6;
+    :root {
+        --background:#f1f1f1;
+        --primary: #000;
     }
 
-    #dark {
-        background-color: #46045e;
+    background: var(--greycolour);
+    
+    [data-theme='dark'] {
+        --background:#000;
+        --darkbackbground: #f1f1f1;
+        --whitefonts: #fff;
+    }
+    
+    h3 {
+        text-transform: uppercase;
     }
 
+    
+    .theme-toggle {
+        width: 10%;
+        height: 9vh;
+        
+        padding: 20px;
+        margin-left: 20%;
+
+        i {
+            cursor: pointer;
+            font-size: 2.2rem;
+        }
+
+    }
 }

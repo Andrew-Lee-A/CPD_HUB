@@ -10,19 +10,24 @@
   --fourth: #F1FAEE;
   --fifth: #E63946;
   --sixth: #457B9D;
+  --seventh: #f1f1f1;
+  --eight: #000000;
 }
 
 body {
-  background: #f1f1f1;
+  background: var(--seventh);
+  /* background: red; */
   margin: 0;
   padding: 0;
   font-family: "Poppins";
 }
 
 header {
-  background: #fff;
-  height: 70px;
-  border-bottom: 0.5px solid rgb(231,228,228);
+  /* background: #fff; */
+  /* background: #f1f1f1; */
+  background: var(--seventh);
+  height: 63px;
+  /* border-bottom: 0.5px solid rgb(231,228,228); */
 }
 
 header .container {
@@ -33,7 +38,8 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #f1f1f1;
+  /* background: #f1f1f1; */
+  /* background: red; */
 }
 
 header a {
@@ -41,9 +47,6 @@ header a {
   text-decoration: none;
 }
 
-h3 {
-  /* border: 1px solid red; */
-}
 
 .pages{
   flex: 6;
@@ -69,7 +72,7 @@ h3 {
 }
 
 .workout-details {
-  background: #fff;
+  background: var(--seventh);
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
@@ -87,6 +90,7 @@ h3 {
   margin: 0;
   font-size: 0.9em;
   color: #555;
+  /* color: red; */
 }
 
 .workout-details span {
