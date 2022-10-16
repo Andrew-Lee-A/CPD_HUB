@@ -18,10 +18,11 @@ const loginUser = async (req, res) => {
         // GET the user details completetion status
         const {detailsCompletedStatus, userDetails} = await User.findById({_id}, {"detailsCompletedStatus": 1, "_id": 0, "userDetails": 1 })
         const {prefferedName} = userDetails
+        const {permission} = user
         
         //create a token
         const token = createToken(user._id)
-        res.status(200).json({email, token, detailsCompletedStatus, prefferedName})
+        res.status(200).json({email, token, detailsCompletedStatus, prefferedName, permission})
     }catch(error){
         res.status(400).json({error: error.message})
     }

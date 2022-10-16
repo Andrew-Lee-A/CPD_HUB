@@ -73,7 +73,12 @@ const userSchema = new Schema({
     keywords:{
         type: Array,
         default: []
-    }
+    },
+    permission: {
+        type: String,
+        enum : ['user','admin'],
+        default: 'user'
+    },
 })
 
 // static signup method
