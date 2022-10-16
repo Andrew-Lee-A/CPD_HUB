@@ -14,6 +14,9 @@ ca = certifi.where()
 #set variable to track page number
 page = 0
 
+keywords = []
+
+
 #connect to Mongo
 client = MongoClient('mongodb+srv://gjs5758:guardianangel1@cluster0.p2ion.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
 #Connect to DB in Mongo
@@ -44,17 +47,42 @@ while page != 18:
         stepSoup = BeautifulSoup(newR.content, 'html5lib')
         #retrieves the title
         stepTitle = stepSoup.find('h2')
-        realStepTitle = stepTitle.text.strip()
+        try:
+            realStepTitle = stepTitle.text.strip()
+        except:
+            break
         #retrieves the price
         stepPrice = stepSoup.find_all(text=re.compile('Member'))
         memberPrice = [stepPrice.split()[-1] for stepPrice in stepPrice]
-        #retrieves the date
+        #retrieves the date, strip the text, split it into time and date, split start and end times, combine start time and date to make start date and end time with date to make end date
         stepDate = stepSoup.find('div', class_='event__datetime')
         try:
             realStepDate = stepDate.text.strip()
-           
         except: 
-            realStepDate = "TBC"
+            startDate = "TBC"
+            endDate = "TBC"
+
+        dateSplit = realStepDate.split(",")
+        try:
+            multiDate = dateSplit[1].split('—')
+            newDate = multiDate[1]
+        except:
+            newDate = dateSplit[1]
+
+        time = dateSplit[0]
+        newTime = time.split('—')
+        startTime = newTime[0].strip(" ")
+
+        
+        endTime = newTime[1].strip(" ")
+        endTime = endTime.split(" ", 1)[0]
+        startDate = newDate + startTime
+        endDate = newDate + endTime
+        startDate = datetime.strptime(startDate, ' %d %B %Y%I.%M%p')
+        endDate = datetime.strptime(endDate, ' %d %B %Y%I.%M%p')
+        print(startDate)
+        print(endDate)
+
         #retirives the CPD points ensuring anything without CPD points is set at 0
         stepPoints = stepSoup.find(text=re.compile('Maximum CPD Hours'))
         try:
@@ -67,14 +95,14 @@ while page != 18:
         #print(stepLocation)
 
         #checking if the title is already in the DB
-        x = collection.find_one({"Title": realStepTitle})
-        
+        x = collection.find_one({"title": realStepTitle})
+        print(x)
         #if title already exists in DB skip to next event else post it in the DB
-        if x == "":
-            break;
+        if x != None:
+            continue;
         else:
             #posts all scraped elements into the DB
-            post = {"title": realStepTitle, "cpd_points": realStepPoints, "date": realStepDate, "price": memberPrice[0], "booking_Url": linkStep }
+            post = {"title": realStepTitle, "cpd_points": realStepPoints, "start_date": startDate, "end_date": endDate, "price": memberPrice[0], "booking_Url": linkStep }
             collection.insert_one(post)
     #increaing page number to scrape the next page
     page = page + 1
