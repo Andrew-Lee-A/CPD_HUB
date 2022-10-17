@@ -109,7 +109,7 @@ const Sidebar = () => {
           { user.permission === 'admin' && (
             <>
               <p className="title">MANAGE TEAM</p>
-              <Link to="CPDTypePage" style={{ textDecoration: "none" }}>
+              <Link to="Employees" style={{ textDecoration: "none" }}>
                 <li>
                   <HiOutlineUserGroup className="icon" />
                   <span>Team Overview</span>
