@@ -40,7 +40,7 @@ function Tabs() {
             <h2>CPD event 1</h2>
             <hr />
             <p>
-              Welcome Sam, Andrew and Tom
+              Hello World!
             </p>
           </div>
 

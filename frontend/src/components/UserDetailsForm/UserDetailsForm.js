@@ -77,8 +77,8 @@ function UserDetailsForm() {
         <select className="selects" required="yes" value={values.lineOfBusiness} name="lineOfBusiness" onChange={handleChange}>
           <option selected="selected" value="" disabled="yes">None selected</option>
           <option className='options' name="discipline" value="Marketing">Marketing</option>
-          <option className='options' name="discipline" value=""></option>
-          <option className='options' name="discipline" value=""></option>
+          {/* <option className='options' name="discipline" value=""></option>
+          <option className='options' name="discipline" value=""></option> */}
         </select>
 
         {/* Discipline */}

@@ -33,7 +33,7 @@ export default function Yearlyplan() {
               {/* Desired position */}
               <label className='YPLabels'>Desired Position:</label>
               <select className='selects' name="position" value={values.position} onChange={handleChange}>
-                <option selected="selected" disabled="yes" >None selected:</option>
+                <option selected="selected" value="" disabled="yes" >None selected:</option>
                 <option name="position" value="Manager" >Manager</option>
                 <option name="position" value="Architect" >Architect</option>
                 <option name="position" value="Engineer" >Engineer</option>
@@ -42,7 +42,7 @@ export default function Yearlyplan() {
               {/* Desired field */}
               <label className='YPLabels'>Desired Field:</label>
               <select className='selects' name="field" value={values.field} onChange={handleChange}>
-                <option selected="selected" disabled="yes">None selected:</option>
+                <option selected="selected" value="" disabled="yes">None selected:</option>
                 <option name="field"value="Naval" >Naval</option>
                 <option name="field"value="Mechanical" >Mechanical</option>
                 <option name="field"value="Software" >Software</option>
@@ -55,7 +55,7 @@ export default function Yearlyplan() {
 
           <div className="yearlyplanview">
             <div className="downArrow">
-              <FcExpand/>
+              {/* <FcExpand/> */}
             </div>
           </div>
         </div>

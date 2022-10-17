@@ -47,6 +47,15 @@ header a {
   text-decoration: none;
 }
 
+/* .dark-mode {
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.light-mode{
+
+} */
 
 .pages{
   flex: 6;
