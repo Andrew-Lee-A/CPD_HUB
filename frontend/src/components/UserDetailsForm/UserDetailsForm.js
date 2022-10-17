@@ -73,21 +73,30 @@ function UserDetailsForm() {
 
         {/* Line of Business */}
         <label className="labels">Line of Business:</label>
-        <input required="yes" type="text" className="inputs" name='lineOfBusiness' value={values.lineOfBusiness} onChange={handleChange}/>
+        {/* <input required="yes" type="text" className="inputs" name='lineOfBusiness' value={values.lineOfBusiness} onChange={handleChange}/> */}
+        <select className="selects" required="yes" value={values.lineOfBusiness} name="lineOfBusiness" onChange={handleChange}>
+          <option selected="selected" value="" disabled="yes">None selected</option>
+          <option className='options' name="discipline" value="Marketing">Marketing</option>
+          {/* <option className='options' name="discipline" value=""></option>
+          <option className='options' name="discipline" value=""></option> */}
+        </select>
 
         {/* Discipline */}
         <label className="disciplineLabel">Discipline type:</label>
         <select className="selects" required="yes" value={values.discipline} name="discipline" onChange={handleChange}>
-          <option value="" disabled="yes">None selected</option>
+          <option selected="selected" value="" disabled="yes">None selected</option>
           <option className='options' name="discipline" value="Mechnical Engineer">Mechanical Engineer</option>
           <option className='options' name="discipline" value="Naval Architect">Naval Architect</option>
-          <option className='options' name="discipline" value="Other">Other</option>
         </select>
 
-        {/* seniority */}
+        {/* Seniority */}
         <label className="labels">Seniority:</label>
-        <input required="yes" type="text" className="inputs" name='seniority' value={values.seniority} onChange={handleChange}/>
-
+        <select className="selects" required="yes" value={values.seniority} name="seniority" onChange={handleChange}>
+          <option selected="selected" value="" disabled="yes">None selected</option>
+          <option className='options' name="discipline" value="Junior">Junior</option>
+          <option className='options' name="discipline" value="Senior">Senior</option>
+        </select>
+        
         {/* CPD start date */}
         <label className="labels">CPD submit date:</label>
         <input required="yes" type="date" className="inputs" name='cycleStartDate' value={values.cycleStartDate} onChange={handleChange} />
@@ -95,9 +104,9 @@ function UserDetailsForm() {
         {/* push notification */}
         <label className="PNFLabels">Push notification frequency:</label>
         <select className="selects" required="yes" value={values.pushFrequency} name="pushFrequency" onChange={handleChange}>
-          <option value="" disabled="yes" >None selected</option>
+          <option  selected="selected" value="" disabled="yes" >None selected</option>
           <option  className='options' name="pushFrequency" value="Fortnightly (every 2 weeks)">Fortnightly (every 2 weeks)</option>
-          <option  className='options'  name="pushFrequency" value="Monthly">Monthly</option>
+          <option  className='options' name="pushFrequency" value="Monthly">Monthly</option>
           <option  className='options' name="pushFrequency" value="Quartly (every 3 months)">Quaterly (every 3 months)</option>
           <option  className='options' name="pushFrequency" value="Semi-annual (every 6 months)">Semi-annual (every 6 months)</option>
         </select>
@@ -106,6 +115,7 @@ function UserDetailsForm() {
         <button className="submitButton" type='submit'>
           submit
         </button>
+
       </form>
 
     </div>
