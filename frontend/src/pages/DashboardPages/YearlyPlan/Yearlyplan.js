@@ -54,7 +54,6 @@ export default function Yearlyplan() {
           </form>
 
           <div className="yearlyplanview">
-
               <h1>Yearly Plan Details</h1>
 
               <div className="outerContainer">
@@ -68,13 +67,7 @@ export default function Yearlyplan() {
                   <label className='chosenPositionandFieldLabels'>Chosen Field:</label>
                   <input readOnly ></input>
                 </div>
-
               </div>
-            <div className="downArrow">
-              
-              {/* <FcExpand/> */}
-
-            </div>
           </div>
         </div>
     </>
