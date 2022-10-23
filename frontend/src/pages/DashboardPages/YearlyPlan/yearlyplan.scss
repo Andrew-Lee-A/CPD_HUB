@@ -25,7 +25,8 @@
             margin-bottom: 5px;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             font-weight: bold;
-            word-spacing: 2px;
+            word-spacing: 1px;
+            letter-spacing: 0.3px;
         }
 
         span {
@@ -39,6 +40,7 @@
             max-width: 300px;
             height: 5vh;
 
+            letter-spacing: 0.3px;
             
             option {
                 display: flex;
@@ -57,14 +59,46 @@
     }
 
     .yearlyplanview {
-        min-width: 290px;
-        max-width: 300px;
+        min-width: 320px;
+        max-width: 330px;
         min-height: 353px;
 
         border-radius: 4px;
-        border: 1px solid #000000;
+        border: 1px solid #FFF;
+
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+
+        // row-gap: 20px;
+
+        .chosenPositionandFieldLabels {
+            margin-left: 5px;
+            margin-top: 25px;
+            // border: 1px solid blue;
+        }
+
+        .outerContainer {
+
+            margin-top: 12px;
+        }
+
+
+        h1 {
+            margin-left: 5px;
+            margin: 0;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        input {
+            margin-left: 5px;
+            width: 90%;
+        }
+       
 
         .downArrow {
+
             font-size: 35px;
             width: 22px;
             height: 3vh;
@@ -73,6 +107,10 @@
             margin-left: 8.5vw;
 
             cursor: pointer;
+
+            .chosenPositionandField {
+                display: flex;
+            }
         }
 
     }

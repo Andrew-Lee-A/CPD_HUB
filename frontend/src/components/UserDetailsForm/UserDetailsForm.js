@@ -68,15 +68,18 @@ function UserDetailsForm() {
         <h2 className='title'>user details form</h2 >
         
         {/* Preferred name */}
-        <label className="labels">Preferred Name:</label>
+        <label className="labels">Full Name:</label>
         <input required="yes" type="text" className="inputs" name='prefferedName' value={values.preferredName} onChange={handleChange} />
 
         {/* Line of Business */}
-        <label className="labels">Line of Business:</label>
+        <label className="lineOfBusinesslabels">Line of Business:</label>
         {/* <input required="yes" type="text" className="inputs" name='lineOfBusiness' value={values.lineOfBusiness} onChange={handleChange}/> */}
         <select className="selects" required="yes" value={values.lineOfBusiness} name="lineOfBusiness" onChange={handleChange}>
           <option selected="selected" value="" disabled="yes">None selected</option>
-          <option className='options' name="discipline" value="Marketing">Marketing</option>
+          <option className='options' name="discipline" value="Marketing">Marine</option>
+          <option className='options' name="discipline" value="Mission and Support Systems">Mission and Support Systems</option>
+          <option className='options' name="discipline" value="Aviation">Aviation</option>
+          <option className='options' name="discipline" value="Critical Services">Critical Services</option>
           {/* <option className='options' name="discipline" value=""></option>
           <option className='options' name="discipline" value=""></option> */}
         </select>
@@ -90,15 +93,42 @@ function UserDetailsForm() {
         </select>
 
         {/* Seniority */}
-        <label className="labels">Seniority:</label>
+        <label className="positionlabels">Positions:</label>
         <select className="selects" required="yes" value={values.seniority} name="seniority" onChange={handleChange}>
-          <option selected="selected" value="" disabled="yes">None selected</option>
-          <option className='options' name="discipline" value="Junior">Junior</option>
-          <option className='options' name="discipline" value="Senior">Senior</option>
+            <option selected="selected" value="" disabled="yes">None selected</option>
+            <optgroup label="Engineering Management">
+              <option value="Engineering Team Leader">Engineering Team Leader</option>
+              <option value="Engineering Manager">Engineering Manager (Program/Functional)</option>
+              <option value="Senior Engineering Manager">Senior Engineering Manager</option>
+              <option value="Head of Engineering">Head of Engineering (Domain/Functional)</option>
+            </optgroup>
+            <optgroup label="Engineering Assurance">
+              <option value="Senior Technical Authority">Senior Technical Authority</option>
+              <option value="Chief Engineer">Chief Engineer</option>
+              <option value="Senior Chief Engineer">Senior Chief Engineer</option>
+            </optgroup>
+            <optgroup label="Engineering Professional">
+              <option value="Graduate Engineer">Graduate (Discipline) Engineer</option>
+              <option value="Engineer">(Discipline) Engineer</option>
+              <option value="Senior Engineer">Senior (Discipline) Engineer</option>
+              <option value="Specialist Capability / Principle Engineer">Specialist (Capability) Engineer / Principle (Discipline) Engineer</option>
+              <option value="Engineering - Discipline Lead">(Capability) Engineering - Discipline Lead</option>
+            </optgroup>
+            <optgroup label="Technical Management">
+              <option value="Technical Team Leader">Technical Team Leader</option>
+              <option value="Manager">(Technical Discipline) Manager</option>
+              <option value="Senior Manager">Senior (Technical Discipline) Manager</option>
+            </optgroup>
+            <optgroup label="Technical Professional">
+              <option value="Specialist Officer / Principal Officer">Specialist (Technical Capability) Officer / Principal (Technical Discipline) Officer</option>
+              <option value="Senior Officer">Senior (Technical Discipline) Officer</option>
+              <option value="Senior Engineering Manager">Senior Engineering Manager</option>
+              <option value="Head of Engineering">Head of Engineering (Domain/Functional)</option>
+            </optgroup>
         </select>
         
         {/* CPD start date */}
-        <label className="labels">CPD submit date:</label>
+        <label className="labels">CPD cycle date:</label>
         <input required="yes" type="date" className="inputs" name='cycleStartDate' value={values.cycleStartDate} onChange={handleChange} />
 
         {/* push notification */}

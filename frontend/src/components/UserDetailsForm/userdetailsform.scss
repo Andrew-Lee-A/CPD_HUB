@@ -7,9 +7,9 @@
     justify-content: center;
 
     .userDetailsForm {
-
         width: 23vw;
-        padding: 20px;
+        padding: 25px;
+
         
         row-gap: 0.6rem;
     
@@ -25,36 +25,47 @@
         .labels {
             font-size: 15px;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+            letter-spacing: 0.3px;
+
         }
 
-        .disciplineLabel, .PNFLabels {
+        .disciplineLabel, .PNFLabels, .lineOfBusinesslabels, .positionlabels {
             font-size: 15px;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
             margin-bottom: 10px;
+            letter-spacing: 0.3px;
         }
     
         .inputs {
-            width: 22vw;
+            width: 22.9vw;
             height: 5vh;
 
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
     
         .selects {
-            width: 22.2vw;
-            height: 5.7vh;
+            width: 22.9vw;
+            height: 5vh;
             margin-bottom: 10px;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            letter-spacing: 0.3px;
+            
         }
     
         .submitButton {
-            width: 22.2vw;
-            height: 5.7vh;
+            width: 22.9vw;
+            height: 5vh;
     
             margin-top: 3vh;
     
             text-transform: uppercase;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
         }
 
         .options {
