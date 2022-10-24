@@ -18,7 +18,7 @@ const Signup = () => {
         <div>
         {/* <Navbar/> */}
         <form className="signup" onSubmit={handleSubmit}>
-            <h3>Sign up</h3>
+            <h2>Sign up</h2>
 
             <label>Email:</label>
             <input
@@ -26,6 +26,7 @@ const Signup = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 value = {email}
             />
+            
             <label>Password:</label>
             <input
                 type="password"

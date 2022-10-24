@@ -7,7 +7,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import CpdEventDetails from "../../components/CpdEventDetails";
 import CpdEventForm from "../../components/CpdEventForm";
 
-const Dashboard = () => {
+const AddCPD = () => {
 
     const { cpdEvents, dispatch } = useCpdEventsContext();
     const { user } = useAuthContext();
@@ -19,6 +19,7 @@ const Dashboard = () => {
             Authorization: `Bearer ${user.token}`,
           },
         });
+        
         const json = await response.json();
   
         if (response.ok) {
@@ -52,4 +53,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default AddCPD

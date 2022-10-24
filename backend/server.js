@@ -21,6 +21,13 @@ app.use('/api/cpdEvents', cpdRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/userDetails', userDetailsRoute)
 
+app.get('/', (req, res) => {
+  //health check route
+  res.status(200).send({ STATUS: 'OK'});
+});
+
+//server
+
 //connect to db
 mongoose.connect(process.env.MONGO_URI, { 
   useNewUrlParser: true, useUnifiedTopology: true 
@@ -30,8 +37,12 @@ mongoose.connect(process.env.MONGO_URI, {
         // listen for requests
         app.listen(process.env.PORT, () => {
           console.log('listening on port', process.env.PORT)
+          
         })
+        
     })
     .catch((error) => {
         console.log(error)
     })
+
+module.exports = app

@@ -1,0 +1,104 @@
+.outerContainerTabs {
+  margin-top: 4px;
+  background: #fff;
+
+  // position: relative;
+
+  // width: 100%;
+  // height: 90%;
+
+  ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .blocs-tabs {
+    // width: 100%;
+    // height: 90%;
+    margin-left: 17%;
+  }
+
+  .tabs {
+    padding: 15px;
+
+    text-align: center;
+    justify-content: center;
+
+    width: 33.33%;
+    background: rgba(128, 128, 128, 0.075);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+    position: relative;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .tabs:not(:last-child){
+    border-right: 1px solid rgba(18, 13, 13, 0.274);
+  }
+
+  .active-tabs  {
+    background: white;
+    border-bottom: 1px solid transparent;
+  }
+
+  .active-tabs::before {
+    width: calc(100% + 1px);
+
+    /* position of the top small bar */
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    height: 4px;
+    content: "";
+    display: block;
+    position: absolute;
+
+    background-color: #143d8f;
+  }
+
+  button {
+    border: none;
+    font-weight: bold;
+  }
+
+  .content-tabs {
+    flex-grow : 1;
+
+    width: 70%;
+    height: 80%;
+
+    margin-left: 17%;
+
+    background: #fff;
+
+  }
+
+  .content {
+    background: white;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+  .active-content {
+    display: block;
+  }
+
+  h2 {
+    padding: 0px 0 5px 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #143d8f;
+  }
+
+  hr {
+    width: 133px;
+    height: 2px;
+    color: #143d8f;
+    background-color: #143d8f;
+    margin-bottom: 5px;
+  }
+}
+

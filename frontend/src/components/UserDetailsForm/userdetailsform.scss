@@ -1,45 +1,77 @@
-.userDetailsForm {
+.App {
+    width: 100vw;
+    height: 100vh;
+
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
 
-    width: 22vw;
-    margin: 5px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 3vw;
-    padding-right: 3vw;
-    row-gap: 0.6rem;
+    .userDetailsForm {
+        width: 23vw;
+        padding: 25px;
 
-    /* border: 1px solid red; */
-    background-color: #F1F1F1;
-    border-radius: 7px;
+        
+        row-gap: 0.6rem;
+    
+        /* border: 1px solid red; */
+        background-color: #F1F1F1;
+        border-radius: 7px;
+    
+        .title {
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+    
+        .labels {
+            font-size: 15px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
-    .title {
-        text-transform: uppercase;
-    }
+            letter-spacing: 0.3px;
 
-    .labels {
-        font-style: oblique;
-    }
+        }
 
-    .inputs {
-        width: 22vw;
-        height: 5vh;
+        .disciplineLabel, .PNFLabels, .lineOfBusinesslabels, .positionlabels {
+            font-size: 15px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
-    }
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+        }
+    
+        .inputs {
+            width: 22.9vw;
+            height: 2.5rem;
 
-    .selects {
-        width: 22.2vw;
-        height: 5.7vh;
-    }
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    
+        .selects {
+            width: 22.9vw;
+            height: 2.5rem;
+            margin-bottom: 10px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            letter-spacing: 0.3px;
+            
+        }
+    
+        .submitButton {
+            width: 22.9vw;
+            height: 2.5rem;
+    
+            margin-top: 3vh;
+    
+            text-transform: uppercase;
 
-    .submitButton {
-        width: 22.2vw;
-        height: 5.7vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-        margin-top: 3vh;
+        }
 
-        text-transform: uppercase;
+        .options {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
     }
 }
+
+

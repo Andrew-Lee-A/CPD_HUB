@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose --runInBand --forceExit",
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
@@ -19,5 +19,9 @@
     "mongoose": "^6.5.0",
     "nodemon": "^2.0.19",
     "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "jest": "^29.1.2",
+    "supertest": "^6.3.0"
   }
 }

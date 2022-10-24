@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
         <header>
             <div className="container">
-                <Link to="/">
+                <Link to="">
                     <h1>CPD HUB</h1>
                 </Link>
                 <nav>

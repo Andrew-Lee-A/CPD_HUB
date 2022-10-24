@@ -1,0 +1,40 @@
+.calendarApp {
+    width: 95%;
+    height: 90%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .calendarview {
+        margin-left: 20%;
+    }
+}
+
+.addEventButton, .startDatePicker, .endtDatePicker {
+    width: 20vw;
+    height: 6vh;
+    
+    margin-left: 3vw;
+}
+
+.addEventButton {
+    text-transform: uppercase;
+    border-radius: 3px;
+
+    background-color: #0b1e47;
+    color: #FFF;
+}
+
+.addEventButton:hover {
+    cursor: pointer;
+    color: #1aac83;
+
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+/* .startDate, .endDate {
+    margin-left: 3.1vw; 
+    font-size: 10px;
+} */
