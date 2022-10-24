@@ -1,12 +1,14 @@
 .sidebar {
-  border-right: 0.5px solid rgb(230, 227, 227);
-  min-height: 100vh;
-  min-width: 250px;
+  // border-right: 0.5px solid rgb(230, 227, 227);
+  // min-height: 100vh;
+  // min-width: 250px;
+  width: 17%;
+  height: 100%;
   background-color: #0b1e47;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  // position: fixed;
+  position: fixed;
 
   .top {
     height: 70px;

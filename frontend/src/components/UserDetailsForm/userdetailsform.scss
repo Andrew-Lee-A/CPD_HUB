@@ -1,5 +1,4 @@
 .App {
-
     width: 100vw;
     height: 100vh;
 
@@ -7,12 +6,10 @@
     align-items: center;
     justify-content: center;
 
- 
-
     .userDetailsForm {
-
         width: 23vw;
-        padding: 20px;
+        padding: 25px;
+
         
         row-gap: 0.6rem;
     
@@ -28,36 +25,47 @@
         .labels {
             font-size: 15px;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+            letter-spacing: 0.3px;
+
         }
 
-        .disciplineLabel, .PNFLabels {
+        .disciplineLabel, .PNFLabels, .lineOfBusinesslabels, .positionlabels {
             font-size: 15px;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
             margin-bottom: 10px;
+            letter-spacing: 0.3px;
         }
     
         .inputs {
-            width: 22vw;
-            height: 5vh;
+            width: 22.9vw;
+            height: 2.5rem;
 
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
     
         .selects {
-            width: 22.2vw;
-            height: 5.7vh;
+            width: 22.9vw;
+            height: 2.5rem;
             margin-bottom: 10px;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            letter-spacing: 0.3px;
+            
         }
     
         .submitButton {
-            width: 22.2vw;
-            height: 5.7vh;
+            width: 22.9vw;
+            height: 2.5rem;
     
             margin-top: 3vh;
     
             text-transform: uppercase;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
         }
 
         .options {

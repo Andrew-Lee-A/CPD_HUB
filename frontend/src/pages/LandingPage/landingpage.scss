@@ -4,32 +4,48 @@
 }
 
 .homeContainer {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: #80808030;
+    // background-color: #0b1e47;
 
     .navbarContainer {
         display: flex;
         align-items: center;
         justify-content: center;
+
+        .babcockContainer, .navbarOptionsContainer, .contactUs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         
         .navbar {
-
+            position: relative;
             margin-top: 1.4rem;
             
-            width: 90vw;
-            height: 10vh;
-        
-            // background-color: #000000d3;
+            width: 90%;
+            height: auto;
+
             background-color: #0b1e47;
+            // background-color: #1aac83;
             
             border-radius: 50px;
             border: 1px solid #808080ad;
     
             display: flex;
+            // float: right;
+
+            .leftContainer {
+                width: 38%;
+                // border: 1px solid gold;
+
+                display: flex;;
+                align-items: center;
+                float: left;
+            }
     
             .babcockContainer {
-    
                 color: #FFF;
     
                 margin: 15px 27px /* TOP LEFT */;
@@ -42,7 +58,6 @@
             }
     
             .navbarOptionsContainer {
-    
                 display: flex;
     
                 margin: 24px 25px;
@@ -62,7 +77,11 @@
             }
     
             .loginAndSignUpButtonsContainer {
-                margin-left: 30em;
+                width: 62%;
+                height: auto;
+                // border: 1px solid red;
+                margin-right: 5%;
+
                 font-size: 20px;
                 font-weight: 700;
                 
@@ -72,8 +91,8 @@
                 
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                    
+                justify-content: right;
+
                 .login {
                     border: 1px solid #0b1e47;
                     padding: 4px;
@@ -91,9 +110,8 @@
                     align-items: center;
                     justify-content: center;
                     
-                    
-                    width: 12vw;
-                    height: 7vh;
+                    width: 120%;
+                    height: 5vh;
                     background-color: #143d8f;
                     // color: #ADD8E6;
                     color: #FFF;
@@ -102,7 +120,6 @@
                     &:hover {
                         cursor: pointer;
                         color: #FFF;
-    
                     }
                 }
             }
@@ -119,15 +136,13 @@
         gap: 50px;
 
         h1 {
-            font-size: 50px;
+            font-size: 60px;
+            color: #0b1e47;
         }
 
         h3 {
             margin-top: 10px;
         }
-
     }
-
-
 }
     

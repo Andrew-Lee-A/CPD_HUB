@@ -20,6 +20,7 @@ import MangageEmployees from './pages/DashboardPages/ManageEmployeesPage/Mangage
 
 function App() {
   const {user} = useAuthContext()
+  
   return (
     <div className="App">
       <BrowserRouter>

@@ -6,7 +6,9 @@ var template = { __html: __html };
 
 const CPD_Recording_Page = () => {
   return (
-    <div className='cpdRecordingUserGuide'><span className="cpdRecordingUserGuide-span" dangerouslySetInnerHTML={template}></span></div>
+    <div className='cpdRecordingUserGuide'>
+      <span className="cpdRecordingUserGuide-span" dangerouslySetInnerHTML={template}></span>
+    </div>
   )
 }
 
