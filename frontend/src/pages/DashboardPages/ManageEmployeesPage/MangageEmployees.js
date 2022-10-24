@@ -2,7 +2,7 @@ import React from 'react'
 import './manageemployees.scss'
 
 import EmployeeTable from '../../../components/EmployeeTable/EmployeeTable.js'
-import ProgressBar from '../../../components/ProgressBar'
+import ProgressWheel from '../../../components/ProgressWheel'
 
 const MangageEmployees = () => {
   return (
@@ -20,7 +20,7 @@ const MangageEmployees = () => {
             <div>
               <h3>Team CPD Overview</h3>
             </div>
-            <ProgressBar />
+            <ProgressWheel />
           </div>
         </div>
     </>

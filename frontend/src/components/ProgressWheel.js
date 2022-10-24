@@ -3,9 +3,9 @@ import ApexCharts from "apexcharts";
 
 import { useAuthContext } from "../hooks/useAuthContext";
 
-import "./progresbar.scss";
+import "./progresswheel.scss";
 
-const ProgressBar = () => {
+const ProgressWheel = () => {
   const [data, setData] = useState({
     areaOfPractice: "0",
     businessAndManagement: "0",
@@ -49,7 +49,7 @@ const ProgressBar = () => {
           value: careerInterests,
           barValue: Math.floor(careerInterests/75*100),
           divisor: 75,
-          name: "Career Interests"
+          name: "Position Related Activities"
         },
         riskManagement:{
           value: riskManagement,
@@ -150,7 +150,7 @@ const ProgressBar = () => {
 
 
     return (
-      <div className="progressBar">
+      <div className="progressWheel">
         {!isLoading ? (
           <div id="chart"></div>
         ) : (
@@ -162,4 +162,4 @@ const ProgressBar = () => {
 
 };
 
-export default ProgressBar;
+export default ProgressWheel;

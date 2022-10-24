@@ -49,8 +49,8 @@ function CalendarApp() {
 
       const cpdEventsArray = cpdEvents.map(item => ({
         title: item.title,
-        start: new Date(item.date),
-        end: calculateEndDate(item.date, item.cpd_points),
+        start: new Date(item.start_date),
+        end: new Date(item.end_date),
       }));
       setAllEvents(allEvents.concat(cpdEventsArray))
       }, []);

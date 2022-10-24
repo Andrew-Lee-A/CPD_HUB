@@ -14,6 +14,10 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    manager: {
+        type: String,
+        default: ""
+    },
     detailsCompletedStatus:{
         type: Boolean,
         default: false,
@@ -61,6 +65,13 @@ const userSchema = new Schema({
             type: String,
             default: "",
         },
+    },
+    keywords:{
+        type: [{type: String}],
+    },
+    cpdPushed: {
+        type: Array,
+        default: [],
     },
     cpdBooked:{
         type: Array,

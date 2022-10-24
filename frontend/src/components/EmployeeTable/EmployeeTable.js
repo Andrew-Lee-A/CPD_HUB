@@ -19,6 +19,7 @@ import {
 } from '@mui/material'
 import theme from './theme'
 import { Search } from '@mui/icons-material'
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const ROWS_PER_PAGE = 5
 
@@ -95,9 +96,20 @@ function Input(props) {
   )
 }
 
+const calculateCPDPoints = (cpdSummary) => {
+  console.log(cpdSummary)
+  const values = Object.values(cpdSummary);
+
+  const sum = values.reduce((accumulator, value) => {
+      return accumulator + value;
+  }, 0);
+
+  return sum
+}
 const EmployeeTable = () => {
+  const { user } = useAuthContext();
   const [currentPage, setCurrentPage] = useState(0)
-  const [articles, setArticles] = useState([])
+  const [employees, setEmployees] = useState([])
 
   //sorting const
   const [order, setOrder] = useState()
@@ -110,17 +122,28 @@ const EmployeeTable = () => {
     },
   })
 
-//   useEffect(() => {
-//     async function getArticles() {
-//       const { data } = await axios('/api/v1/article')
-//       setArticles(data)
-//     }
+  useEffect(() => {
+    async function getEmployees() {
+      const response = await fetch('/api/employees', {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      })
 
-//     getArticles()
-//   }, []) // on mount
+      const json = await response.json();
+
+      if (response.ok){
+        setEmployees(json)
+      }
+    }
+
+    
+    getEmployees()
+  }, []) // on mount
 
   //sort function
   function stableSort(array, comparator) {
+    console.log(array)
     const stabilizedThis = array.map((el, index) => [el, index])
     stabilizedThis.sort((a, b) => {
       const order = comparator(a[0], b[0])
@@ -200,120 +223,121 @@ const EmployeeTable = () => {
               <TableHead>
                 <TableRow>
                   <TableCellVariant
-                    id='title'
-                    sortDirection={orderBy === 'title' ? order : false}
+                    id='_id'
+                    sortDirection={orderBy === '_id' ? order : false}
                   >
                     <StyledLabel
-                      active={orderBy === 'title'}
-                      direction={orderBy === 'title' ? order : 'asc'}
+                      active={orderBy === '_id'}
+                      direction={orderBy === '_id' ? order : 'asc'}
                       onClick={() => {
-                        handleSortRequest('title')
+                        handleSortRequest('_id')
                       }}
                     >
                       Employee ID
                     </StyledLabel>
                   </TableCellVariant>
                   <TableCellVariant
-                    id='authors'
-                    sortDirection={orderBy === 'authors' ? order : false}
+                    id='prefferedName'
+                    sortDirection={orderBy === 'prefferedName' ? order : false}
                   >
                     <StyledLabel
-                      active={orderBy === 'authors'}
-                      direction={orderBy === 'authors' ? order : 'asc'}
+                      active={orderBy === 'prefferedName'}
+                      direction={orderBy === 'prefferedName' ? order : 'asc'}
                       onClick={() => {
-                        handleSortRequest('authors')
+                        handleSortRequest('prefferedName')
                       }}
                     >
-                      Name
+                      Full Name
                     </StyledLabel>
                   </TableCellVariant>
                   <TableCellVariant
-                    id='source'
-                    sortDirection={orderBy === 'source' ? order : false}
+                    id='lineOfBusiness'
+                    sortDirection={orderBy === 'lineOfBusiness' ? order : false}
                   >
                     <StyledLabel
-                      active={orderBy === 'source'}
-                      direction={orderBy === 'source' ? order : 'asc'}
+                      active={orderBy === 'lineOfBusiness'}
+                      direction={orderBy === 'lineOfBusiness' ? order : 'asc'}
                       onClick={() => {
-                        handleSortRequest('source')
+                        handleSortRequest('lineOfBusiness')
                       }}
                     >
                       Line of Business
                     </StyledLabel>
                   </TableCellVariant>
                   <TableCellVariant
-                    id='pubYear'
-                    sortDirection={orderBy === 'pubYear' ? order : false}
+                    id='discipline'
+                    sortDirection={orderBy === 'discipline' ? order : false}
                   >
                     <StyledLabel
-                      active={orderBy === 'pubYear'}
-                      direction={orderBy === 'pubYear' ? order : 'asc'}
+                      active={orderBy === 'discipline'}
+                      direction={orderBy === 'discipline' ? order : 'asc'}
                       onClick={() => {
-                        handleSortRequest('pubYear')
+                        handleSortRequest('discipline')
                       }}
                     >
                       Discipline
                     </StyledLabel>
                   </TableCellVariant>
                   <TableCellVariant
-                    id='doi'
-                    sortDirection={orderBy === 'doi' ? order : false}
+                    id='seniority'
+                    sortDirection={orderBy === 'seniority' ? order : false}
                   >
                     <StyledLabel
-                      active={orderBy === 'doi'}
-                      direction={orderBy === 'doi' ? order : 'asc'}
+                      active={orderBy === 'seniority'}
+                      direction={orderBy === 'seniority' ? order : 'asc'}
                       onClick={() => {
-                        handleSortRequest('doi')
+                        handleSortRequest('seniority')
                       }}
                     >
-                      Seniority
+                      Position
                     </StyledLabel>
                   </TableCellVariant>
                   <TableCellVariant
-                    id='claimedBenefit'
-                    sortDirection={orderBy === 'claimedBenefit' ? order : false}
+                    id='cycleStartDate'
+                    sortDirection={orderBy === 'cycleStartDate' ? order : false}
                   >
                     <StyledLabel
-                      active={orderBy === 'claimedBenefit'}
-                      direction={orderBy === 'claimedBenefit' ? order : 'asc'}
+                      active={orderBy === 'cycleStartDate'}
+                      direction={orderBy === 'cycleStartDate' ? order : 'asc'}
                       onClick={() => {
-                        handleSortRequest('claimedBenefit')
+                        handleSortRequest('cycleStartDate')
                       }}
                     >
-                      Cycle Date
+                      CPEng Chartered Date
                     </StyledLabel>
                   </TableCellVariant>
                   <TableCellVariant
-                    id='levelOfEvidence'
+                    id='pushFrequency'
                     sortDirection={
-                      orderBy === 'levelOfEvidence' ? order : false
+                      orderBy === 'pushFrequency' ? order : false
                     }
                   >
                     <StyledLabel
-                      active={orderBy === 'levelOfEvidence'}
-                      direction={orderBy === 'levelOfEvidence' ? order : 'asc'}
+                      active={orderBy === 'pushFrequency'}
+                      direction={orderBy === 'pushFrequency' ? order : 'asc'}
                       onClick={() => {
-                        handleSortRequest('levelOfEvidence')
+                        handleSortRequest('pushFrequency')
                       }}
                     >
-                      Push frequency
-                    </StyledLabel>
-                    <StyledLabel
-                      active={orderBy === 'levelOfEvidence'}
-                      direction={orderBy === 'levelOfEvidence' ? order : 'asc'}
-                      onClick={() => {
-                        handleSortRequest('levelOfEvidence')
-                      }}
-                    >
-                      Progress %
+                      CPD Points
                     </StyledLabel>
                   </TableCellVariant>
-                  <TableCellVariant></TableCellVariant>
+                  <TableCellVariant>
+                  <StyledLabel
+                      active={orderBy === 'levelOfEvidence'}
+                      direction={orderBy === 'levelOfEvidence' ? order : 'asc'}
+                      onClick={() => {
+                        handleSortRequest('levelOfEvidence')
+                      }}
+                    >
+                      Progress Tracking
+                    </StyledLabel>
+                  </TableCellVariant>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {stableSort(
-                  filterFn.fn(articles),
+                  filterFn.fn(employees),
                   getComparator(order, orderBy)
                 )
                   .slice(
@@ -322,17 +346,18 @@ const EmployeeTable = () => {
                   )
                   .map((item) => {
                     return (
-                      <TableRow key={item.doi} hover>
-                        <TableCellVariant>{item.title}</TableCellVariant>
-                        <TableCellVariant>{item.authors}</TableCellVariant>
-                        <TableCellVariant>{item.source}</TableCellVariant>
-                        <TableCellVariant>{item.pubYear}</TableCellVariant>
-                        <TableCellVariant>{item.doi}</TableCellVariant>
+                      <TableRow key={item._id} hover>
+                        <TableCellVariant>{item._id}</TableCellVariant>
+                        <TableCellVariant>{item.userDetails.prefferedName}</TableCellVariant>
+                        <TableCellVariant>{item.userDetails.lineOfBusiness}</TableCellVariant>
+                        <TableCellVariant>{item.userDetails.discipline}</TableCellVariant>
+                        <TableCellVariant>{item.userDetails.seniority}</TableCellVariant>
+                        <TableCellVariant>{new Date(item.userDetails.cycleStartDate.toString()).toLocaleString('en-NZ', {timezone: 'NZST'})}</TableCellVariant>
                         <TableCellVariant>
-                          {item.claimedBenefit}
+                          {calculateCPDPoints(item.cpdSummary)}
                         </TableCellVariant>
                         <TableCellVariant>
-                          {item.levelOfEvidence}
+                          On track
                         </TableCellVariant>
                       </TableRow>
                     )
@@ -347,7 +372,7 @@ const EmployeeTable = () => {
               page={currentPage}
               rowsPerPage={ROWS_PER_PAGE}
               onPageChange={handleNextPage}
-              count={articles.length}
+              count={employees.length}
               colSpan={8}
             />
           </TableContainer>

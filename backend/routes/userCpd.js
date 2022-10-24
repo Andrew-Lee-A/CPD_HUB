@@ -2,6 +2,7 @@ const express = require('express')
 const {
     getUserBookedCPD,
     getUserCompletedCPD,
+    getUserPushedCPD,
     addUserBookedCPD,
     addUserCompletedCPD,
     deleteBookedCpdEvent
@@ -18,6 +19,8 @@ router.get('/bookedCPD', getUserBookedCPD)
 router.patch('/bookedCPD', addUserBookedCPD)
 
 router.get('/completedCPD', getUserCompletedCPD)
+
+router.get('/pushedCPD', getUserPushedCPD)
 
 // router.patch('/bookedCPD', addUserBookedCPD)
 

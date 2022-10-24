@@ -11,7 +11,11 @@ const cpdEventSchema = new Schema({
     type: Number,
     required: true
   },
-  date:{
+  start_date:{
+    type: Date,
+    required: false
+  },
+  end_date:{
     type: Date,
     required: false
   },

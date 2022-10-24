@@ -64,9 +64,23 @@ const getUserCompletedCPD = async (req, res) => {
 
 //Delete completed CPD
 
+//Get pushed CPD
+const getUserPushedCPD = async (req, res) => {
+    const _id = req.user._id
+    const user = await User.findById({_id})
+    const pushedCPD_array = []
+    for (const id of user.cpdPushed){
+        const cpdEvent = await CpdEvent.findOne({_id: id})
+        pushedCPD_array.push(cpdEvent)
+    }
+    res.status(200).json(pushedCPD_array)
+}
+
 module.exports = {
     getUserBookedCPD,
     getUserCompletedCPD,
+    getUserPushedCPD,
     addUserBookedCPD,
     deleteBookedCpdEvent,
+    
 }

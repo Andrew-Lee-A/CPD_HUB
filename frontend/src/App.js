@@ -17,8 +17,6 @@ import CPDRecordingUserGuide from './pages/DashboardPages/CPDRecordingUserGuide/
 import YearlyPlan from './pages/DashboardPages/YearlyPlan/Yearlyplan'
 import Settings from './pages/DashboardPages/SettingsPage/Settings'
 import MangageEmployees from './pages/DashboardPages/ManageEmployeesPage/MangageEmployees'
-import { ManageAccountsTwoTone } from '@mui/icons-material'
-
 
 function App() {
   const {user} = useAuthContext()

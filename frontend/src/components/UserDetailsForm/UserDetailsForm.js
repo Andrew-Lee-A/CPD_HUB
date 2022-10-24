@@ -68,7 +68,7 @@ function UserDetailsForm() {
         <h2 className='title'>user details form</h2 >
         
         {/* Preferred name */}
-        <label className="labels">Preferred Name:</label>
+        <label className="labels">Full Name:</label>
         <input required="yes" type="text" className="inputs" name='prefferedName' value={values.preferredName} onChange={handleChange} />
 
         {/* Line of Business */}
@@ -85,11 +85,11 @@ function UserDetailsForm() {
         </select>
 
         {/* seniority */}
-        <label className="labels">Seniority:</label>
+        <label className="labels">Position:</label>
         <input required="yes" type="text" className="inputs" name='seniority' value={values.seniority} onChange={handleChange}/>
 
         {/* CPD start date */}
-        <label className="labels">CPD submit date:</label>
+        <label className="labels">CPEng Charted date:</label>
         <input required="yes" type="date" className="inputs" name='cycleStartDate' value={values.cycleStartDate} onChange={handleChange} />
 
         {/* push notification */}
