@@ -14,7 +14,7 @@ ca = certifi.where()
 #set variable to track page number
 page = 0
 
-keywords = []
+keywords = ["construction", "bearing", "hello", "beanie"]
 
 
 #connect to Mongo
@@ -80,9 +80,7 @@ while page != 18:
         endDate = newDate + endTime
         startDate = datetime.strptime(startDate, ' %d %B %Y%I.%M%p')
         endDate = datetime.strptime(endDate, ' %d %B %Y%I.%M%p')
-        print(startDate)
-        print(endDate)
-
+      
         #retirives the CPD points ensuring anything without CPD points is set at 0
         stepPoints = stepSoup.find(text=re.compile('Maximum CPD Hours'))
         try:
@@ -93,6 +91,12 @@ while page != 18:
         #LOCATION STEP - DETAILS NEEDED TO IMPLEMENT *Inconsistent naming and html location on website
         #stepLocation = stepSoup.find('div', class_='event__location')
         #print(stepLocation)
+
+        #Keyword Step
+        stepKeywords = stepSoup.find_all('div', class_='col-12 col-lg-7 order-1 order-lg-0 event__content')
+        for word in keywords:
+            score = stepKeywords.count(word)
+        
 
         #checking if the title is already in the DB
         x = collection.find_one({"title": realStepTitle})
