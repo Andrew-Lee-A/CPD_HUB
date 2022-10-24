@@ -11,21 +11,21 @@ const cpdEventSchema = new Schema({
     type: Number,
     required: true
   },
-  field: {
-    type: String,
-    required: true
-  },
-  date:{
+  start_date:{
     type: Date,
     required: false
   },
-  location:{
+  end_date:{
+    type: Date,
+    required: false
+  },
+  price:{
     type: String,
     required: false
   },
-  user_id: {
+  booking_Url:{
     type: String,
-    required: true
+    default: ""
   }
 }, { timestamps: true })
 

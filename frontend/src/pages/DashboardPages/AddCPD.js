@@ -14,7 +14,7 @@ const AddCPD = () => {
   
     useEffect(() => {
       const fetchWorkouts = async () => {
-        const response = await fetch("/api/cpdEvents", {
+        const response = await fetch("/api/bookedCPD", {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },

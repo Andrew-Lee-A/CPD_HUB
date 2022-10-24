@@ -7,9 +7,16 @@ const Navbar = () => {
     return (
         <header>
             <div className="container">
-                <Link to="">
-                    <h1>CPD HUB</h1>
-                </Link>
+                { user.permission === 'admin'?(
+                    <Link to="">
+                        <h1>Admin Dashboard</h1>
+                    </Link>
+                ) : (
+                    <Link to="">
+                        <h1>User Dashboard</h1>
+                    </Link>
+                )
+                }
                 <nav>
                     {user ? (
                         <div>

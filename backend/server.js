@@ -3,7 +3,9 @@ const mongoose = require('mongoose')
 const express = require('express')
 const cpdRoutes = require('./routes/cpdEvents')
 const userRoutes = require('./routes/user')
+const userCPDRoutes = require('./routes/userCpd')
 const userDetailsRoute = require('./routes/userDetails')
+const userEmployeesRoutes = require('./routes/userEmployees')
 
 // express app
 const app = express()
@@ -20,6 +22,8 @@ app.use((req, res, next) => {
 app.use('/api/cpdEvents', cpdRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/userDetails', userDetailsRoute)
+app.use('/api', userCPDRoutes)
+app.use('/api/employees', userEmployeesRoutes)
 
 app.get('/', (req, res) => {
   //health check route

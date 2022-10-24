@@ -47,10 +47,8 @@ const createCpdEvent = async (req, res) => {
     }
 
     try {
-        const user_id = req.user._id
-        console.log(date + " Controller")
-      const cpdEvent = await CpdEvent.create({title, cpd_points, field, user_id, date, location})
-      res.status(200).json(cpdEvent)
+        const cpdEvent = await CpdEvent.create({title, cpd_points, field, date, location})
+        res.status(200).json(cpdEvent)
     } catch (error) {
       res.status(400).json({error: error.message})
     }

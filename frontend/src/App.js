@@ -16,7 +16,7 @@ import CPDTypePage from './pages/DashboardPages/CPDTypePage/CPDTypePage'
 import CPDRecordingUserGuide from './pages/DashboardPages/CPDRecordingUserGuide/CPDRecordingUserGuidePage'
 import YearlyPlan from './pages/DashboardPages/YearlyPlan/Yearlyplan'
 import Settings from './pages/DashboardPages/SettingsPage/Settings'
-
+import MangageEmployees from './pages/DashboardPages/ManageEmployeesPage/MangageEmployees'
 
 function App() {
   const {user} = useAuthContext()
@@ -32,7 +32,7 @@ function App() {
               to='Dashboard'/>:<LandingPage/>}>
             </Route>
 
-            <Route path='Dashboard' element={user ? ((!user.detailsCompletedStatus)? <Navigate to="/userDetails"/>: <Home/>) : <Navigate to="/login"/>}>
+            <Route path='Dashboard' element={user ? ((!user.detailsCompletedStatus)? <Navigate to="/userDetails"/>: <Home/>) : <Navigate to="/"/>}>
               <Route index element={<Dashboard/>}></Route>
               <Route path="calendar" element={<Calendar/>}> </Route>
               <Route path="addcpd" element={<AddCPD/>}> </Route>
@@ -42,6 +42,9 @@ function App() {
               <Route path="cpdsummary" element={<CPDsummary/>}></Route>
               <Route path="yearlyplan" element={<YearlyPlan/>}></Route>
               <Route path="settings" element={<Settings/>}></Route>
+
+              {/* admin route */}
+              <Route path="Employees" element={user ? ((!user.permission) ? <Navigate to="/Dashboard"/>: <MangageEmployees/>) : <Navigate to="/"/>}></Route>
             </Route>
 
             <Route 
