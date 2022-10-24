@@ -78,8 +78,7 @@ function UserDetailsForm() {
           <option selected="selected" value="" disabled="yes">None selected</option>
           <option className='options' name="discipline" value="Marketing">Marine</option>
           <option className='options' name="discipline" value="Mission and Support Systems">Mission and Support Systems</option>
-          <option className='options' name="discipline" value="Aviation">Aviation</option>
-          <option className='options' name="discipline" value="Critical Services">Critical Services</option>
+          <option className='options' name="discipline" value="Aviation and Critical Services">Aviation and Critical Services</option>
           {/* <option className='options' name="discipline" value=""></option>
           <option className='options' name="discipline" value=""></option> */}
         </select>
