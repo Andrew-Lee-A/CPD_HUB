@@ -118,7 +118,7 @@ describe('TESING_USER_LOGIN_ROUTE', () => {
     describe('ROUTE_POST_OK', () => {
         
         test('SUCCESS_Login_OK', async () => {
-            const sampleResponse = {email: "", token: "", detailsCompletedStatus: "", prefferedName: ""}
+            const sampleResponse = {email: "", token: "", detailsCompletedStatus: "", prefferedName: "", permission: ""}
             const response = await request.post('/api/user/login').send({email: "Jest@gmail.com", password: "@Cpduser1"})
             expect(response.statusCode).toBe(200)
     
