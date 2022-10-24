@@ -13,8 +13,9 @@ ca = certifi.where()
 
 #set variable to track page number
 page = 0
+score = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
-keywords = ["construction", "bearing", "hello", "beanie"]
+keywords = ["finance", "engineer", "civil", "business", "performance"]
 
 
 #connect to Mongo
@@ -69,17 +70,20 @@ while page != 18:
         except:
             newDate = dateSplit[1]
 
-        time = dateSplit[0]
-        newTime = time.split('—')
-        startTime = newTime[0].strip(" ")
+        try:
+            time = dateSplit[0]
+            newTime = time.split('—')
+            startTime = newTime[0].strip(" ") 
+            endTime = newTime[1].strip(" ")
+            endTime = endTime.split(" ", 1)[0]
+            startDate = newDate + startTime
+            endDate = newDate + endTime
+            startDate = datetime.strptime(startDate, ' %d %B %Y%I.%M%p')
+            endDate = datetime.strptime(endDate, ' %d %B %Y%I.%M%p')
 
-        
-        endTime = newTime[1].strip(" ")
-        endTime = endTime.split(" ", 1)[0]
-        startDate = newDate + startTime
-        endDate = newDate + endTime
-        startDate = datetime.strptime(startDate, ' %d %B %Y%I.%M%p')
-        endDate = datetime.strptime(endDate, ' %d %B %Y%I.%M%p')
+        except:
+            startDate = ''
+            endDate = ''
       
         #retirives the CPD points ensuring anything without CPD points is set at 0
         stepPoints = stepSoup.find(text=re.compile('Maximum CPD Hours'))
@@ -93,10 +97,28 @@ while page != 18:
         #print(stepLocation)
 
         #Keyword Step
-        stepKeywords = stepSoup.find_all('div', class_='col-12 col-lg-7 order-1 order-lg-0 event__content')
+        stepKeywords = stepSoup.find('div', class_='col-12 col-lg-7 order-1 order-lg-0 event__content')
+
         for word in keywords:
-            score = stepKeywords.count(word)
+            try:
+                keyIndex = keywords.index(word)
+                score[keyIndex] = stepKeywords.text.count(word)   
+            except:
+                continue
+
+        realKeywords = []
+        for i in range(len(score)):
+            
+            if score[i] > 0:
+                realKeywords.append(keywords[i])
+                
+
         
+        
+
+
+
+
 
         #checking if the title is already in the DB
         x = collection.find_one({"title": realStepTitle})
@@ -106,9 +128,10 @@ while page != 18:
             continue;
         else:
             #posts all scraped elements into the DB
-            post = {"title": realStepTitle, "cpd_points": realStepPoints, "start_date": startDate, "end_date": endDate, "price": memberPrice[0], "booking_Url": linkStep }
+            post = {"title": realStepTitle, "cpd_points": realStepPoints, "start_date": startDate, "end_date": endDate, "price": memberPrice[0], "booking_Url": linkStep, "keywords": realKeywords }
             collection.insert_one(post)
     #increaing page number to scrape the next page
+        del realKeywords
     page = page + 1
 
     
