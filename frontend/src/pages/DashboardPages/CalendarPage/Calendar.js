@@ -12,7 +12,6 @@ import startOfWeek from "date-fns/startOfWeek";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
-
 /* Global variables */
 const locales = {
     "en-NZ": require("date-fns/locale/en-NZ")
@@ -41,7 +40,6 @@ function calculateEndDate(date, points){
 }
 
 function CalendarApp() {
-
     const [allEvents, setAllEvents] = useState(events);
     const {cpdEvents} = useCpdEventsContext();
 
@@ -75,7 +73,6 @@ function CalendarApp() {
                 style={{
                     height: '80vh',
                     width: '65vw',
-                    margin: '50px'
                 }}
             />
         </div>

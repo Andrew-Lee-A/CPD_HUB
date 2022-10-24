@@ -13,44 +13,39 @@ function Tabs() {
 
       <div className="outerContainerTabs">
 
+        {/* TABS */}
         <div className="blocs-tabs">
-          <button
-            className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-            onClick={() => toggleTab(1)}
-          >
+          
+          {/* 1st Year tab */}
+          <button className={toggleState === 1 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(1)}>
             1st Year
           </button>
 
-          <button
-            className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-            onClick={() => toggleTab(2)}
-          >
+          {/* 2nd Year tab */}
+          <button className={toggleState === 2 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(2)}>
             2nd Year
           </button>
 
-          <button
-            className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-            onClick={() => toggleTab(3)}
-          > 
+          {/* 3rd Year tab */}
+          <button className={toggleState === 3 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(3)}> 
             3rd Year  
           </button>
-
         </div>
 
+        {/* CONTENTS */}
         <div className="content-tabs">
-          <div
-            className={toggleState === 1 ? "content  active-content" : "content"}
-          >
+
+          {/* TAB 1 box */}
+          <div className={toggleState === 1 ? "content  active-content" : "content"}>
             <h2>CPD event 1</h2>
             <hr />
             <p>
-              Welcome Sam, Andrew and Tom
+              Hello World!
             </p>
           </div>
 
-          <div
-            className={toggleState === 2 ? "content  active-content" : "content"}
-          >
+          {/* TAB 2 box*/}
+          <div className={toggleState === 2 ? "content  active-content" : "content"}>
             <h2>CPD event 2</h2>
             <hr />
             <p>
@@ -59,9 +54,8 @@ function Tabs() {
             </p>
           </div>
 
-          <div
-            className={toggleState === 3 ? "content  active-content" : "content"}
-          >
+          {/* TAB 3 box*/}
+          <div className={toggleState === 3 ? "content  active-content" : "content"}>
             <h2>CPD event 3</h2>
             <hr />
             <p>
@@ -73,6 +67,7 @@ function Tabs() {
               aperiam voluptatem atque. Beatae rerum dolores sunt.
             </p>
           </div>
+
         </div>
       </div>
     </>

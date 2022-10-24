@@ -121,16 +121,20 @@ const Sidebar = () => {
         <div className="bottom">
           <ul>
             <p className="title">USER</p>
-            <Link to ="profile" style={{ textDecoration: "none" }}>
+
+            <Link to="profile" style={{ textDecoration: "none" }}>
               <li>
                 <AccountCircleOutlinedIcon className="icon" />
                 <span>Profile</span>
               </li>
             </Link>
-            <li onClick={handleClick} >
-              <ExitToAppIcon className="icon" />
-              <span>Logout</span>
-            </li>
+
+            <Link to ="/" style={{ textDecoration: "none" }}>
+              <li onClick={handleClick} >
+                <ExitToAppIcon className="icon" />
+                <span>Logout</span>
+              </li>
+            </Link>
           </ul>
         </div>
       </div>

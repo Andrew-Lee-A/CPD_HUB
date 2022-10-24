@@ -14,6 +14,7 @@ const Profile = () => {
     cycleStartDate: "",
     pushFrequency: "",
   });
+
   const [isLoaded, setIsLoaded] = useState(false)
 
   const handleSubmit = async (e) => {
@@ -46,7 +47,8 @@ const Profile = () => {
   return (
     <div className="pages">
         <div className="userDetails">
-        {isLoaded ? ( 
+            {isLoaded ? ( 
+
             <div className="userDetailsCard">
                 <form className="create" onSubmit={handleSubmit}>
                 <h3>General Details</h3>
@@ -97,16 +99,17 @@ const Profile = () => {
                 </form>
             </div>
             
+            ):(
+                <div> Loading </div>
+            )}
+        </div>
 
-        ):(
-            <div> Loading </div>
-        )}
+        <div className="pictureCard">
+            <div className="picture">
+                <InsertEmoticonIcon/>
+            </div>
         </div>
-      <div className="pictureCard">
-        <div className="picture">
-            <InsertEmoticonIcon/>
-        </div>
-      </div>
+
     </div>
   );
 };
