@@ -72,7 +72,7 @@ function UserDetailsForm() {
         <input required="yes" type="text" className="inputs" name='prefferedName' value={values.preferredName} onChange={handleChange} />
 
         {/* Line of Business */}
-        <label className="lineOfBusinesslabels">Line of Business:</label>
+        <label className="lineOfBusinesslabels">Lines of Business:</label>
         {/* <input required="yes" type="text" className="inputs" name='lineOfBusiness' value={values.lineOfBusiness} onChange={handleChange}/> */}
         <select className="selects" required="yes" value={values.lineOfBusiness} name="lineOfBusiness" onChange={handleChange}>
           <option selected="selected" value="" disabled="yes">None selected</option>
@@ -127,7 +127,7 @@ function UserDetailsForm() {
         </select>
         
         {/* CPD start date */}
-        <label className="labels">CPD cycle date:</label>
+        <label className="labels">CPEng cycle start date:</label>
         <input required="yes" type="date" className="inputs" name='cycleStartDate' value={values.cycleStartDate} onChange={handleChange} />
 
         {/* push notification */}
