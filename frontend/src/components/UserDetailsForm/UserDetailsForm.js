@@ -71,7 +71,7 @@ function UserDetailsForm() {
         <label className="labels">Full Name:</label>
         <input required="yes" type="text" className="inputs" name='prefferedName' value={values.preferredName} onChange={handleChange} />
 
-        {/* Line of Business */}
+        {/* Lines of Business */}
         <label className="lineOfBusinesslabels">Lines of Business:</label>
         {/* <input required="yes" type="text" className="inputs" name='lineOfBusiness' value={values.lineOfBusiness} onChange={handleChange}/> */}
         <select className="selects" required="yes" value={values.lineOfBusiness} name="lineOfBusiness" onChange={handleChange}>
@@ -91,7 +91,7 @@ function UserDetailsForm() {
           <option className='options' name="discipline" value="Naval Architect">Naval Architect</option>
         </select>
 
-        {/* Seniority */}
+        {/* Positions */}
         <label className="positionlabels">Positions:</label>
         <select className="selects" required="yes" value={values.seniority} name="seniority" onChange={handleChange}>
             <option selected="selected" value="" disabled="yes">None selected</option>
