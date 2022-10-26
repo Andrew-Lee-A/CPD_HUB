@@ -75,7 +75,7 @@ const Dashboard = () => {
           
           <div>
             <div>
-              <h3>CPD Progress - Points(hours)</h3>
+              <h3>CPD Progress</h3>
             </div>
               <ProgressWheel />
               <WithLabelExample/>

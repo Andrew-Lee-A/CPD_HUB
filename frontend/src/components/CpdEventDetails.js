@@ -30,7 +30,7 @@ const CpdEventDetails = ({ cpdEvent }) => {
     return (
         <div className="workout-details">
             <h4>{cpdEvent.title}</h4>
-            <p><strong> CPD Points (hours): </strong>{cpdEvent.cpd_points}</p>
+            <p><strong> CPD Points: </strong>{cpdEvent.cpd_points}</p>
             <p><strong> Start Date : </strong>{start_date}</p>
             <p><strong> End Date : </strong>{end_date}</p>
             <p><strong> Price : </strong>{cpdEvent.price}</p>

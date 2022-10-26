@@ -1,11 +1,11 @@
 import { React, useEffect, useState } from "react";
 import ApexCharts from "apexcharts";
 
-import { useAuthContext } from "../hooks/useAuthContext";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
-import "./progresswheel.scss";
+import "./teamprogresswheel.scss";
 
-const ProgressWheel = () => {
+const TeamProgressWheel = () => {
   const [data, setData] = useState({
     areaOfPractice: "0",
     businessAndManagement: "0",
@@ -86,7 +86,7 @@ const ProgressWheel = () => {
               show: true,
               fontSize: '16px',
               formatter: function(seriesName){
-                if (seriesName === "CPD points"){
+                if (seriesName === "Team CPD points"){
                   return seriesName
                 }else{
                   return chartData[seriesName].name;
@@ -98,7 +98,7 @@ const ProgressWheel = () => {
             },
             total: {
               show: true,
-              label: "CPD points",
+              label: "Team CPD points",
               formatter: function (w) {
                 // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
                 return parseInt(chartData.areaOfPractice.value)+parseInt(chartData.careerInterests.value)+parseInt(chartData.businessAndManagement.value)
@@ -150,7 +150,7 @@ const ProgressWheel = () => {
 
 
     return (
-      <div className="progressWheel">
+      <div className="teamprogressWheel">
         {!isLoading ? (
           <div id="chart"></div>
         ) : (
@@ -162,4 +162,4 @@ const ProgressWheel = () => {
 
 };
 
-export default ProgressWheel;
+export default TeamProgressWheel;
