@@ -3,14 +3,15 @@ import ApexCharts from "apexcharts";
 
 import { useAuthContext } from "../hooks/useAuthContext";
 
-import "./progresbar.scss";
+import "./progresswheel.scss";
 
-const ProgressBar = () => {
-  const [data, setData] = useState(null);
-  const [areaOfPractice, setAreaOfPractice] = useState('')
-  const [businessAndManagement, setBusinessAndManagement] = useState('')
-  const [careerInterests, setCareerInterests] = useState('')
-  const [riskManagement, setRiskManagement] = useState('')
+const ProgressWheel = () => {
+  const [data, setData] = useState({
+    areaOfPractice: "0",
+    businessAndManagement: "0",
+    careerInterests: "0",
+    riskManagement: "0",
+  });
   const [isLoading, setIsLoading] = useState(true)
   const { user } = useAuthContext();
 
@@ -25,18 +26,12 @@ const ProgressBar = () => {
       const json = await response.json();
 
       if (response.ok){
-        console.log(json)
         setData(json)
-        setBusinessAndManagement(json.businessAndManagement)
-        setCareerInterests(json.careerInterests)
-        setAreaOfPractice(json.areaOfPractice)
-        setRiskManagement(json.riskManagement)
         setIsLoading(false)
       }
     };
-
-    if (user){
       fetchCPDSummary()
+      const {areaOfPractice, businessAndManagement, riskManagement, careerInterests} = data
       let chartData = {
         areaOfPractice:{
           value: areaOfPractice,
@@ -48,13 +43,13 @@ const ProgressBar = () => {
           value: businessAndManagement,
           barValue: Math.floor(businessAndManagement/15*100),
           divisor: 15,
-          name: "Business"
+          name: "Business Management"
         },
         careerInterests:{
           value: careerInterests,
           barValue: Math.floor(careerInterests/75*100),
           divisor: 75,
-          name: "Career Interests"
+          name: "Position Related Activities"
         },
         riskManagement:{
           value: riskManagement,
@@ -151,12 +146,11 @@ const ProgressBar = () => {
       new ApexCharts(document.querySelector("#chart"), options).render();
     }
       
-}
-}, [isLoading, user, areaOfPractice, businessAndManagement, careerInterests, riskManagement]);
+}, [isLoading, user.token]);
 
 
     return (
-      <div className="progressBar">
+      <div className="progressWheel">
         {!isLoading ? (
           <div id="chart"></div>
         ) : (
@@ -168,4 +162,4 @@ const ProgressBar = () => {
 
 };
 
-export default ProgressBar;
+export default ProgressWheel;

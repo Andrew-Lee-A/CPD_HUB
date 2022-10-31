@@ -1,0 +1,37 @@
+.pages {
+    width: 70%;
+    height: 70%;
+    
+    .userDetails {
+        margin-left: 10%;
+        position: relative;;
+        width: 90%;
+    
+    }
+
+    .userDetailsCard{
+        background: #fff;
+        border-radius: 4px;
+        padding: 7px;
+        min-width: 300px;
+        position: relative;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+    
+        font-size: larger;
+    }
+
+    .pictureCard {
+        background: #fff;
+        border-radius: 4px;
+        padding: 5px;
+        min-width: 300px;
+        position: relative;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+
+        .picture{
+            align-items: center;
+            justify-items: center;
+        }
+    }
+}
+

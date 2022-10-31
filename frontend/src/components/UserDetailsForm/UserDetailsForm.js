@@ -14,7 +14,7 @@ function UserDetailsForm() {
     // console.log(todaysdate)
 
    const [values, setValues] = useState ({
-        preferredName: "",
+        prefferedName: "",
         lineOfBusiness: "",
         discipline: "",
         seniority: "",
@@ -27,6 +27,7 @@ function UserDetailsForm() {
         ...values,
         [e.target.name]: e.target.value,
     });
+    console.log(e.target.value + ": "  + e.target.name)
   };
 
   const handleSubmit = async (e) => {
@@ -47,6 +48,7 @@ function UserDetailsForm() {
         //update Local Storage so that detailsCompletedStatus turns to True
         const user = JSON.parse(localStorage.getItem('user'))
         user["detailsCompletedStatus"] = true;
+        user["prefferedName"] = values.prefferedName;
         localStorage.setItem('user', JSON.stringify(user));
 
         //navigate to dashboard route
@@ -66,45 +68,83 @@ function UserDetailsForm() {
         <h2 className='title'>user details form</h2 >
         
         {/* Preferred name */}
-        <label className="labels">Preferred Name:</label>
-        <input required="yes" type="text" className="inputs" name='preferredName' value={values.preferredName} onChange={handleChange} />
+        <label className="labels">Full Name:</label>
+        <input required="yes" type="text" className="inputs" name='prefferedName' value={values.preferredName} onChange={handleChange} />
 
         {/* Line of Business */}
-        <label className="labels">Line of Business:</label>
-        <input required="yes" type="text" className="inputs" name='lineOfBusiness' value={values.lineOfBusiness} onChange={handleChange}/>
-
-        {/* Discipline */}
-        <label className="labels">Discipline type:</label>
-        <select className="selects" defaultValue={'DEFAULT'} id="disciplines">
-          <option value="DEFAULT" disabled="yes" >None selected</option>
-          <option name="disciplines" value={values.discipline}>Mechanical Engineer</option>
-          <option name="disciplines" value={values.discipline}>Naval Architect</option>
-          <option name="disciplines" value={values.discipline}>Other</option>
+        <label className="lineOfBusinesslabels">Line of Business:</label>
+        {/* <input required="yes" type="text" className="inputs" name='lineOfBusiness' value={values.lineOfBusiness} onChange={handleChange}/> */}
+        <select className="selects" required="yes" value={values.lineOfBusiness} name="lineOfBusiness" onChange={handleChange}>
+          <option selected="selected" value="" disabled="yes">None selected</option>
+          <option className='options' name="discipline" value="Marketing">Marine</option>
+          <option className='options' name="discipline" value="Mission and Support Systems">Mission and Support Systems</option>
+          <option className='options' name="discipline" value="Aviation and Critical Services">Aviation and Critical Services</option>
+          {/* <option className='options' name="discipline" value=""></option>
+          <option className='options' name="discipline" value=""></option> */}
         </select>
 
-        {/* seniority */}
-        <label className="labels">Seniority:</label>
-        <input required="yes" type="text" className="inputs" name='seniority' value={values.seniority} onChange={handleChange}/>
+        {/* Discipline */}
+        <label className="disciplineLabel">Discipline type:</label>
+        <select className="selects" required="yes" value={values.discipline} name="discipline" onChange={handleChange}>
+          <option selected="selected" value="" disabled="yes">None selected</option>
+          <option className='options' name="discipline" value="Mechnical Engineer">Mechanical Engineer</option>
+          <option className='options' name="discipline" value="Naval Architect">Naval Architect</option>
+        </select>
 
+        {/* Seniority */}
+        <label className="positionlabels">Position:</label>
+        <select className="selects" required="yes" value={values.seniority} name="seniority" onChange={handleChange}>
+            <option selected="selected" value="" disabled="yes">None selected</option>
+            <optgroup label="Engineering Management">
+              <option value="Engineering Team Leader">Engineering Team Leader</option>
+              <option value="Engineering Manager">Engineering Manager (Program/Functional)</option>
+              <option value="Senior Engineering Manager">Senior Engineering Manager</option>
+              <option value="Head of Engineering">Head of Engineering (Domain/Functional)</option>
+            </optgroup>
+            <optgroup label="Engineering Assurance">
+              <option value="Senior Technical Authority">Senior Technical Authority</option>
+              <option value="Chief Engineer">Chief Engineer</option>
+              <option value="Senior Chief Engineer">Senior Chief Engineer</option>
+            </optgroup>
+            <optgroup label="Engineering Professional">
+              <option value="Graduate Engineer">Graduate (Discipline) Engineer</option>
+              <option value="Engineer">(Discipline) Engineer</option>
+              <option value="Senior Engineer">Senior (Discipline) Engineer</option>
+              <option value="Specialist Capability / Principle Engineer">Specialist (Capability) Engineer / Principle (Discipline) Engineer</option>
+              <option value="Engineering - Discipline Lead">(Capability) Engineering - Discipline Lead</option>
+            </optgroup>
+            <optgroup label="Technical Management">
+              <option value="Technical Team Leader">Technical Team Leader</option>
+              <option value="Manager">(Technical Discipline) Manager</option>
+              <option value="Senior Manager">Senior (Technical Discipline) Manager</option>
+            </optgroup>
+            <optgroup label="Technical Professional">
+              <option value="Specialist Officer / Principal Officer">Specialist (Technical Capability) Officer / Principal (Technical Discipline) Officer</option>
+              <option value="Senior Officer">Senior (Technical Discipline) Officer</option>
+              <option value="Senior Engineering Manager">Senior Engineering Manager</option>
+              <option value="Head of Engineering">Head of Engineering (Domain/Functional)</option>
+            </optgroup>
+        </select>
+        
         {/* CPD start date */}
-        <label className="labels">CPD submit date:</label>
-        <input required="yes" type="date" className="inputs" name='cyclestartdate' value={values.cycleStartDate} onChange={handleChange} />
+        <label className="labels">CPEng chartered date:</label>
+        <input required="yes" type="date" className="inputs" name='cycleStartDate' value={values.cycleStartDate} onChange={handleChange} />
 
         {/* push notification */}
-        <label className="labels">Push notification frequency:</label>
-        <select className="selects" defaultValue={'DEFAULT'} id="pushnotifications" >
-          <option value="default" disabled="yes" >None selected</option>
-          <option name="notification" value={values.pushFrequency}>Fortnightly (every 2 weeks)</option>
-          <option name="notification" value={values.pushFrequency}>Monthly</option>
-          <option name="notification" value={values.pushFrequency}>Quaterly (every 3 months)</option>
-          <option name="notification" value={values.pushFrequency}>Semi-annual (every 6 months)</option>
+        <label className="PNFLabels">Push notification frequency:</label>
+        <select className="selects" required="yes" value={values.pushFrequency} name="pushFrequency" onChange={handleChange}>
+          <option  selected="selected" value="" disabled="yes" >None selected</option>
+          <option  className='options' name="pushFrequency" value="Fortnightly (every 2 weeks)">Fortnightly (every 2 weeks)</option>
+          <option  className='options' name="pushFrequency" value="Monthly">Monthly</option>
+          <option  className='options' name="pushFrequency" value="Quartly (every 3 months)">Quaterly (every 3 months)</option>
+          <option  className='options' name="pushFrequency" value="Semi-annual (every 6 months)">Semi-annual (every 6 months)</option>
         </select>
 
         {/* Submit button */}
         <button className="submitButton" type='submit'>
           submit
-          
         </button>
+
       </form>
 
     </div>

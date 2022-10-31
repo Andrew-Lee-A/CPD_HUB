@@ -14,25 +14,29 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    manager: {
+        type: String,
+        default: ""
+    },
     detailsCompletedStatus:{
         type: Boolean,
         default: false,
     },
     cpdSummary:{
         areaOfPractice:{
-            type: String,
+            type: Number,
             default: "0",
         },
         riskManagement:{
-            type: String,
+            type: Number,
             default: "0",
         },
         businessAndManagement:{
-            type: String,
+            type: Number,
             default: "0",
         },
         careerInterests:{
-            type: String,
+            type: Number,
             default: "0",
         }
     },
@@ -62,6 +66,13 @@ const userSchema = new Schema({
             default: "",
         },
     },
+    keywords:{
+        type: [{type: String}],
+    },
+    cpdPushed: {
+        type: Array,
+        default: [],
+    },
     cpdBooked:{
         type: Array,
         default: [],
@@ -69,6 +80,15 @@ const userSchema = new Schema({
     cpdCompleted:{
         type: Array,
         default: [],
+    },
+    keywords:{
+        type: Array,
+        default: []
+    },
+    permission: {
+        type: String,
+        enum : ['user','admin'],
+        default: 'user'
     },
 })
 

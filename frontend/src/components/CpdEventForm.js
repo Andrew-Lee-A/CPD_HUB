@@ -96,7 +96,6 @@ const CpdEventForm = () => {
         className={emptyFields.includes('location') ? 'error' : ''}
       />
       
-
       <button>Add CPD Event</button>
       {error && <div className="error">{error}</div>}
     </form>

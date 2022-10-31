@@ -8,12 +8,26 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from "react-router-dom";
+
 // import { DarkModeContext } from "../../context/darkModeContext";
 // import { useContext } from "react";
+import { BiNews } from 'react-icons/bi';
+import { BiCommentDetail } from 'react-icons/bi';
+import { BiCalendar } from 'react-icons/bi';
+import { BiReceipt } from 'react-icons/bi';
+import { BiMessageSquareAdd } from 'react-icons/bi';
+import { BiCog } from 'react-icons/bi';
+import { BiFile } from 'react-icons/bi';
+import { BiLinkAlt } from 'react-icons/bi';
+import { FaBars } from 'react-icons/fa';
+import {HiOutlineUserGroup} from 'react-icons/hi'
+
 
 import { useLogout } from "../../hooks/useLogout";
+import { useAuthContext } from '../../hooks/useAuthContext'
 
 const Sidebar = () => {
+  const {user} = useAuthContext() 
   //   const { dispatch } = useContext(DarkModeContext);
 
   const { logout } = useLogout();
@@ -32,73 +46,96 @@ const Sidebar = () => {
       <hr />
       <div className="center">
         <ul>
+
           <p className="title">MAIN</p>
-          <Link to="/" style={{textDecoration: "none"}}>
-          <li>
-            <DashboardIcon className="icon" />
-            <span>Dashboard</span>
-          </li>
-          </Link>
-          <p className="title">LISTS</p>
-          <Link to="/calendar" style={{ textDecoration: "none" }}>
+          <Link to="" style={{textDecoration: "none"}}>
             <li>
-              <PersonOutlineIcon className="icon" />
+              <BiNews className="icon" />
+              <span>Dashboard</span>
+            </li>
+          </Link>
+
+          <p className="title">LISTS</p>
+          <Link to="calendar" style={{ textDecoration: "none" }}>
+            <li>
+              <BiCalendar className="icon" />
               <span>Calendar</span>
             </li>
           </Link>
-          <Link to="/yearlyplan" style={{ textDecoration: "none" }}>
+
+          <Link to="yearlyplan" style={{ textDecoration: "none" }}>
             <li>
-              <StoreIcon className="icon" />
+              <BiCommentDetail className="icon" />
               <span>Yearly Plan</span>
             </li>
           </Link>
-          <Link to="/CPDSUMMARY" style={{ textDecoration: "none" }}>
+
+          <Link to="CPDSUMMARY" style={{ textDecoration: "none" }}>
             <li>
-              <CreditCardIcon className="icon" />
+              <BiReceipt className="icon" />
               <span>CPD Summary</span>
             </li>
           </Link>
 
-          <Link to="/settings" style={{ textDecoration: "none" }}>
+          <Link to="addcpd" style={{ textDecoration: "none" }}>
             <li>
-              <SettingsApplicationsIcon className="icon" />
+              <BiMessageSquareAdd className="icon" />
+              <span>Add CPD</span>
+            </li>
+          </Link>
+
+          <Link to="settings" style={{ textDecoration: "none" }}>
+            <li>
+              <BiCog className="icon" />
               <span>Settings</span>
             </li>
           </Link>
+
           <p className="title">REFERENCES</p>
-          <Link to="/CPDTypePage" style={{ textDecoration: "none" }}>
+          <Link to="CPDTypePage" style={{ textDecoration: "none" }}>
             <li>
-              <CreditCardIcon className="icon" />
+              <BiFile className="icon" />
               <span>CPD Types</span>
             </li>
           </Link>
-          <Link to="/CPDRecordingUserGuide" style={{ textDecoration: "none" }}>
+
+          <Link to="CPDRecordingUserGuide" style={{ textDecoration: "none" }}>
             <li>
-              <CreditCardIcon className="icon" />
+              <BiLinkAlt className="icon" />
               <span>Recording Guide</span>
             </li>
           </Link>
+
+          { user.permission === 'admin' && (
+            <>
+              <p className="title">MANAGE TEAM</p>
+              <Link to="Employees" style={{ textDecoration: "none" }}>
+                <li>
+                  <HiOutlineUserGroup className="icon" />
+                  <span>Team Overview</span>
+                </li>
+              </Link>
+            </>
+          )}  
         </ul>
         <div className="bottom">
           <ul>
             <p className="title">USER</p>
-            <li>
-              <AccountCircleOutlinedIcon className="icon" />
-              <span>Profile</span>
-            </li>
-            <li>
-              <ExitToAppIcon className="icon" />
-              <span onClick={handleClick}>Logout</span>
-            </li>
+
+            <Link to="profile" style={{ textDecoration: "none" }}>
+              <li>
+                <AccountCircleOutlinedIcon className="icon" />
+                <span>Profile</span>
+              </li>
+            </Link>
+
+            <Link to ="/" style={{ textDecoration: "none" }}>
+              <li onClick={handleClick} >
+                <ExitToAppIcon className="icon" />
+                <span>Logout</span>
+              </li>
+            </Link>
           </ul>
-          {/* <div
-          className="colorOption"
-          onClick={() => dispatch({ type: "LIGHT" })}
-        ></div>
-        <div
-          className="colorOption"
-          onClick={() => dispatch({ type: "DARK" })}
-        ></div> */}
         </div>
       </div>
     </div>

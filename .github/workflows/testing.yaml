@@ -1,0 +1,38 @@
+name: Run backend Tests
+
+env: 
+  MONGO_URI: ${{ secrets.MONGO_URI }}
+  PORT: 8000
+  SECRET: ninjadojoshifuyoshimarioluigipeachbowser
+
+on:
+  pull_request:
+    branches: [ main, development, development_merge, development_merge_JEST  ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Change dir and install dep
+        run: |
+          cd backend
+          npm ci
+      - name: Build
+        run: |
+          cd backend
+          npm run build --if-present
+      - name: Run test JEST
+        run: |
+          cd backend
+          npm test

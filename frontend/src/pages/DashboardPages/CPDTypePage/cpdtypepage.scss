@@ -1,15 +1,14 @@
 .cpdType{
     margin: 15px;
+    display: flex;
     align-content: center;
     justify-content: center;
-    display: flex;
-   
-    .cpdTypeSpan{
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+
+    width: 100%;
+
+    .cpdTypeSpan {
+        padding: 10px 10px;
+        margin-left: 15%;
         background-color: #fff;
-    
     }   
 }
