@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useAuthContext } from '../../../hooks/useAuthContext'
-import './profile.scss'
+import './profilepages.scss'
 
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 

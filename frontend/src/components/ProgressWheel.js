@@ -67,7 +67,7 @@ const ProgressWheel = () => {
           
           ],
         chart: {
-        height: 400,
+        height: 350,
         type: 'radialBar',
       },
       plotOptions: {
@@ -113,9 +113,9 @@ const ProgressWheel = () => {
       legend: {
         show: true,
         floating: true,
-        fontSize: '13vw',
+        fontSize: '12vw',
         position: 'left',
-        offsetX: -30,
+        offsetX: -35,
         offsetY: 2,
         labels: {
           useSeriesColors: true,
